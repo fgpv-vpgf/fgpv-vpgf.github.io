@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+
+    <!-- TODO: not forget to inject the Roboto fonts in production -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="shortcut icon" href="content/images/favicon.ico" type="image/x-icon" />
+
+    <!-- inject:vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="main.css">
+    <!-- endinject -->
+
+    <!-- inject:error -->
+    <!-- endinject -->
+
+    <style>
+        .fgpv {
+            height: 700px;
+            border: 1px solid black;
+            margin: 50px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fgpv" th-config='{"title": "Granpa"}'></div>
+
+    <div class="fgpv" th-config="config.en.json"></div>
+
+    <div class="fgpv"></div>
+
+    <!-- inject:vendor:js -->
+    <script src="lib.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="app.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <script src="templates.js"></script>
+    <!-- endinject -->
+
+</body>
+
+</html>
