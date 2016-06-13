@@ -1,0 +1,19 @@
+<!-- ngDirective.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >rvTocEntryControl</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<h3>directive in ap</h3>
+
+	<div>
+	  <p>The <code>rvTocEntryControl</code> directive is one of the layer toggle buttons: visiblity, settings, metadata, etc.</p>
+<pre><code class="lang-html">&lt;!-- `option` attribute specifies the name of the toggle; toggle&#39;s control object and its template are fetched from the layerItem directive --&gt;
+&lt;rv-toc-entry-control option=&quot;settings&quot;&gt;&lt;/toc-entry-control&gt;
+
+&lt;!-- `type` attribute specifies the template to be used for the control; it defaults to `entry-button.html`; another option is `entry-control-menu-item.html` --&gt;
+&lt;rv-toc-entry-control option=&quot;metadata&quot; type=&quot;menu-item&quot;&gt;&lt;/rv-toc-entry-control&gt;
+</code></pre>
+
+	</div>
+
+	
+</md-content>

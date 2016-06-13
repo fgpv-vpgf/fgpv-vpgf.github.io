@@ -1,0 +1,42 @@
+<!-- ngDirective.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >rvStepperItem</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<h3>directive in app.ui.common.stepper</h3>
+
+	<div>
+	  <p>The <code>rvStepperItem</code> directive is a step implementation in Material Design stepper component.
+Material Design has specs for a <a href="https://www.google.com/design/spec/components/steppers.html#steppers-specs">Stepper component</a>. Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps. Unfortunatelly, Angular Material didn&#39;t implement it yet, so we have to build our own.
+This directive represents a single step (<code>Stepper</code> service provides navigation between linked steps) which wraps the specified content in a form to provide field validation. <code>Continue</code> and <code>Cancel</code> buttons can be display in each step. <code>Continue</code> button is disabled unless the form is valid. <code>Cancel</code> button clears the form and remove all the standard error messages.</p>
+<p><code>Stepper-items</code> should not be nested.</p>
+<p>// TODO: check if individual overrides even make sense and useful; removing them will siplify the template;
+<code>title-value</code> a string to be displayed in the step&#39;s header
+<code>summary-value</code> a string to be displayed under the step&#39;s header; not shown if omitted
+<code>step-number</code> the step number to be displayed
+<code>is-active</code> a boolean flag specifying if the step is active (open) at the moment
+<code>is-complete</code> a boolean flag specifying is the step has been completed (checkmark is shown instead of the step&#39;s number)
+<code>on-continue</code> a function to call when the user pressed the <code>continue</code> button; the <code>continue</code> button is not shown if the function is omitted
+<code>on-cancel</code> a function to call when the user pressed the <code>cancel</code> button; the <code>cancel</code> button is not shown if the function is omitted
+<code>is-continue-enabled</code> a boolean flag indicating if the <code>continue</code> button is enabled; doesn&#39;t make sense if <code>on-cancel</code> is omitted
+<code>is-cancel-enabled</code> a boolean flag indicating if the <code>cancel</code> button is enabled; doesn&#39;t make sense if <code>on-continue</code> is omitted
+<code>step</code> a shortcut for all other properties which can be supplied in an object; first, a explicit binding takes precedence over anything supplied in the <code>step</code> property
+<code>step-form</code> is an object reference to which stepper item&#39;s form will be bound, so it can be access from the parent directive</p>
+<p>Usage example:</p>
+<pre><code class="lang-html">&lt;stepper-item
+        title-value=&quot;Pick a side&quot;
+        summary-value=&quot;Empire or Rebels&quot;
+        step-number=&quot;2&quot;
+        is-active=&quot;true&quot;
+        is-active=&quot;false&quot;
+        on-continue=&quot;forward&quot;
+        on-cancel=&quot;back&quot;
+        is-continue-enabled=&quot;true&quot;
+        is-cancel-enabled=&quot;false&quot;&gt;
+
+&lt;/stepper-item&gt;
+</code></pre>
+
+	</div>
+
+	
+</md-content>

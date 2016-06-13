@@ -1,0 +1,17 @@
+<!-- ngDirective.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >rvDragula</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<h3>directive in app.ui.common</h3>
+
+	<div>
+	  <p>The <code>rvDragula</code> directive is used to workaround angular-dragula propensity of requesting new scopes on the elements.
+This directive uses inherited scope and the compiles an angular-dragula directive on some random piece of html providing it with proper parameters.</p>
+<p><code>rv-dragula</code> - [string] name of the dragula bag; mimics the original <code>dragula</code> property from the <code>dragula</code> directive
+<code>rv-dragula-model</code> - [array] collection to serve as model for dragula reorder; mimics the original <code>dragula-model</code> property from the <code>dragula</code> directive
+<code>rv-dragula-options</code> - [string] name of the object on the inherited scope (on <code>self</code>) providing any overrides for dragule init properies; use this to set up <code>accept</code> and other callbacks</p>
+
+	</div>
+
+	
+</md-content>

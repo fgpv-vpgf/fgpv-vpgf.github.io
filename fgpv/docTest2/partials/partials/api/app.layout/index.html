@@ -1,0 +1,30 @@
+<!-- ngModule.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >app.layout Module</h2></md-toolbar>
+
+<md-content layout-padding flex>
+
+  <p>The <code>app.layout</code> module handles layout of the application, application-wide state transitions and events.</p>
+
+
+  
+
+	
+		
+		<material-divider></material-divider>
+		<h3>service</h3>
+		<ul>
+			
+			<li><a href="#/api/app.layout/service/layoutService">layoutService</a> - The `layoutService` service works as a UI-manager for the rest of the application. `layoutService` exposes services for individual components that can be called.</li>
+			<li><a href="#/api/app.layout/service/storageService">storageService</a> - The 'storageService' service stores information about the the layout, like width/height of the panels.</li>
+		</ul>
+		
+		<material-divider></material-divider>
+		<h3>directive</h3>
+		<ul>
+			
+			<li><a href="#/api/app.layout/directive/rvShell">rvShell</a> - // TODO: update comments since it's a directive now and much had changed.
+The `ShellController` controller handles the shell which is the visible part of the layout.
+`self.isLoading` is initially `true` and causes the loading overlay to be displayed; when `configService` resolves, it's set to `false` and the loading overly is removed.</li>
+		</ul>
+
+</md-content>
