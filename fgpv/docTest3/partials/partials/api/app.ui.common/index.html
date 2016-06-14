@@ -1,0 +1,72 @@
+<!-- ngModule.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >app.ui.common Module</h2></md-toolbar>
+
+<md-content layout-padding flex>
+
+  <p>The <code>app.ui.common</code> module contains reusable, non-component specific attribute directives like <code>rv-morph</code> (think of <code>ng-show</code> or <code>ng-hide</code> directives) and JS-based animation definitions to be used on <code>leave</code>, <code>enter</code>, etc. events (<a href="https://docs.angularjs.org/api/ngAnimate#javascript-based-animations">https://docs.angularjs.org/api/ngAnimate#javascript-based-animations</a>).</p>
+
+
+  
+
+	
+		
+		<material-divider></material-divider>
+		<h3>directive</h3>
+		<ul>
+			
+			<li><a href="#/api/app.ui.common/directive/rvDetectScrollbar">rvDetectScrollbar</a> - The `rvDetectScrollbar` directive fires a `rv-detect-scrollbar` event when a scrollbar is detected on a node.</li>
+			<li><a href="#/api/app.ui.common/directive/rvDragula">rvDragula</a> - The `rvDragula` directive is used to workaround angular-dragula propensity of requesting new scopes on the elements.
+This directive uses inherited scope and the compiles an angular-dragula directive on some random piece of html providing it with proper parameters.
+
+`rv-dragula` - [string] name of the dragula bag; mimics the original `dragula` property from the `dragula` directive
+`rv-dragula-model` - [array] collection to serve as model for dragula reorder; mimics the original `dragula-model` property from the `dragula` directive
+`rv-dragula-options` - [string] name of the object on the inherited scope (on `self`) providing any overrides for dragule init properies; use this to set up `accept` and other callbacks</li>
+			<li><a href="#/api/app.ui.common/directive/rvMorph">rvMorph</a> - The `rvMorph` directive animates the given HTML element from one CSS class to another provided to the `rvMorph` attribute. The element is morphed by using GSAP animation library. Only class changes are animated - the first class is applied immediately; when removed, applied immediately as well.
+
+```html
+<!-- when $scope.myValue changes from `value1` to `value2`, the transition is animated -->
+<div rv-morph="myValue"></div>
+```
+The value of `rv-morph` attribute is added to the CSS classes of the element after transition completes; the old class value is removed.
+
+Optional `rv-morph-speed` attribute can be added to the element to change the animation speed from the default 0.3s.
+
+```html
+<!-- transition will take 10 seconds -->
+<div rv-morph="myValue" rv-morph-speed="10"></div>
+```
+
+`rv-morph` should not be applied to elements that are animated by different means (ngAnimate or other CSS animations), this may interfere with applying of CSS classes.</li>
+			<li><a href="#/api/app.ui.common/directive/rvTruncate">rvTruncate</a> - The `rvTruncate` directive shortens the contents to a set limit as defined by the
+`maxTextLength` property. If the maxTextLength is reached mid-word, the entire word is truncated instead.
+If maxTextLength is not defined or less than 1 this directive has no effect.
+
+<rv-truncate max-text-length="7">Some text to shorten</rv-truncate>
+Results in `Some...`</li>
+		</ul>
+		
+		<material-divider></material-divider>
+		<h3>service</h3>
+		<ul>
+			
+			<li><a href="#/api/app.ui.common/service/errorService">errorService</a> - The `errorService` factory handles the display of error toasts</li>
+			<li><a href="#/api/app.ui.common/service/fullscreen">fullscreen</a> - The `fullscreen` factory makes the map go "Boom!".</li>
+			<li><a href="#/api/app.ui.common/service/rvPlugSlide">rvPlugSlide</a> - The `rvPlugSlide` is an animation. It animates enter and leave events on view plugs by applying transitions to plugs' panels. It will not work with just any node.
+
+```html
+<!-- plug's panel will be animated by sliding it down from -100% of its height relative to itself -->
+<div class="rv-plug-slide-down"></div>
+
+<!-- plug's panel will be animated by sliding it down from -100% of its height relative to the app's root element -->
+<div class="rv-plug-slide-down-grand"></div></li>
+			<li><a href="#/api/app.ui.common/service/rvToggleSlide">rvToggleSlide</a> - The `rvToggleSlide` is an animation. It animates `enter` and `leave` events for `ng-if`; `addClass` and `removeClass`, for `ng-if` and `ng-show` directives on any node by `sliding` it up or down, animating its height, when its added or removed from the dom.
+
+```html
+<div class="rv-toggle-slide" ng-show="value"></div>
+<div class="rv-toggle-slide" ng-hide="value"></div>
+
+<div class="rv-toggle-slide" ng-if="value"></div>
+```</li>
+		</ul>
+
+</md-content>

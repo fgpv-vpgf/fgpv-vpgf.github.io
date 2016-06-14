@@ -1,0 +1,36 @@
+<!-- ngDirective.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >rvContentPane</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<h3>directive in app.ui.panels</h3>
+
+	<div>
+	  <p>The <code>rvContentPane</code> directive is a panel inner container holding the panel&#39;s content.</p>
+<p><code>title-value</code> a string to be displayed in the pane&#39;s header; if ommited, the header is not shown
+<code>title-style</code> sets the style of the pane&#39;s title; options: &quot;headline&quot;, &quot;title&quot;, &quot;subhead&quot;
+<code>is-loading</code> a flag to show/hide the loading indicator
+<code>hide-when-loading</code> if true, hides the content of the pane when the loading indicator is active
+<code>header-controls</code> a list of directive names separated by &#39;;&#39; to be inserted into the header (extra controls like a menu for example)
+<code>floating-header</code> no explicit header is shown; close button sticks to the upper right corner of the scrollable content
+<code>footer</code> directive name to insert into the footer
+<code>close-panel</code> a custom &quot;close&quot; function to call when the pane is closed
+<code>static-content</code> makes main content section non-scrollable</p>
+<p>Usage example:</p>
+<pre><code class="lang-html">&lt;rv-content-pane
+        title-value=&quot;Panel&quot;
+        title-style=&quot;title&quot;
+        is-loading=&quot;true&quot;
+        hide-when-loading=&quot;true&quot;
+        header-controls=&quot;filters-default-menu&quot;
+        floating-header=&quot;true&quot;
+        footer=&quot;&quot;
+        close-panel=&quot;&quot;
+        static-content=&quot;false&quot;&gt;
+
+&lt;/rv-content-pane&gt;
+</code></pre>
+
+	</div>
+
+	
+</md-content>

@@ -1,0 +1,62 @@
+<!-- ngModule.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >app.ui.common.stepper Module</h2></md-toolbar>
+
+<md-content layout-padding flex>
+
+  <p>The <code>app.ui.common.stepper</code> description.</p>
+
+
+  
+
+	
+		
+		<material-divider></material-divider>
+		<h3>directive</h3>
+		<ul>
+			
+			<li><a href="#/api/app.ui.common.stepper/directive/rvStepperItem">rvStepperItem</a> - The `rvStepperItem` directive is a step implementation in Material Design stepper component.
+Material Design has specs for a [Stepper component](https://www.google.com/design/spec/components/steppers.html#steppers-specs). Steppers display progress through a sequence by breaking it up into multiple logical and numbered steps. Unfortunatelly, Angular Material didn't implement it yet, so we have to build our own.
+This directive represents a single step (`Stepper` service provides navigation between linked steps) which wraps the specified content in a form to provide field validation. `Continue` and `Cancel` buttons can be display in each step. `Continue` button is disabled unless the form is valid. `Cancel` button clears the form and remove all the standard error messages.
+
+`Stepper-items` should not be nested.
+
+// TODO: check if individual overrides even make sense and useful; removing them will siplify the template;
+`title-value` a string to be displayed in the step's header
+`summary-value` a string to be displayed under the step's header; not shown if omitted
+`step-number` the step number to be displayed
+`is-active` a boolean flag specifying if the step is active (open) at the moment
+`is-complete` a boolean flag specifying is the step has been completed (checkmark is shown instead of the step's number)
+`on-continue` a function to call when the user pressed the `continue` button; the `continue` button is not shown if the function is omitted
+`on-cancel` a function to call when the user pressed the `cancel` button; the `cancel` button is not shown if the function is omitted
+`is-continue-enabled` a boolean flag indicating if the `continue` button is enabled; doesn't make sense if `on-cancel` is omitted
+`is-cancel-enabled` a boolean flag indicating if the `cancel` button is enabled; doesn't make sense if `on-continue` is omitted
+`step` a shortcut for all other properties which can be supplied in an object; first, a explicit binding takes precedence over anything supplied in the `step` property
+`step-form` is an object reference to which stepper item's form will be bound, so it can be access from the parent directive
+
+Usage example:
+```html
+<stepper-item
+        title-value="Pick a side"
+        summary-value="Empire or Rebels"
+        step-number="2"
+        is-active="true"
+        is-active="false"
+        on-continue="forward"
+        on-cancel="back"
+        is-continue-enabled="true"
+        is-cancel-enabled="false">
+
+</stepper-item>
+```</li>
+		</ul>
+		
+		<material-divider></material-divider>
+		<h3>object</h3>
+		<ul>
+			
+			<li><a href="#/api/app.ui.common.stepper/object/Stepper">Stepper</a> - The `Stepper` class provides a common interface to move between a number of steps forming a stepper [Material Design Stepper](https://www.google.com/design/spec/components/steppers.html#steppers-specs).
+Other components should import `Stepper`, create a new stepper object using `new Stepper()` and add steps to it in the order they appear in the template.
+Only one step can be active at a time; you can move forward and backwards, or jump to any step optionally "completing" intermediate steps.</li>
+		</ul>
+
+</md-content>

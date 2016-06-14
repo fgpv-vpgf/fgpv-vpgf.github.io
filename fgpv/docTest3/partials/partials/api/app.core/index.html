@@ -1,0 +1,55 @@
+<!-- ngModule.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >app.core Module</h2></md-toolbar>
+
+<md-content layout-padding flex>
+
+  <p>The <code>app.core</code> module pull in all the commonly used dependencies.</p>
+
+
+  
+
+	
+		
+		<material-divider></material-divider>
+		<h3>service</h3>
+		<ul>
+			
+			<li><a href="#/api/app.core/service/common">common</a> - The `common` service provides access to commonly used services and functions like $timeout, $broadcast, $q, logger, etc.</li>
+			<li><a href="#/api/app.core/service/configService">configService</a> - The `configService` is responsible for loading and parsing the supplied configuration.
+
+Config file is either specified inline, by a url or is referencing a global variable:
+```html
+<div rv-map rv-cfg='{"layout": { "title": "Granpa"}}'></div>
+```
+```html
+<div rv-map rv-cfg="config.en.json"></div>
+```
+```html
+<div rv-map rv-cfg="configOpts"></div>
+<script>configOpts = {}</script>
+```
+The main core run block (core.run.js) kicks in the initialization process by calling initialize on the `configService`. `configService` is responsible for parsing (inline) or loading (url) of the config. This service preserves the configuration in its pristine state (after applying all the defaults) - it will not be modified.
+After the main config service retrieved the configuration, all other services are initialized. Until then, the application is covered by a loading overlay to hide unstyled content.
+
+Config service body returns the service object with the following:
+- data: config data
+- initialize: initialize function; call from core.run
+- ready: checks if the service is ready to use</li>
+			<li><a href="#/api/app.core/service/configDefaults">configDefaults</a> - The `configDefaults` constant service provides default config values.</li>
+			<li><a href="#/api/app.core/service/templateRegistry">templateRegistry</a> - The `templateRegistry` constant service provides template URLs.</li>
+			<li><a href="#/api/app.core/service/globalRegistry">globalRegistry</a> - The `globalRegistry` constant wraps around RV global registry for a single point of reference. Use this to access `RV` global.
+It's useful if we need to change the name of the global registry.</li>
+			<li><a href="#/api/app.core/service/version">version</a> - The 'version' constant service provides current version numbers and the timestap.</li>
+		</ul>
+		
+		<material-divider></material-divider>
+		<h3>function</h3>
+		<ul>
+			
+			<li><a href="#/api/app.core/function/configBlock">configBlock</a> - The `configBlock` does three things right now:
+- configure translation provider by prepping static loader (and optionally setting preferred language if we know what it is),
+- configure theme colours for angular material</li>
+			<li><a href="#/api/app.core/function/runBlock">runBlock</a> - The `runBlock` triggers config and locale file loading, sets language of the app.</li>
+		</ul>
+
+</md-content>

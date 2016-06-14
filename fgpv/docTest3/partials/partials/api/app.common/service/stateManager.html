@@ -1,0 +1,23 @@
+<!-- common.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding>stateManager</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<strong>(service)</strong>
+
+	<p><p>The <code>stateManager</code> factory is a service controlling states (true/false) of panels and their content.
+State object corresponds to either a panel with mutually exclusive content panes, a content pane, or any other element with set content. For simplicity, a state object which is a parent, cannot be a child of another state object.</p>
+<p>When a parent state object is:</p>
+<ul>
+<li>activated: it activates a first (random) child as well; activating a parent state object should be avoided;</li>
+<li>deactivated: it deactivates its active child as well;</li>
+</ul>
+<p>When a child state object is:</p>
+<ul>
+<li>activated: it activates its parent and deactivates its active sibling if any;</li>
+<li>deactivated: it deactivates its parent as well;</li>
+</ul>
+<p>Only <code>active</code> and <code>morph</code> state properties are animated (animation can be skipped which is indicated by the <code>activeSkip</code> and <code>morphSkip</code> flags) and need to be set through <code>setActive</code> and <code>setMorph</code> functions accordingly; these properties can be bound and watched directly though. Everything else on the <code>state</code> object can be set, bound, and watched directly.</p>
+</p>
+
+	
+</md-content>

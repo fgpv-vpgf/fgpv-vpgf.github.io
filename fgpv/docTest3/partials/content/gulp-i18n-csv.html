@@ -1,0 +1,89 @@
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >i18n csv File</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<div class="doc-content theming">
+	    
+	    <h1 id="gulp-i18n-csv">gulp-i18n-csv</h1>
+<p><a href="https://gitter.im/fgpv-vpgf/gulp-i18n-csv?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/fgpv-vpgf/gulp-i18n-csv"></a></p>
+<blockquote>
+<p>Create internationalized files from a CSV translations file</p>
+</blockquote>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install --save-dev gulp-i18n-csv
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-js">var gulp = require(&#39;gulp&#39;);
+var gulpi18nCsv = require(&#39;gulp-i18n-csv&#39;);
+
+gulp.task(&#39;default&#39;, function () {
+    return gulp.src(&#39;node_modules/gulp-i18n-csv/sample/wet.csv&#39;)
+        .pipe(gulpi18nCsv())
+        .pipe(gulp.dest(&#39;./output&#39;));
+});
+</code></pre>
+<h2 id="api">API</h2>
+<p><code>gulpi18nCsv([ options ])</code></p>
+<h3 id="options">options</h3>
+<h4 id="pretty">pretty</h4>
+<p>Type: <code>boolean</code>
+Default: <code>false</code></p>
+<p>When <code>true</code>, outputs human-readble JSON.</p>
+<h4 id="resource-path-respath-">resource path (resPath)</h4>
+<p>Type: <code>string</code>
+Default: <code>locales/\__lng__/\__ns__.json</code></p>
+<p>When specified, writes file to specified location.</p>
+<h5 id="examples">Examples</h5>
+<p>__lng<strong> - language name
+\</strong>ns__ - namespace (defaults to &#39;translation&#39;)</p>
+<pre><code class="lang-js">gulpi18nCsv({ resPath: &#39;locales/__lng__/__ns__.json&#39; })
+</code></pre>
+<pre><code>&#39;locales/en/translation.json&#39;
+&#39;locales/fr/translation.json&#39;
+&#39;locales/zh-Hans/translation.json&#39;
+...
+</code></pre>
+<p>Another one:</p>
+<pre><code class="lang-js">gulpi18nCsv({ resPath: &#39;locales/__ns__-__lng__.json&#39; })
+</code></pre>
+<pre><code>&#39;locales/translation-en.json&#39;
+&#39;locales/translation-fr.json&#39;
+&#39;locales/translation-zh-Hans.json&#39;
+...
+</code></pre>
+<h3 id="formatting">Formatting</h3>
+<p>If a superkey has subkeys after it , do not have the superkey as a key in the csv file at all.
+(ie. if <code>foo</code> has subkey <code>foo.bar</code>, do not have <code>foo</code> as a key in the csv file)</p>
+<h3 id="deep-key-nesting">Deep-key nesting</h3>
+<p>gulp-i18n-csv provides deep key nesting when the key is separated by periods.</p>
+<h5 id="example-">Example:</h5>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo.bar.blah.dog</td>
+<td>hello</td>
+</tr>
+</tbody>
+</table>
+<p>This about should become</p>
+<pre><code class="lang-json">{
+    &quot;foo&quot;: {
+        &quot;bar&quot;: {
+            &quot;blah&quot;: {
+                &quot;dog&quot;: &quot;hello&quot;
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="license">License</h2>
+<p>MIT © <a href="http://github.com/cynngah">Cynthia (Qingwei) Li</a></p>
+
+	    
+	</div>
+</md-content>
