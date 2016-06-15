@@ -1,0 +1,27 @@
+<!-- common.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding>configService</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<strong>(service)</strong>
+
+	<p><p>The <code>configService</code> is responsible for loading and parsing the supplied configuration.</p>
+<p>Config file is either specified inline, by a url or is referencing a global variable:</p>
+<pre><code class="lang-html">&lt;div rv-map rv-cfg=&#39;{&quot;layout&quot;: { &quot;title&quot;: &quot;Granpa&quot;}}&#39;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;div rv-map rv-cfg=&quot;config.en.json&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;div rv-map rv-cfg=&quot;configOpts&quot;&gt;&lt;/div&gt;
+&lt;script&gt;configOpts = {}&lt;/script&gt;
+</code></pre>
+<p>The main core run block (core.run.js) kicks in the initialization process by calling initialize on the <code>configService</code>. <code>configService</code> is responsible for parsing (inline) or loading (url) of the config. This service preserves the configuration in its pristine state (after applying all the defaults) - it will not be modified.
+After the main config service retrieved the configuration, all other services are initialized. Until then, the application is covered by a loading overlay to hide unstyled content.</p>
+<p>Config service body returns the service object with the following:</p>
+<ul>
+<li>data: config data</li>
+<li>initialize: initialize function; call from core.run</li>
+<li>ready: checks if the service is ready to use</li>
+</ul>
+</p>
+
+	
+</md-content>

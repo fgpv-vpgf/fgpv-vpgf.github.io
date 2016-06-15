@@ -1,0 +1,48 @@
+<!-- ngModule.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >app.geo Module</h2></md-toolbar>
+
+<md-content layout-padding flex>
+
+  <p>The <code>app.geo</code> module interfaces with the geoApi library to perform map related activities.
+It is responsible for stateful mapping components (e.g. map, layers, attribute tables), it should
+hold references to those objects and abstract functionality away from the rest of the API.</p>
+<p>This module will be ESRI specific as it will be interacting with ESRI objects.  As part of decoupling
+it should be built so it does not leak any ESRI specific concepts through the rest of the application.
+And, as far as possible, it should minimize the amount of GIS specific functionality needs to be built
+outside the module.</p>
+
+
+  
+
+	
+		
+		<material-divider></material-divider>
+		<h3>service</h3>
+		<ul>
+			
+			<li><a href="#/api/app.geo/service/gapi">gapi</a> - The `gapi` factory exposes `geoApi` interface after it's loaded. Modules should not access `gapi` property before it's set. It's safe though since `core.run` block waits for `gapi` to be ready before kicking in the app into gear.</li>
+			<li><a href="#/api/app.geo/service/Geo">Geo</a> - The `Geo` constant service is a container for all app.geo related constants.</li>
+			<li><a href="#/api/app.geo/service/geoService">geoService</a> - `geoService` wraps all calls to geoapi and also tracks the state of anything map related
+(ex: layers, filters, extent history).</li>
+			<li><a href="#/api/app.geo/service/identifyService">identifyService</a> - Generates handlers for feature identification on all layer types.</li>
+			<li><a href="#/api/app.geo/service/LayerBlueprintUserOptions">LayerBlueprintUserOptions</a> - The `LayerBlueprintUserOptions` service returns a collection of file option classes. These specify user selectable options when importing layer.</li>
+			<li><a href="#/api/app.geo/service/LayerBlueprint">LayerBlueprint</a> - The `LayerBlueprint` service returns `LayerBlueprint` class which abstracts common elements of layer creating (either from file or online servcie).
+The `LayerServiceBlueprint` service returns `LayerServiceBlueprint` class to be used when creating layers from online services (supplied by config, RCS or user added).
+The `LayerFileBlueprint` service returns `LayerFileBlueprint` class to be used when creating layers from user-supplied files.</li>
+			<li><a href="#/api/app.geo/service/layerRegistry">layerRegistry</a> - The `layerRegistry` factory tracks active layers and constructs legend, provide all layer-related functionality like registering, removing, changing visibility, changing opacity, etc.</li>
+			<li><a href="#/api/app.geo/service/legendEntryFactory">legendEntryFactory</a> - The `legendEntryFactory` factory creates legend entries to be added to the toc.</li>
+			<li><a href="#/api/app.geo/service/legendService">legendService</a> - The `legendService` factory constructs the legend (auto or structured). `LayerRegistry` instantiates `LegendService` providing the current config, layers and legend containers.
+This service also scrapes layer symbology.</li>
+			<li><a href="#/api/app.geo/service/mapService">mapService</a> - The `mapService` factory holds references to the map dom node and the currently active map object.</li>
+			<li><a href="#/api/app.geo/service/metadataService">metadataService</a> - Generates handlers for feature identification on all layer types.</li>
+		</ul>
+		
+		<material-divider></material-divider>
+		<h3>directive</h3>
+		<ul>
+			
+			<li><a href="#/api/app.geo/directive/rvInitMap">rvInitMap</a> - The `rvInitMap` directive creates an ESRI Map object on the DOM node it is attached to.  It is a string attribute which
+will trigger the initialzation when set to 'true'.</li>
+		</ul>
+
+</md-content>

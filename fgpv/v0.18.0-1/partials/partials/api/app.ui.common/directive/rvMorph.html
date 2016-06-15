@@ -1,0 +1,22 @@
+<!-- ngDirective.template.html -->
+<md-toolbar layout="row" class="site-content-toolbar md-whiteframe-glow-z1"><h2 layout-padding  >rvMorph</h2></md-toolbar>
+
+<md-content layout-padding flex>
+	<h3>directive in app.ui.common</h3>
+
+	<div>
+	  <p>The <code>rvMorph</code> directive animates the given HTML element from one CSS class to another provided to the <code>rvMorph</code> attribute. The element is morphed by using GSAP animation library. Only class changes are animated - the first class is applied immediately; when removed, applied immediately as well.</p>
+<pre><code class="lang-html">&lt;!-- when $scope.myValue changes from `value1` to `value2`, the transition is animated --&gt;
+&lt;div rv-morph=&quot;myValue&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>The value of <code>rv-morph</code> attribute is added to the CSS classes of the element after transition completes; the old class value is removed.</p>
+<p>Optional <code>rv-morph-speed</code> attribute can be added to the element to change the animation speed from the default 0.3s.</p>
+<pre><code class="lang-html">&lt;!-- transition will take 10 seconds --&gt;
+&lt;div rv-morph=&quot;myValue&quot; rv-morph-speed=&quot;10&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p><code>rv-morph</code> should not be applied to elements that are animated by different means (ngAnimate or other CSS animations), this may interfere with applying of CSS classes.</p>
+
+	</div>
+
+	
+</md-content>
