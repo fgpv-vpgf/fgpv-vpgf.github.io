@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>geo/identify.service.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="app.module_geo-LayerBlueprint.LayerBlueprint.html">LayerBlueprint</a></li><li><a href="app.module_geo-LayerFileBlueprint.html">LayerFileBlueprint</a><ul class='methods'><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#_readFileData">_readFileData</a></li><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#generateLayer">generateLayer</a></li><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#validate">validate</a></li></ul></li><li><a href="app.module_geo-LayerServiceBlueprint.LayerServiceBlueprint.html">LayerServiceBlueprint</a></li><li><a href="LayerRecord.html">LayerRecord</a><ul class='methods'><li data-type='method'><a href="LayerRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="LayerRecord.html#createBbox">createBbox</a></li><li data-type='method'><a href="LayerRecord.html#destroyBbox">destroyBbox</a></li><li data-type='method'><a href="LayerRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="app.common.module_router.html">router</a></li><li><a href="app.core.module_common.html">common</a></li><li><a href="app.core.module_configService.html">configService</a><ul class='methods'><li data-type='method'><a href="app.core.module_configService.html#~currentLang">currentLang</a></li><li data-type='method'><a href="app.core.module_configService.html#~fileInit">fileInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~getCurrent">getCurrent</a></li><li data-type='method'><a href="app.core.module_configService.html#~initialize">initialize</a></li><li data-type='method'><a href="app.core.module_configService.html#~mergeConfigParts">mergeConfigParts</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsAddKeys">rcsAddKeys</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsInit">rcsInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsLoad">rcsLoad</a></li><li data-type='method'><a href="app.core.module_configService.html#~ready">ready</a></li></ul></li><li><a href="app.geo.module_metadataService.html">metadataService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_metadataService.html#.transformXml">transformXml</a></li></ul></li><li><a href="app.layout.module_layoutService.html">layoutService</a></li><li><a href="app.layout.module_rvShell.html">rvShell</a></li><li><a href="app.layout.module_storageService.html">storageService</a></li><li><a href="app.module_common.html">common</a></li><li><a href="app.module_core.html">core</a></li><li><a href="app.module_geo.html">geo</a></li><li><a href="app.ui.common.module_stepper.html">stepper</a></li><li><a href="app.ui.module_appbar.html">appbar</a></li><li><a href="app.ui.module_basemap.html">basemap</a></li><li><a href="app.ui.module_common.html">common</a></li><li><a href="app.ui.module_details.html">details</a></li><li><a href="app.ui.module_filters.html">filters</a></li><li><a href="app.ui.module_help.html">help</a></li><li><a href="app.ui.module_loader.html">loader</a></li><li><a href="app.ui.module_mapnav.html">mapnav</a></li><li><a href="app.ui.module_metadata.html">metadata</a></li><li><a href="app.ui.module_panels.html">panels</a></li><li><a href="app.ui.module_settings.html">settings</a></li><li><a href="app.ui.module_sidenav.html">sidenav</a></li><li><a href="app.ui.module_toc.html">toc</a></li><li><a href="app.ui.module_tocService.html">tocService</a></li><li><a href="app.ui.module_toolbox.html">toolbox</a></li><li><a href="material.components.module_menuBar.html">menuBar</a></li><li><a href="module-ap.html">ap</a></li></ul><h3>Namespaces</h3><ul><li><a href="app.html">app</a></li><li><a href="app.common.html">common</a></li><li><a href="app.core.html">core</a><ul class='methods'><li data-type='method'><a href="app.core.html#.apiBlock">apiBlock</a></li><li data-type='method'><a href="app.core.html#.configBlock">configBlock</a></li><li data-type='method'><a href="app.core.html#.runBlock">runBlock</a></li><li data-type='method'><a href="app.core.html#.seed">seed</a></li><li data-type='method'><a href="app.core.html#~configureIconsets">configureIconsets</a></li><li data-type='method'><a href="app.core.html#~configureTheme">configureTheme</a></li><li data-type='method'><a href="app.core.html#~configureTranslations">configureTranslations</a></li><li data-type='method'><a href="app.core.html#~loadRcsLayers">loadRcsLayers</a></li><li data-type='method'><a href="app.core.html#~setLanguage">setLanguage</a></li></ul></li><li><a href="app.layout.html">layout</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting Started</a></li><li><a href="tutorial-gulp-i18n-csv.html">Translation Plugin</a></li></ul><h3>Global</h3><ul><li><a href="global.html#RV">RV</a></li><li><a href="global.html#versionCheck">versionCheck</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">geo/identify.service.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>(() => {
+    /**
+     * @ngdoc service
+     * @name identifyService
+     * @module app.geo
+     *
+     * @description
+     * Generates handlers for feature identification on all layer types.
+     */
+    angular
+        .module('app.geo')
+        .factory('identifyService', identifyServiceFactory);
+
+    function identifyServiceFactory($q, gapiService, stateManager, Geo) {
+        return geoState => identifyService(
+            geoState,
+            geoState.mapService.mapObject,
+            geoState.layerRegistry
+        );
+
+        function identifyService(geoState, mapObject, layerRegistry) {
+
+            // identify handler switch
+            const identifyHandlers = {
+                esriFeature: identifyEsriFeatureLayer,
+                esriDynamic: identifyEsriDynamicLayer,
+                ogcWms: identifyOgcWmsLayer
+            };
+
+            // TODO convert this object into an ES6 class
+            // jscs doesn't like enhanced object notation
+            // jscs:disable requireSpacesInAnonymousFunctionExpression
+            /**
+             * Create an identify result object.
+             * @param  {String} name      layer name of the queried layer
+             * @param  {Array} symbology array of layer symbology to be displayed in details panel
+             * @param  {String} format    indicates data formating template
+             * @param  {Object} layerRec  layer record for the queried layer
+             * @param  {Integer} featureIdx  optional feature index of queried layer (should be provided for attribute based layers)
+             * @param  {String} caption   optional captions to be displayed along with the name
+             * @return {Object}           identify result object
+             */
+            const IDENTIFY_RESULT = (name, symbology, format, layerRec, featureIdx, caption) => {
+                return {
+                    isLoading: true,
+                    requestId: -1,
+                    requester: {
+                        name,
+                        symbology,
+                        format,
+                        caption,
+                        layerRec,
+                        featureIdx
+                    },
+                    data: []
+                };
+            };
+            // jscs:enable requireSpacesInAnonymousFunctionExpression
+
+            return init();
+
+            /***/
+
+            /**
+             * Initializes identify service. This needs to be called everytime the map is created.
+             */
+            function init() {
+                gapiService.gapi.events.wrapEvents(
+                    mapObject,
+                    {
+                        click: clickHandlerBuilder
+                    }
+                );
+
+                return {
+                    getFeatureName,
+                    attributesToDetails
+                };
+            }
+
+            /******/
+
+            // returns the number of visible layers that have been registered with the identify service
+            function getVisibleLayers() {
+                // use .filter to count boolean true values
+                // TODO: make nicer
+                return layerRegistry.getLayersByType(Geo.Layer.Types.ESRI_FEATURE)
+                    .concat(layerRegistry.getLayersByType(Geo.Layer.Types.ESRI_DYNAMIC))
+                    .filter(l => l.visibleAtMapScale)
+                    .concat(layerRegistry.getLayersByType(Geo.Layer.Types.OGC_WMS))
+                    .length;
+            }
+
+            // takes an attribute set (key-value mapping) and converts it to a format
+            // suitable for the details pane.
+            // the fields param is optional field information containing alias data
+            // TODO make this extensible / modifiable / configurable to allow different details looks for different data
+            function attributesToDetails(attribs, fields) {
+                // simple array of text mapping for demonstration purposes. fancy grid formatting later?
+                return Object.keys(attribs)
+                    .map(key => {
+                        let fieldName = layerRegistry.aliasedFieldName(key, fields);
+                        let val = attribs[key];
+
+                        if (layerRegistry.checkDateType(key, fields) &amp;&amp; val.length > 10) {
+                            const date = new Date(val);
+                            val = date.toISOString().substring(0, 10);
+                        }
+
+                        return {
+                            key: fieldName,
+                            value: val
+                        };
+                    });
+            }
+
+            /**
+            * Extract the feature name from a feature as best we can.
+            * Support for dynamic layers is limited at the moment.
+            *
+            * @param {Object} attribs the dictionary of attributes for the feature
+            * @param {Object} layerRec the record in the layer registry that the feature belongs to
+            * @param {Integer} objId the object id of the attribute
+            * @returns {String} the name of the feature
+            */
+            function getFeatureName(attribs, layerRec, objId) {
+                // FIXME : name field is not yet defined in the config schema.
+                //         we also need to determine if we will support name fields
+                //         on child layers of Dynamic services. This would be relevant
+                //         if we implement maptips, or need to override the name field
+                //         in the details pane.
+
+                let nameField = '';
+
+                if (layerRec.legendEntry &amp;&amp; layerRec.legendEntry.nameField) {
+                    nameField = layerRec.legendEntry.nameField;
+                } else if (layerRec._layer &amp;&amp; layerRec._layer.displayField) {
+                    nameField = layerRec._layer.displayField;
+                }
+
+                if (nameField) {
+                    return attribs[nameField];
+                } else {
+                    // FIXME wire in "feature" to translation service
+                    return 'Feature ' + objId;
+                }
+            }
+
+            // will make an extent around a point, that is appropriate for the current map scale.
+            // makes it easier for point clicks to instersect
+            // the tolerance is distance in pixels from mouse point that qualifies as a hit
+            function makeClickBuffer(point, map, tolerance = 5) {
+                // take pixel tolerance, convert to map units at current scale. x2 to turn radius into diameter
+                const buffSize = 2 * tolerance * map.extent.getWidth() / map.width;
+
+                // Build tolerance envelope of correct size
+                const cBuff = new gapiService.gapi.mapManager.Extent(1, 1, buffSize, buffSize, point.spatialReference);
+
+                // move the envelope so it is centered around the point
+                return cBuff.centerAt(point);
+            }
+
+            /**
+            * Run a query on a dynamic layer, return the result as a promise.
+            * @param {Object} layerRecord esri layer object
+            * @param {Object} opts additional argumets like map object, clickEvent, etc.
+            * @returns {Object} an object with identify results array and identify promise resolving when identify is complete; if an empty object is returned, it will be skipped
+            */
+            function identifyEsriDynamicLayer(layerRecord, opts) {
+                const legendEntry = layerRecord.legendEntry;
+
+                // ignore invisible layers by returning empty object
+                if (!layerRecord.visibleAtMapScale || !layerRecord.visible) {
+                    return {};
+                }
+
+                const identifyResults = [];
+
+                // every dynamic layer is a group in toc; walk its items to create an entry in details panel
+                legendEntry.walkItems(legendEntry => {
+
+                    // ignore invisible sublayers and those where query option is false by returning empty object
+                    if (!legendEntry.getVisibility() || !legendEntry.options.query.value) {
+                        return;
+                    }
+
+                    const identifyResult =
+                        IDENTIFY_RESULT(legendEntry.name, legendEntry.symbology, 'EsriFeature', layerRecord,
+                            legendEntry.featureIdx, legendEntry.name);
+
+                    identifyResults[legendEntry.featureIdx] = identifyResult;
+                });
+
+                opts.tolerance = layerRecord.clickTolerance;
+
+                const identifyPromise = gapiService.gapi.layer.serverLayerIdentify(layerRecord._layer, opts)
+                    .then(clickResults => {
+                        console.log('got a click result');
+                        console.log(clickResults);
+
+                        // transform attributes of click results into {name,data} objects
+                        // one object per identified feature
+                        //
+                        // each feature will have its attributes converted into a table
+                        // placeholder for now until we figure out how to signal the panel that
+                        // we want to make a nice table
+                        clickResults.forEach(ele => {
+                            // NOTE: the identify service returns aliased field names, so no need to look them up here
+                            // NOTE: ele.layerId is what we would call featureIdx
+                            layerRecord.attributeBundle[ele.layerId].layerData.then(lData => {
+                                const identifyResult = identifyResults[ele.layerId];
+                                identifyResult.data.push({
+                                    name: ele.value,
+                                    data: attributesToDetails(ele.feature.attributes),
+                                    oid: ele.feature.attributes[lData.oidField],
+                                    symbology: [{
+                                        icon: geoState.mapService.retrieveSymbol(ele.feature.attributes,
+                                            lData.renderer)
+                                    }]
+                                });
+                                identifyResult.isLoading = false;
+                            });
+                        });
+
+                        // set the rest of the entries to loading false
+                        identifyResults.forEach(identifyResult =>
+                                identifyResult.isLoading = false);
+                    });
+
+                return {
+                    identifyResults: identifyResults.filter(identifyResult => identifyResult), // collapse sparse array
+                    identifyPromise
+                };
+            }
+
+            /**
+            * Run a getFeatureInfo on a WMS layer, return the result as a promise.  Fills the panelData array on resolution.
+            * @param {Object} layerRecord esri layer object
+            * @param {Object} opts additional argumets like map object, clickEvent, etc.
+            * @returns {Object} an object with identify results array and identify promise resolving when identify is complete; if an empty object is returned, it will be skipped
+            */
+            function identifyOgcWmsLayer(layerRecord, opts) {
+                const legendEntry = layerRecord.legendEntry;
+                const infoMap = Geo.Layer.Ogc.INFO_FORMAT_MAP;
+
+                // ignore layers with no mime type or invisible layers and those where query option is false by returning empty object
+                if (!infoMap.hasOwnProperty(legendEntry.featureInfoMimeType) ||
+                    !layerRecord.visible ||
+                    !legendEntry.options.query.value) {
+                    return {};
+                }
+
+                const identifyResult =
+                    IDENTIFY_RESULT(legendEntry.name, legendEntry.symbology, infoMap[legendEntry.featureInfoMimeType],
+                        layerRecord);
+
+                const identifyPromise = gapiService.gapi.layer.ogc
+                    .getFeatureInfo(
+                        layerRecord._layer,
+                        opts.clickEvent,
+                        legendEntry.layerEntries.map(le => le.id),
+                        legendEntry.featureInfoMimeType)
+                    .then(data => {
+                        identifyResult.isLoading = false;
+
+                        // TODO: check for French service
+                        // check if a result is returned by the service. If not, do not add to the array of data
+                        if (data.indexOf('Search returned no results') === -1) {
+                            identifyResult.data.push(data);
+                        }
+
+                        // console.info(data);
+                    });
+
+                return { identifyResults: [identifyResult], identifyPromise };
+            }
+
+            /**
+            * Run a query on a feature layer, return the result as a promise.  Fills the panelData array on resolution.
+            * @param {Object} layerRecord esri layer object
+            * @param {Object} opts additional argumets like map object, clickEvent, etc.
+            * @returns {Object} an object with identify results array and identify promise resolving when identify is complete; if an empty object is returned, it will be skipped
+            */
+            function identifyEsriFeatureLayer(layerRecord, opts) {
+                const legendEntry = layerRecord.legendEntry;
+
+                // ignore invisible layers and those where identify option is false by returning empty object
+                if (!layerRecord.visibleAtMapScale || !layerRecord.visible || !legendEntry.options.query.value) {
+                    return {};
+                }
+
+                const identifyResult =
+                    IDENTIFY_RESULT(legendEntry.name, legendEntry.symbology, 'EsriFeature',
+                        layerRecord, legendEntry.featureIdx);
+
+                // run a spatial query
+                const qry = new gapiService.gapi.layer.Query();
+                qry.outFields = ['*']; // this will result in just objectid fields, as that is all we have in feature layers
+
+                // more accurate results without making the buffer if we're dealing with extents
+                if (layerRecord._layer.geometryType === 'esriGeometryPolygon') {
+                    qry.geometry = opts.geometry;
+                } else {
+                    qry.geometry = makeClickBuffer(opts.clickEvent.mapPoint, opts.map, layerRecord.clickTolerance);
+                }
+
+                // no need to check if the layer is registered as this object comes from an array of registered layers
+                const identifyPromise = $q.all([
+                        layerRecord.getAttributes(legendEntry.featureIdx),
+                        $q.resolve(layerRecord._layer.queryFeatures(qry)),
+                        layerRecord.attributeBundle[legendEntry.featureIdx].layerData
+                    ])
+                    .then(([attributes, queryResult, layerData]) => {
+                        // transform attributes of query results into {name,data} objects one object per queried feature
+                        //
+                        // each feature will have its attributes converted into a table
+                        // placeholder for now until we figure out how to signal the panel that
+                        // we want to make a nice table
+                        identifyResult.isLoading = false;
+                        identifyResult.data = queryResult.features.map(
+                            feat => {
+                                // grab the object id of the feature we clicked on.
+                                const objId = feat.attributes[attributes.oidField].toString();
+
+                                // use object id find location of our feature in the feature array, and grab its attributes
+                                const featAttribs = attributes.rows[attributes.oidIndex[objId]];
+                                return {
+                                    name: getFeatureName(featAttribs, layerRecord, objId),
+                                    data: attributesToDetails(featAttribs, attributes.fields),
+                                    oid: objId,
+                                    symbology: [
+                                        { icon: geoState.mapService.retrieveSymbol(featAttribs, layerData.renderer) }
+                                    ]
+                                };
+                            });
+                    });
+
+                return { identifyResults: [identifyResult], identifyPromise };
+            }
+
+            /**
+             * Modifies identify promises to always resolve, never reject.
+             * Any errors caught will be added to the details data object.
+             * Resolutions of these promises are for turning off loading indicator.
+             *
+             * @param  {Promise} promise [description]
+             * @return {Promise}                 promise that doesn't reject
+             */
+            function makeInfalliblePromise(promise) {
+                const modifiedPromise = $q(resolve =>
+                    promise
+                        .then(() => resolve(true))
+                        .catch(() => resolve(true))
+                );
+
+                return modifiedPromise;
+            }
+
+            /**
+             * Handles global map clicks.  Currently configured to walk through all registered dynamic
+             * layers and trigger service side identify queries, and perform client side spatial queries
+             * on registered feature layers.
+             * @name clickHandler
+             * @param {Object} clickEvent an ESRI event object for map click events
+             */
+            function clickHandlerBuilder(clickEvent) {
+                geoState.mapService.clearHilight();
+
+                if (getVisibleLayers() === 0) {
+                    return;
+                }
+
+                console.info('Click start');
+
+                const loadingPromises = [];
+                const details = {
+                    data: []
+                };
+
+                // TODO: mapObject is accessible from all function, there is no need to pass it as a parameter
+                const opts = {
+                    map: mapObject,
+                    clickEvent,
+                    geometry: clickEvent.mapPoint,
+                    width: mapObject.width,
+                    height: mapObject.height,
+                    mapExtent: mapObject.extent,
+                };
+
+                geoState.mapService.dropMapPin(clickEvent.mapPoint);
+
+                layerRegistry
+                    .getAllQueryableLayerRecords()
+                    .forEach(layerRecord => {
+                        const { identifyResults, identifyPromise } =
+                            identifyHandlers[layerRecord.config.layerType](layerRecord, opts);
+
+                        // identify function returns undefined is the layer is cannot be queries because it's not visible or for some other reason
+                        if (typeof identifyResults === 'undefined') {
+                            return;
+                        }
+
+                        // catch error on identify promises and store error messages to be shown in the details panel.
+                        const loadingPromise = identifyPromise.catch(error => {
+                            // add common error handling
+
+                            console.warn(`Identify query failed for ${layerRecord.legendEntry.name}`);
+                            console.warn(error);
+
+                            identifyResults.forEach(identifyResult => {
+                                // TODO: this outputs raw error message from the service
+                                // we might want to replace it with more user-understandable messages
+                                identifyResult.error = error.message;
+                                identifyResult.isLoading = false;
+                            });
+                        });
+
+                        const infallibleLoadingPromise = makeInfalliblePromise(loadingPromise);
+
+                        details.data.push(...identifyResults);
+                        loadingPromises.push(infallibleLoadingPromise);
+                    });
+
+                details.isLoaded = $q.all(loadingPromises).then(() => true);
+                // show details panel only when there is data
+                if (details.data.length) {
+                    stateManager.toggleDisplayPanel('mainDetails', details, {}, 0);
+                }
+            }
+        }
+    }
+})();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jul 04 2016 16:00:05 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
