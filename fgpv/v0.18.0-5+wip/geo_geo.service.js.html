@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>geo/geo.service.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="app.module_geo-LayerBlueprint.LayerBlueprint.html">LayerBlueprint</a></li><li><a href="app.module_geo-LayerFileBlueprint.html">LayerFileBlueprint</a><ul class='methods'><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#_readFileData">_readFileData</a></li><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#generateLayer">generateLayer</a></li><li data-type='method'><a href="app.module_geo-LayerFileBlueprint.html#validate">validate</a></li></ul></li><li><a href="app.module_geo-LayerServiceBlueprint.LayerServiceBlueprint.html">LayerServiceBlueprint</a></li><li><a href="LayerRecord.html">LayerRecord</a><ul class='methods'><li data-type='method'><a href="LayerRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="LayerRecord.html#createBbox">createBbox</a></li><li data-type='method'><a href="LayerRecord.html#destroyBbox">destroyBbox</a></li><li data-type='method'><a href="LayerRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="app.common.module_router.html">router</a></li><li><a href="app.core.module_common.html">common</a></li><li><a href="app.core.module_configService.html">configService</a><ul class='methods'><li data-type='method'><a href="app.core.module_configService.html#~currentLang">currentLang</a></li><li data-type='method'><a href="app.core.module_configService.html#~fileInit">fileInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~getCurrent">getCurrent</a></li><li data-type='method'><a href="app.core.module_configService.html#~initialize">initialize</a></li><li data-type='method'><a href="app.core.module_configService.html#~mergeConfigParts">mergeConfigParts</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsAddKeys">rcsAddKeys</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsInit">rcsInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsLoad">rcsLoad</a></li><li data-type='method'><a href="app.core.module_configService.html#~ready">ready</a></li></ul></li><li><a href="app.geo.module_metadataService.html">metadataService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_metadataService.html#.transformXml">transformXml</a></li></ul></li><li><a href="app.layout.module_layoutService.html">layoutService</a></li><li><a href="app.layout.module_rvShell.html">rvShell</a></li><li><a href="app.layout.module_storageService.html">storageService</a></li><li><a href="app.module_common.html">common</a></li><li><a href="app.module_core.html">core</a></li><li><a href="app.module_geo.html">geo</a></li><li><a href="app.ui.common.module_stepper.html">stepper</a></li><li><a href="app.ui.module_appbar.html">appbar</a></li><li><a href="app.ui.module_basemap.html">basemap</a></li><li><a href="app.ui.module_common.html">common</a></li><li><a href="app.ui.module_details.html">details</a></li><li><a href="app.ui.module_filters.html">filters</a></li><li><a href="app.ui.module_help.html">help</a></li><li><a href="app.ui.module_loader.html">loader</a></li><li><a href="app.ui.module_mapnav.html">mapnav</a></li><li><a href="app.ui.module_metadata.html">metadata</a></li><li><a href="app.ui.module_panels.html">panels</a></li><li><a href="app.ui.module_settings.html">settings</a></li><li><a href="app.ui.module_sidenav.html">sidenav</a></li><li><a href="app.ui.module_toc.html">toc</a></li><li><a href="app.ui.module_tocService.html">tocService</a></li><li><a href="app.ui.module_toolbox.html">toolbox</a></li><li><a href="material.components.module_menuBar.html">menuBar</a></li><li><a href="module-ap.html">ap</a></li></ul><h3>Namespaces</h3><ul><li><a href="app.html">app</a></li><li><a href="app.common.html">common</a></li><li><a href="app.core.html">core</a><ul class='methods'><li data-type='method'><a href="app.core.html#.apiBlock">apiBlock</a></li><li data-type='method'><a href="app.core.html#.configBlock">configBlock</a></li><li data-type='method'><a href="app.core.html#.runBlock">runBlock</a></li><li data-type='method'><a href="app.core.html#.seed">seed</a></li><li data-type='method'><a href="app.core.html#~configureIconsets">configureIconsets</a></li><li data-type='method'><a href="app.core.html#~configureTheme">configureTheme</a></li><li data-type='method'><a href="app.core.html#~configureTranslations">configureTranslations</a></li><li data-type='method'><a href="app.core.html#~loadRcsLayers">loadRcsLayers</a></li><li data-type='method'><a href="app.core.html#~setLanguage">setLanguage</a></li></ul></li><li><a href="app.layout.html">layout</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting Started</a></li><li><a href="tutorial-gulp-i18n-csv.html">Translation Plugin</a></li></ul><h3>Global</h3><ul><li><a href="global.html#RV">RV</a></li><li><a href="global.html#versionCheck">versionCheck</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">geo/geo.service.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>(() => {
+    'use strict';
+
+    /**
+     * @ngdoc service
+     * @name geoService
+     * @module app.geo
+     * @requires $http, $q, gapiService, mapService, layerRegistry, configService, identifyService
+     *
+     * @description
+     * `geoService` wraps all calls to geoapi and also tracks the state of anything map related
+     * (ex: layers, filters, extent history).
+     */
+    angular
+        .module('app.geo')
+        .factory('geoService', geoService);
+
+    function geoService($http, $q, $rootScope, events, gapiService, mapService, layerRegistry, configService,
+        identifyService, LayerBlueprint) {
+
+        // TODO update how the layerOrder works with the UI
+        // Make the property read only. All angular bindings will be a one-way binding to read the state of layerOrder
+        // Add a function to update the layer order. This function will raise a change event so other interested
+        // pieces of code can react to the change in the order
+
+        const service = {
+            isMapReady: false, // flag indicating that the map is ready
+
+            epsgLookup,
+            assembleMap,
+            reloadLayer: l => layerRegistry.reloadLayer(l),
+            snapshotLayer: l => layerRegistry.snapshotLayer(l),
+
+            state: null
+        };
+
+        return service;
+
+        /**
+         * Lookup a proj4 style projection definition for a given ESPG code.
+         * @param {string|number} code the EPSG code as a string or number
+         * @return {Promise} a Promise resolving to proj4 style definition or null if the definition could not be found
+         */
+        function epsgLookup(code) {
+            // FIXME this should be moved to a plugin; it is hardcoded to use epsg.io
+
+            const urnRegex = /urn:ogc:def:crs:EPSG::(\d+)/;
+            const epsgRegex = /EPSG:(\d+)/;
+            let lookup = code;
+            if (typeof lookup === 'number') {
+                lookup = String(lookup);
+            }
+            const urnMatches = lookup.match(urnRegex);
+            if (urnMatches) {
+                lookup = urnMatches[1];
+            }
+            const epsgMatches = lookup.match(epsgRegex);
+            if (epsgMatches) {
+                lookup = epsgMatches[1];
+            }
+
+            return $http.get(`http://epsg.io/${lookup}.proj4`)
+                .then(response => {
+                    return response.data;
+                })
+                .catch(err => {
+                    console.warn(err);
+
+                    // jscs check doesn't realize return null; returns a promise
+                    return null; // jscs:ignore jsDoc
+                });
+        }
+
+        /**
+         * Constructs a map on the given DOM node given the current config object.
+         * When switching languages, switch language using `$translate` and call `assembleMap` without parameters. This will rebuild the map using the exising map node.
+         *
+         * ```js
+         * $translate.use(lang);
+         * geoService.assembleMap();
+         * ```
+         *
+         * @param  {Object} mapNode    dom node to build the map on; need to be specified only the first time the map is created;
+         * @return {Promise} resolving when all the map building is done
+         */
+        function assembleMap(mapNode) {
+            // reuse the previous state or create the new one
+            // when reusing existing state, its map will be destroyed
+            const state = service.state || {
+                mapNode: mapNode
+            };
+
+            let config; // reference to the current config
+
+            return configService.getCurrent()
+                .then(cf => {
+                    config = cf;
+
+                    // assemble geo state object
+                    return mapService(state, config);
+                })
+                .then(ms => {
+                    // expose mapService on geoService
+                    angular.extend(service, ms);
+
+                    return layerRegistry(state, config);
+                })
+                .then(lr => {
+                    // expose layerRegistry service on geoService
+                    angular.extend(service, lr);
+
+                    const layerBlueprints = config.layers.map(layerConfig =>
+                        new LayerBlueprint.service(layerConfig, epsgLookup));
+                    service.constructLayers(layerBlueprints);
+
+                    return identifyService(state);
+                })
+                .then(id => {
+                    // expose idenitifyService on geoService
+                    angular.extend(service, id);
+
+                    service.state = state; // store geo state
+                    service.isMapReady = true;
+                    $rootScope.$broadcast(events.rvApiReady);
+
+                    return service;
+                })
+                .catch(error => {
+                    console.error('Failed to assemble the map');
+                    console.error(error);
+                });
+        }
+
+    }
+})();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jul 04 2016 01:24:26 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
