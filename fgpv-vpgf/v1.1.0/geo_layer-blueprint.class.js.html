@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>geo/layer-blueprint.class.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="app.geo.module_identifyService-IDENTIFY_RESULT.html">IDENTIFY_RESULT</a></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerBlueprint.LayerBlueprint.html">LayerBlueprint</a></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html">LayerFileBlueprint</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html#_readFileData">_readFileData</a></li><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html#generateLayer">generateLayer</a></li><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html#validate">validate</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerServiceBlueprint.LayerServiceBlueprint.html">LayerServiceBlueprint</a></li><li><a href="app.geo.module_LayerRecordFactory-AttrRecord.html">AttrRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-AttrRecord.html#formatAttributes">formatAttributes</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-AttrRecord.html#getAttributes">getAttributes</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-DynamicRecord.html">DynamicRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-DynamicRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-DynamicRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-FeatureRecord.html">FeatureRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-FeatureRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-FeatureRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-ImageRecord.html">ImageRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-ImageRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-ImageRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-LayerRecord.html">LayerRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-LayerRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-LayerRecord.html#createBbox">createBbox</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-LayerRecord.html#destroyBbox">destroyBbox</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-LayerRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-LayerRecord.LayerRecord.html">LayerRecord</a></li><li><a href="app.geo.module_LayerRecordFactory-TileRecord.html">TileRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-TileRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-TileRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.geo.module_LayerRecordFactory-WmsRecord.html">WmsRecord</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory-WmsRecord.html#.parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory-WmsRecord.html#makeLayerBookmark">makeLayerBookmark</a></li></ul></li><li><a href="app.ui.module_StepperFactory-Stepper.html">Stepper</a><ul class='methods'><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_configureStep">_configureStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_reset">_reset</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_think">_think</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#addSteps">addSteps</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#cancelMove">cancelMove</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#moveToStep">moveToStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#nextStep">nextStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#previousStep">previousStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#reset">reset</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#start">start</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="app.common.module_displayManager.html">app.common.displayManager</a><ul class='methods'><li data-type='method'><a href="app.common.module_displayManager.html#~clearDisplayPanel">clearDisplayPanel</a></li><li data-type='method'><a href="app.common.module_displayManager.html#~setDisplay">setDisplay</a></li><li data-type='method'><a href="app.common.module_displayManager.html#~toggleDisplayPanel">toggleDisplayPanel</a></li></ul></li><li><a href="app.common.module_stateManager.html">app.common.stateManager</a><ul class='methods'><li data-type='method'><a href="app.common.module_stateManager.html#~addState">addState</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~callback">callback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~closePanel">closePanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~closePanelFromHistory">closePanelFromHistory</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getChildren">getChildren</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getItem">getItem</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getParent">getParent</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~modifyHistory">modifyHistory</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~onCloseCallback">onCloseCallback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~openPanel">openPanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~runCloseCallback">runCloseCallback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setActive">setActive</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setItemProperty">setItemProperty</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setMorph">setMorph</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~togglePanel">togglePanel</a></li></ul></li><li><a href="app.core.module_common.html">app.core.common</a></li><li><a href="app.core.module_configService.html">app.core.configService</a><ul class='methods'><li data-type='method'><a href="app.core.module_configService.html#~currentLang">currentLang</a></li><li data-type='method'><a href="app.core.module_configService.html#~fileInit">fileInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~getCurrent">getCurrent</a></li><li data-type='method'><a href="app.core.module_configService.html#~getOriginal">getOriginal</a></li><li data-type='method'><a href="app.core.module_configService.html#~initialize">initialize</a></li><li data-type='method'><a href="app.core.module_configService.html#~mergeConfigParts">mergeConfigParts</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsAddKeys">rcsAddKeys</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsInit">rcsInit</a></li><li data-type='method'><a href="app.core.module_configService.html#~rcsLoad">rcsLoad</a></li><li data-type='method'><a href="app.core.module_configService.html#~ready">ready</a></li><li data-type='method'><a href="app.core.module_configService.html#~setCurrent">setCurrent</a></li></ul></li><li><a href="app.geo.module_gapiService.html">app.geo.gapiService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_gapiService.html#~init">init</a></li></ul></li><li><a href="app.geo.module_Geo.html">app.geo.Geo</a></li><li><a href="app.geo.module_geoService.html">app.geo.geoService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_geoService.html#~assembleMap">assembleMap</a></li><li data-type='method'><a href="app.geo.module_geoService.html#~epsgLookup">epsgLookup</a></li></ul></li><li><a href="app.geo.module_identifyService.html">app.geo.identifyService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_identifyService.html#~attributesToDetails">attributesToDetails</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~clickHandlerBuilder">clickHandlerBuilder</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~getFeatureName">getFeatureName</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~identifyEsriDynamicLayer">identifyEsriDynamicLayer</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~identifyEsriFeatureLayer">identifyEsriFeatureLayer</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~identifyOgcWmsLayer">identifyOgcWmsLayer</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~init">init</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~makeInfalliblePromise">makeInfalliblePromise</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~unAliasAttribs">unAliasAttribs</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory.html">app.geo.LayerBlueprintFactory</a></li><li><a href="app.geo.module_LayerBlueprintUserOptions.html">app.geo.LayerBlueprintUserOptions</a></li><li><a href="app.geo.module_LayerRecordFactory.html">app.geo.LayerRecordFactory</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerRecordFactory.html#~makeFileRecord">makeFileRecord</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory.html#~makeServiceRecord">makeServiceRecord</a></li><li data-type='method'><a href="app.geo.module_LayerRecordFactory.html#~parseLayerData">parseLayerData</a></li></ul></li><li><a href="app.geo.module_layerRegistry.html">app.geo.layerRegistry</a><ul class='methods'><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_refactorIsLayerInMapStack">_refactorIsLayerInMapStack</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_testSyncCheck">_testSyncCheck</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~aliasedFieldName">aliasedFieldName</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~checkDateType">checkDateType</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~constructLayers">constructLayers</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~extentChangeHandler">extentChangeHandler</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getAllQueryableLayerRecords">getAllQueryableLayerRecords</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getLayerInsertPosition">getLayerInsertPosition</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getLayerMapIndex">getLayerMapIndex</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getLayersByType">getLayersByType</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~isOffScale">isOffScale</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~makeScaleSet">makeScaleSet</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~moveLayer">moveLayer</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~registerLayerRecord">registerLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~reloadLayer">reloadLayer</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~removeLayer">removeLayer</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~setBboxState">setBboxState</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~setScaleDepState">setScaleDepState</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~snapshotLayer">snapshotLayer</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~zoomToBoundary">zoomToBoundary</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~zoomToScale">zoomToScale</a></li></ul></li><li><a href="app.geo.module_legendEntryFactory.html">app.geo.legendEntryFactory</a></li><li><a href="app.geo.module_legendService.html">app.geo.legendService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_legendService.html#~addLayer">addLayer</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~addPlaceholder">addPlaceholder</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~applyFeatureCount">applyFeatureCount</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~applySymbology">applySymbology</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~autoLegendService">autoLegendService</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~dynamicGenerator">dynamicGenerator</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~featureGenerator">featureGenerator</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~getServiceFeatureCount">getServiceFeatureCount</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~imageGenerator">imageGenerator</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~tileGenerator">tileGenerator</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~wmsGenerator">wmsGenerator</a></li></ul></li><li><a href="app.geo.module_locateService.html">app.geo.locateService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_locateService.html#~_apiLocate">_apiLocate</a></li><li data-type='method'><a href="app.geo.module_locateService.html#~_browserLocate">_browserLocate</a></li><li data-type='method'><a href="app.geo.module_locateService.html#~find">find</a></li></ul></li><li><a href="app.geo.module_mapService.html">app.geo.mapService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_mapService.html#~applyHilight">applyHilight</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~baseMapHasSameSP">baseMapHasSameSP</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~buildMapObject">buildMapObject</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~clearHilight">clearHilight</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~dropMapPin">dropMapPin</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~fetchGraphic">fetchGraphic</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~geolocate">geolocate</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~getBaseMapConfig">getBaseMapConfig</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~getFullExtFromExtentSets">getFullExtFromExtentSets</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~getLod">getLod</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~hideBaseMap">hideBaseMap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~hilightGraphic">hilightGraphic</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~prepMapLoad">prepMapLoad</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~retrieveSymbol">retrieveSymbol</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~selectBasemap">selectBasemap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~setFullExtent">setFullExtent</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~setMapLoadingFlag">setMapLoadingFlag</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~setSelectedBaseMap">setSelectedBaseMap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~setZoom">setZoom</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~shiftZoom">shiftZoom</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~zoomToGraphic">zoomToGraphic</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~zoomWithOffset">zoomWithOffset</a></li></ul></li><li><a href="app.geo.module_metadataService.html">app.geo.metadataService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_metadataService.html#.transformXml">transformXml</a></li><li data-type='method'><a href="app.geo.module_metadataService.html#~applyXSLT">applyXSLT</a></li><li data-type='method'><a href="app.geo.module_metadataService.html#~loadXmlFile">loadXmlFile</a></li></ul></li><li><a href="app.geo.module_rvInitMap.html">app.geo.rvInitMap</a><ul class='methods'><li data-type='method'><a href="app.geo.module_rvInitMap.html#~animate">animate</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~keyDownDetected">keyDownDetected</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~keyUpDetected">keyUpDetected</a></li></ul></li><li><a href="app.layout.module_focusService.html">app.layout.focusService</a><ul class='methods'><li data-type='method'><a href="app.layout.module_focusService.html#~_activeRootFocusinCB">_activeRootFocusinCB</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~_activeRootFocusoutCB">_activeRootFocusoutCB</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~_inactiveFocusinCB">_inactiveFocusinCB</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~_waitingClickCB">_waitingClickCB</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~_waitingKeydownCB">_waitingKeydownCB</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~confirmFocus">confirmFocus</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~createLink">createLink</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~findNextFocusable">findNextFocusable</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~findPrevFocusable">findPrevFocusable</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~previousFocus">previousFocus</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~restore">restore</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~setFocusElement">setFocusElement</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~setPanelFocus">setPanelFocus</a></li><li data-type='method'><a href="app.layout.module_focusService.html#~setStatus">setStatus</a></li></ul></li><li><a href="app.layout.module_layoutService.html">app.layout.layoutService</a></li><li><a href="app.layout.module_rvShell.html">app.layout.rvShell</a></li><li><a href="app.layout.module_storageService.html">app.layout.storageService</a></li><li><a href="app.module_core.html">app.core</a><ul class='methods'><li data-type='method'><a href="app.module_core.html#~addRcsConfigs">addRcsConfigs</a></li><li data-type='method'><a href="app.module_core.html#~decode64">decode64</a></li><li data-type='method'><a href="app.module_core.html#~encode64">encode64</a></li><li data-type='method'><a href="app.module_core.html#~getBookmark">getBookmark</a></li><li data-type='method'><a href="app.module_core.html#~loadNewLang">loadNewLang</a></li><li data-type='method'><a href="app.module_core.html#~loadNewProjection">loadNewProjection</a></li><li data-type='method'><a href="app.module_core.html#~loadWithBookmark">loadWithBookmark</a></li><li data-type='method'><a href="app.module_core.html#~parseBookmark">parseBookmark</a></li></ul></li><li><a href="app.module_ui.html">app.ui</a><ul class='methods'><li data-type='method'><a href="app.module_ui.html#~closeLoaderService">closeLoaderService</a></li><li data-type='method'><a href="app.module_ui.html#~configureOnContinue">configureOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~configureReset">configureReset</a></li><li data-type='method'><a href="app.module_ui.html#~connectOnContinue">connectOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~connectReset">connectReset</a></li><li data-type='method'><a href="app.module_ui.html#~onCancel">onCancel</a></li><li data-type='method'><a href="app.module_ui.html#~selectOnContinue">selectOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~serviceUrlResetValidation">serviceUrlResetValidation</a></li><li data-type='method'><a href="app.module_ui.html#~toggleErrorMessage">toggleErrorMessage</a></li></ul></li><li><a href="app.ui.basemap.module_rvBasemap.html">app.ui.basemap.rvBasemap</a></li><li><a href="app.ui.module_basemapService.html">app.ui.basemapService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_basemapService.html#~_addBaseMaps">_addBaseMaps</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~_normalizeBasemap">_normalizeBasemap</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~getSelected">getSelected</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~reload">reload</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~select">select</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~setOnChangeCallback">setOnChangeCallback</a></li></ul></li><li><a href="app.ui.module_errorService.html">app.ui.errorService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_errorService.html#~display">display</a></li><li data-type='method'><a href="app.ui.module_errorService.html#~remove">remove</a></li></ul></li><li><a href="app.ui.module_fullScreenService.html">app.ui.fullScreenService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_fullScreenService.html#~onComplete">onComplete</a></li><li data-type='method'><a href="app.ui.module_fullScreenService.html#~toggle">toggle</a></li></ul></li><li><a href="app.ui.module_helpService.html">app.ui.helpService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_helpService.html#~clearDrawn">clearDrawn</a></li><li data-type='method'><a href="app.ui.module_helpService.html#~register">register</a></li><li data-type='method'><a href="app.ui.module_helpService.html#~setDrawn">setDrawn</a></li><li data-type='method'><a href="app.ui.module_helpService.html#~unregister">unregister</a></li></ul></li><li><a href="app.ui.module_mapNavigationService.html">app.ui.mapNavigationService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_mapNavigationService.html#~mapNavigationService">mapNavigationService</a></li></ul></li><li><a href="app.ui.module_rvAppbar.html">app.ui.rvAppbar</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvAppbar.html#~rvAppbar">rvAppbar</a></li></ul></li><li><a href="app.ui.module_rvBasemapItem.html">app.ui.rvBasemapItem</a></li><li><a href="app.ui.module_rvContentPane.html">app.ui.rvContentPane</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvContentPane.html#~addHeaderControl">addHeaderControl</a></li><li data-type='method'><a href="app.ui.module_rvContentPane.html#~link">link</a></li><li data-type='method'><a href="app.ui.module_rvContentPane.html#~rvContentPane">rvContentPane</a></li></ul></li><li><a href="app.ui.module_rvDetails.html">app.ui.rvDetails</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetails.html#~closeDetails">closeDetails</a></li><li data-type='method'><a href="app.ui.module_rvDetails.html#~getSelectedItem">getSelectedItem</a></li><li data-type='method'><a href="app.ui.module_rvDetails.html#~selectItem">selectItem</a></li></ul></li><li><a href="app.ui.module_rvDetailsContent.html">app.ui.rvDetailsContent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsContent.html#~rvDetailsContent">rvDetailsContent</a></li></ul></li><li><a href="app.ui.module_rvDetailsExpand.html">app.ui.rvDetailsExpand</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsExpand.html#~rvDetailsExpand">rvDetailsExpand</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordEsrifeature.html">app.ui.rvDetailsRecordEsrifeature</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~renderDetails">renderDetails</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~toggleDetails">toggleDetails</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~zoomToFeature">zoomToFeature</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordHtml.html">app.ui.rvDetailsRecordHtml</a></li><li><a href="app.ui.module_rvDetectScrollbar.html">app.ui.rvDetectScrollbar</a></li><li><a href="app.ui.module_rvDragula.html">app.ui.rvDragula</a></li><li><a href="app.ui.module_rvFiltersDefault.html">app.ui.rvFiltersDefault</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~addColumnInteractivity">addColumnInteractivity</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~Controller">Controller</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~createTable">createTable</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~destroyTable">destroyTable</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~getDToLang">getDToLang</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~link">link</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~onDetailsClick">onDetailsClick</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~onTableDraw">onTableDraw</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~onTableInit">onTableInit</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~onZoomClick">onZoomClick</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~rvFiltersDefault">rvFiltersDefault</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~setDToLang">setDToLang</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefault.html#~triggerTableButton">triggerTableButton</a></li></ul></li><li><a href="app.ui.module_rvFiltersDefaultMenu.html">app.ui.rvFiltersDefaultMenu</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvFiltersDefaultMenu.html#~dataExportCSVTODO:eschewevents;neededheresinceit'sveryhardtocommunicatewithmainfiltersdirective;angular1.5shouldsolveitusingdirectiveswithmultipletransclusions">dataExportCSV
+TODO: eschew events; needed here since it's very hard to communicate with main filters directive; angular 1.5 should solve it using directives with multiple transclusions</a></li><li data-type='method'><a href="app.ui.module_rvFiltersDefaultMenu.html#~dataPrintTODO:eschewevents;neededheresinceit'sveryhardtocommunicatewithmainfiltersdirective;angular1.5shouldsolveitusingdirectiveswithmultipletransclusions">dataPrint
+TODO: eschew events; needed here since it's very hard to communicate with main filters directive; angular 1.5 should solve it using directives with multiple transclusions</a></li></ul></li><li><a href="app.ui.module_rvFiltersPanel.html">app.ui.rvFiltersPanel</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvFiltersPanel.html#~closePanelFIXME:thisshouldbehandledintheshatehelper">closePanel
+FIXME: this should be handled in the shatehelper</a></li><li data-type='method'><a href="app.ui.module_rvFiltersPanel.html#~Controller">Controller</a></li><li data-type='method'><a href="app.ui.module_rvFiltersPanel.html#~rvPanel">rvPanel</a></li></ul></li><li><a href="app.ui.module_rvHelpOverlay.html">app.ui.rvHelpOverlay</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~draw">draw</a></li><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~overlap">overlap</a></li><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~shouldBeDrawn">shouldBeDrawn</a></li></ul></li><li><a href="app.ui.module_rvLayerItemSymbology.html">app.ui.rvLayerItemSymbology</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLayerItemSymbology.html#~getTextWidth">getTextWidth</a></li><li data-type='method'><a href="app.ui.module_rvLayerItemSymbology.html#~iconLegendItem">iconLegendItem</a></li><li data-type='method'><a href="app.ui.module_rvLayerItemSymbology.html#~imageLegendItem">imageLegendItem</a></li></ul></li><li><a href="app.ui.module_rvLayerListSlider.html">app.ui.rvLayerListSlider</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~animateClosed">animateClosed</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~animateOpen">animateOpen</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~itemSelectedByKeypress">itemSelectedByKeypress</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~itemSelectedByMouse">itemSelectedByMouse</a></li></ul></li><li><a href="app.ui.module_rvLoaderFile.html">app.ui.rvLoaderFile</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~closeLoaderFile">closeLoaderFile</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~configureOnContinue">configureOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileReset">fileReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileResetValidation">fileResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileUrlReset">fileUrlReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileUrlResetValidation">fileUrlResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~onCancel">onCancel</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~onLayerBlueprintReady">onLayerBlueprintReady</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectOnContinue">selectOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectReset">selectReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectReset">selectReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectResetValidation">selectResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectResetValidation">selectResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~toggleErrorMessage">toggleErrorMessage</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~updateProgress">updateProgress</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadFilesSubmitted">uploadFilesSubmitted</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadOnContinue">uploadOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadReset">uploadReset</a></li></ul></li><li><a href="app.ui.module_rvLoaderMenu.html">app.ui.rvLoaderMenu</a></li><li><a href="app.ui.module_rvMapnav.html">app.ui.rvMapnav</a></li><li><a href="app.ui.module_rvMapnavButton.html">app.ui.rvMapnavButton</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMapnavButton.html#~rvMapnavButton">rvMapnavButton</a></li></ul></li><li><a href="app.ui.module_rvMenuLink.html">app.ui.rvMenuLink</a></li><li><a href="app.ui.module_rvMetadataContent.html">app.ui.rvMetadataContent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataContent.html#~rvMetadataContent">rvMetadataContent</a></li></ul></li><li><a href="app.ui.module_rvMetadataExpand.html">app.ui.rvMetadataExpand</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataExpand.html#~rvMetadataExpand">rvMetadataExpand</a></li></ul></li><li><a href="app.ui.module_rvMetadataPanel.html">app.ui.rvMetadataPanel</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataPanel.html#~rvMetadataPanel">rvMetadataPanel</a></li></ul></li><li><a href="app.ui.module_rvMorph.html">app.ui.rvMorph</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMorph.html#~linkFunc">linkFunc</a></li><li data-type='method'><a href="app.ui.module_rvMorph.html#~rvMorph">rvMorph</a></li></ul></li><li><a href="app.ui.module_rvPlugSlide.html">app.ui.rvPlugSlide</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~animationBuilder">animationBuilder</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~buildTween">buildTween</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~calculateShift">calculateShift</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~cleanup">cleanup</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~deltaHelper">deltaHelper</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~getPanelSize">getPanelSize</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~makeFadeAnim">makeFadeAnim</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~makeSlideAnim">makeSlideAnim</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~ngShowHideWrapper">ngShowHideWrapper</a></li></ul></li><li><a href="app.ui.module_rvReverse.html">app.ui.rvReverse</a></li><li><a href="app.ui.module_rvSettings.html">app.ui.rvSettings</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvSettings.html#~rvSettings">rvSettings</a></li><li data-type='method'><a href="app.ui.module_rvSettings.html#~toggleQuery">toggleQuery</a></li></ul></li><li><a href="app.ui.module_rvStepperItem.html">app.ui.rvStepperItem</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvStepperItem.html#~onCancelBefore">onCancelBefore</a></li></ul></li><li><a href="app.ui.module_rvToc.html">app.ui.rvToc</a></li><li><a href="app.ui.module_rvTocEntry.html">app.ui.rvTocEntry</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTocEntry.html#~link">link</a></li></ul></li><li><a href="app.ui.module_rvTocEntryControl.html">app.ui.rvTocEntryControl</a></li><li><a href="app.ui.module_rvTocEntryFlag.html">app.ui.rvTocEntryFlag</a></li><li><a href="app.ui.module_rvToggleSlide.html">app.ui.rvToggleSlide</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~getTargetHeight">getTargetHeight</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~ngShowHideBootstrap">ngShowHideBootstrap</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~toggleClose">toggleClose</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~toggleOpen">toggleOpen</a></li></ul></li><li><a href="app.ui.module_rvToolbox.html">app.ui.rvToolbox</a></li><li><a href="app.ui.module_rvTruncate.html">app.ui.rvTruncate</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTruncate.html#~rvTruncate">rvTruncate</a></li></ul></li><li><a href="app.ui.module_sideNavigationService.html">app.ui.sideNavigationService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~close">close</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~open">open</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~toggle">toggle</a></li></ul></li><li><a href="app.ui.module_StepperFactory.html">app.ui.StepperFactory</a></li><li><a href="app.ui.module_tocService.html">app.ui.tocService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_tocService.html#~removeLayer">removeLayer</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~setTocEntrySelectedState">setTocEntrySelectedState</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleLayerFiltersPanel">toggleLayerFiltersPanel</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleMetadata">toggleMetadata</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleSettings">toggleSettings</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~watchPanelState">watchPanelState</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~zoomLayerScale">zoomLayerScale</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~zoomToBoundary">zoomToBoundary</a></li></ul></li><li><a href="material.components.icon.module_mdIconDirectiveDecorator.html">material.components.icon.mdIconDirectiveDecorator</a><ul class='methods'><li data-type='method'><a href="material.components.icon.module_mdIconDirectiveDecorator.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.menuBar.module_mdMenuItemDirectiveDecorator.html">material.components.menuBar.mdMenuItemDirectiveDecorator</a><ul class='methods'><li data-type='method'><a href="material.components.menuBar.module_mdMenuItemDirectiveDecorator.html#~decorateCompile">decorateCompile</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="app.html">app</a></li><li><a href="app.html#.common">app.common</a></li><li><a href="app.core.html">app.core</a><ul class='methods'><li data-type='method'><a href="app.core.html#.apiBlock">apiBlock</a></li><li data-type='method'><a href="app.core.html#.configBlock">configBlock</a></li><li data-type='method'><a href="app.core.html#.debugBlock">debugBlock</a></li><li data-type='method'><a href="app.core.html#.runBlock">runBlock</a></li><li data-type='method'><a href="app.core.html#.seed">seed</a></li><li data-type='method'><a href="app.core.html#~configureIconsets">configureIconsets</a></li><li data-type='method'><a href="app.core.html#~configureTheme">configureTheme</a></li><li data-type='method'><a href="app.core.html#~configureTranslations">configureTranslations</a></li><li data-type='method'><a href="app.core.html#~loadRcsLayers">loadRcsLayers</a></li><li data-type='method'><a href="app.core.html#~setLanguage">setLanguage</a></li></ul></li><li><a href="app.geo.html">app.geo</a></li><li><a href="app.layout.html">app.layout</a></li><li><a href="app.ui.html">app.ui</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-getting_started.html">Getting Started</a></li><li><a href="tutorial-gulp-i18n-csv.html">Translation Plugin</a></li></ul><h3>Global</h3><ul><li><a href="global.html#attachEvents">attachEvents</a></li><li><a href="global.html#centerAndZoom">centerAndZoom</a></li><li><a href="global.html#detachEvents">detachEvents</a></li><li><a href="global.html#detectBlur">detectBlur</a></li><li><a href="global.html#detectFocus">detectFocus</a></li><li><a href="global.html#getBookmark">getBookmark</a></li><li><a href="global.html#isSameActiveElement">isSameActiveElement</a></li><li><a href="global.html#preLoadApiBlock">preLoadApiBlock</a></li><li><a href="global.html#readyDelay">readyDelay</a></li><li><a href="global.html#RV">RV</a></li><li><a href="global.html#trackFocusBuilder">trackFocusBuilder</a></li><li><a href="global.html#useBookmark">useBookmark</a></li><li><a href="global.html#versionCheck">versionCheck</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">geo/layer-blueprint.class.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>(() => {
+    'use strict';
+
+    /**
+     * @module LayerBlueprintFactory
+     * @memberof app.geo
+     * @requires dependencies
+     * @description
+     *
+     * The `LayerBlueprint` service returns `LayerBlueprint` class which abstracts common elements of layer creating (either from file or online servcie).
+     * The `LayerServiceBlueprint` service returns `LayerServiceBlueprint` class to be used when creating layers from online services (supplied by config, RCS or user added).
+     * The `LayerFileBlueprint` service returns `LayerFileBlueprint` class to be used when creating layers from user-supplied files.
+     *
+     */
+    angular
+        .module('app.geo')
+        .factory('LayerBlueprint', LayerBlueprintFactory);
+
+    function LayerBlueprintFactory($q, LayerBlueprintUserOptions, gapiService, Geo, layerDefaults, LayerRecordFactory) {
+        let idCounter = 0; // layer counter for generating layer ids
+
+        // jscs doesn't like enhanced object notation
+        // jscs:disable requireSpacesInAnonymousFunctionExpression
+        class LayerBlueprint {
+            /**
+             * Creates a new LayerBlueprint.
+             * @param  {Object} initialConfig partial config, can be an empty object.
+             * @param  {Function} epsgLookup a function which takes and EPSG code and returns a projection definition (see geoService for the exact signature)
+             */
+            constructor(initialConfig, epsgLookup) {
+                this.initialConfig = {};
+                this.config = {};
+                this._epsgLookup = epsgLookup;
+
+                if (typeof initialConfig !== 'undefined') {
+                    this.initialConfig = initialConfig;
+                    this.config = angular.merge({}, initialConfig);
+                }
+
+                this._applyDefaults();
+
+                this._userOptions = {};
+            }
+
+            /**
+             * Applies layer defaults based on the layer type.
+             */
+            _applyDefaults() {
+                if (this.layerType !== null) {
+                    const defaults = layerDefaults[this.layerType];
+
+                    // TODO: add defautls for wms and dynamic layerEntries
+                    // this is mostly useless right now since we apply defaults in `legend-entry` service
+                    this.config.options = angular.merge({}, defaults.options, this.initialConfig.options);
+                    this.config.flags = angular.merge({}, defaults.flags, this.initialConfig.flags);
+                }
+            }
+
+            /**
+             * Returns layer type or null if not set of the blueprint.
+             * @return {String|null} layer type as String or null
+             */
+            get layerType() {
+                return (typeof this.config.layerType !== 'undefined') ? this.config.layerType : null;
+            }
+
+            /**
+             * Sets layer type.
+             * @param  {String} value layer type as String
+             */
+            set layerType(value) {
+                // apply config defaults when setting layer type
+                this.config.layerType = value;
+                this._applyDefaults();
+
+                // generate id if missing when generating layer
+                if (typeof this.config.id === 'undefined') {
+                    this.config.id = `${this.layerType}#${idCounter++}`;
+                }
+            }
+
+            /**
+             * Returns a constructor promise which resolves when file or service data is loaded and read in.
+             * @return {Promise} constructor promise
+             */
+            get ready() { return this._constructorPromise; }
+
+            /**
+             * Returns user layer options class instance or a plain object if type is not yet set.
+             * @return {Object} user options
+             */
+            get userOptions() { return this._userOptions; }
+
+            /**
+             * Returns fields found in the blueprint.
+             * @return {Array|null} array of fields in the form of [{ name: "Long", type: "esriFieldTypeString"}]
+             */
+            get fields() { throw new Error(`Access fields on a subclass instead.`); }
+
+            validate() { throw new Error(`Call validate on a subclass instead.`); }
+
+            /**
+             * Generates a layer object. This is a stub function to be fully implemented by subcalasses.
+             * @return {Object} "common config" ? witch contains layer id
+             */
+            generateLayer() {
+                throw new Error('Call generateLayer on a subclass instead.');
+            }
+        }
+        // jscs:enable requireSpacesInAnonymousFunctionExpression
+
+        const serviceTypeToLayerType = {
+            [Geo.Service.Types.FeatureLayer]: Geo.Layer.Types.ESRI_FEATURE,
+            [Geo.Service.Types.DynamicService]: Geo.Layer.Types.ESRI_DYNAMIC,
+            [Geo.Service.Types.TileService]: Geo.Layer.Types.ESRI_TILE,
+            [Geo.Service.Types.ImageService]: Geo.Layer.Types.ESRI_IMAGE,
+            [Geo.Service.Types.WMS]: Geo.Layer.Types.OGC_WMS
+        };
+
+        // jscs doesn't like enhanced object notation
+        // jscs:disable requireSpacesInAnonymousFunctionExpression
+        class LayerServiceBlueprint extends LayerBlueprint {
+            /**
+             * Creates a new LayerServiceBlueprint.
+             * @param  {initialConfig} initialConfig partical config, __must__ contain a service `url`.
+             * @param  {Function} epsgLookup a function which takes and EPSG code and returns a projection definition (see geoService for the exact signature)
+             */
+            constructor(initialConfig, epsgLookup) {
+                if (typeof initialConfig.url === 'undefined') {
+                    // TODO: throw error ?
+                    console.error('Service layer needs a url.');
+                    return;
+                } else if (initialConfig.layerType === Geo.Layer.Types.FeatureLayer) {
+                    // `replace` strips trailing slashes. Assists in plucking index off url.
+                    initialConfig.url = initialConfig.url.replace(/\/+$/, '');
+                }
+
+                super(initialConfig, epsgLookup);
+
+                this._serviceType = null;
+                this._serviceInfo = null;
+
+                // if layerType is no specified, this is a user added layer; otherwise blueprint creation is deemed completed
+                // call GeoApi to predict its type
+                this._constructorPromise = this.layerType !== null ? $q.resolve() : this._fetchServiceInfo();
+            }
+
+            /**
+             * Get service info from the supplied url. Service info usually include information like service type, name, available fields, etc.
+             * TODO: there is a lot of workarounds since wms layers need special handling, and it's not possible to immediately detect if the layer is not a service endpoint .
+             */
+            _fetchServiceInfo() {
+                const hint = this._serviceInfo !== null ? this._serviceInfo.serviceType : undefined;
+
+                // due to #702, wms detection is problematic; here are some workarounds
+                // TODO: refactor when abovementioned issue is resolved
+                return $q.resolve(gapiService.gapi.layer.ogc.parseCapabilities(this.config.url))
+                    .then(data => {
+                        if (data.layers.length > 0) { // if there are layers, it's a wms layer
+                            console.log(`${this.config.url} is a WMS, yak!`);
+
+                            // return an object resembling fileInfo object returned by GeoApi
+                            return {
+                                serviceType: Geo.Service.Types.WMS,
+                                name: this.config.url,
+                                layers: flattenWmsLayerList(data.layers)
+                            };
+
+                        } else {
+                            console.log(`${this.config.url} is not a WMS, running more checks.`);
+                            return gapiService.gapi.layer.predictLayerUrl(this.config.url, hint);
+                        }
+                    })
+                    .then(fileInfo => {
+                        console.log(fileInfo);
+
+                        // this is not a service URL;
+                        // in some cases, if URL is not a service URL, dojo script used to interogate the address
+                        // will throw a page-level error which cannot be caught; in such cases, it's not clear to the user what has happened;
+                        // timeout error will eventually be raised and this block will trigger
+                        // TODO: as a workaround, block continue button until interogation is complete so users can't click multiple times, causing multiple checks
+                        if (fileInfo.serviceType === Geo.Service.Types.Error) {
+                            return $q.reject(fileInfo); // reject promise if the provided url cannot be accessed
+                        }
+
+                        this._serviceInfo = fileInfo;
+                        this.serviceType = this._serviceInfo.serviceType;
+                        this.config.name = this._serviceInfo.name;
+
+                        // some custom processing of Dynamic layers to let the user option to pick sublayers
+                        if (this.serviceType === Geo.Service.Types.DynamicService) {
+                            // change the group layer url to its parent dynamic layer one so data can be fetched properly
+                            if (this._serviceInfo.groupIdx !== undefined) {
+                                this.config.url = this.config.url.substring(0, this.config.url.lastIndexOf('/'));
+                            }
+
+                            flattenDynamicLayerList(this._serviceInfo.layers);
+
+                            // this includes all sublayers; converting layerEntries to a proper config format
+                            /*this.config.layerEntries = this._serviceInfo.layers
+                                .filter(layer => layer.parentLayerId === -1) // pick all sub-top level items
+                                .map(layer => {
+                                    return {
+                                        index: layer.id
+                                    };
+                                });*/
+                        }
+                    })
+                    .catch(error => {
+                        this._serviceInfo = null;
+                        return $q.reject(error);
+                    });
+
+                /**
+                 * This flattens wms array hierarchy into a flat list to be displayed in a drop down selector
+                 * TODO: this is temporary, possibly, as we want to provide user with an actual tree to select from
+                 * @param  {Array} layers array of layer objects
+                 * @param  {Number} level  =             0 tells how deep the layer is in the hierarchy
+                 * @return {Array}        layer list
+                 */
+                function flattenWmsLayerList(layers, level = 0) {
+                    return [].concat.apply([], layers.map(layer => {
+                        layer.indent = Array.from(Array(level)).fill('-').join('');
+
+                        if (layer.layers.length > 0) {
+                            return [].concat(layer, flattenWmsLayerList(layer.layers, ++level));
+                        } else {
+                            return layer;
+                        }
+                    }));
+                }
+
+                /**
+                 * This calculates relative depth of the dynamic layer hierarchy on the provided flat list of layers
+                 * TODO: this is temporary, possibly, as we want to provide user with an actual tree to select from
+                 * @return {Array} layer list
+                 */
+                function flattenDynamicLayerList(layers) {
+                    layers.forEach(layer => {
+                        const level = calculateLevel(layer, layers);
+
+                        layer.level = level;
+                        layer.indent = Array.from(Array(level)).fill('-').join('');
+                    });
+
+                    function calculateLevel(layer, layers) {
+                        if (layer.parentLayerId === -1) {
+                            return 0;
+                        } else {
+                            return calculateLevel(layers[layer.parentLayerId], layers) + 1;
+                        }
+                    }
+                }
+            }
+
+            /**
+             * Returns service type of the service layer blueprint. If type is `Unknown`, returns null for template bindings
+             * @return {String|null} service type
+             */
+            get serviceType() {
+                if (Geo.Service.Types.Unknown === this._serviceType) {
+                    return null;
+                }
+                return this._serviceType;
+            }
+
+            /**
+             * Sets service type
+             * @param  {String} value service type
+             */
+            set serviceType(value) { this._serviceType = value; }
+
+            /**
+             * Returns fields found in the file data.
+             * @return {Array|null} array of fields in the form of [{ name: "Long", type: "esriFieldTypeString"}]
+             */
+            get fields() {
+                // console.log(this._formatedFileData);
+
+                if (this._serviceInfo !== null) {
+                    return this._serviceInfo.fields;
+                } else {
+                    return null;
+                }
+            }
+
+            get serviceInfo() {
+                return this._serviceInfo;
+            }
+
+            /**
+             * Validates service blueprint against selected service type.
+             *
+             * @return {Promise} a promise resolving if the validation is successful
+             */
+            validate() {
+                // our prediction routine is infallible, so if the user disagrees, too bad :D
+                // NOTE: in cases where we can't predict the service type (geoapi returns Unknown), we also cannot validate the service except if we make a layer and add it to the map and see if it loads or not
+                return $q((resolve, reject) => {
+                    if (this._serviceInfo.serviceType === this.serviceType ||
+                        this._serviceInfo.serviceType === Geo.Service.Types.Unknown) {
+
+                        this.layerType = serviceTypeToLayerType[this.serviceType];
+
+                        // for feature layers, apply nameField smart default
+                        // TODO: revisit when config objects are typed classes
+                        if (this.serviceType === Geo.Service.Types.FeatureLayer &amp;&amp; this._serviceInfo.smartDefaults) {
+                            this.config.nameField = this._serviceInfo.smartDefaults.primary;
+                        }
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                });
+            }
+
+            /**
+             * Generates a layer from an online service based on the layer type.
+             * Takes a layer in the config format and generates an appropriate layer object.
+             * @param {Object} layerConfig a configuration fragment for a single layer
+             * @return {Promise} resolving with a LayerRecord object matching one of the esri/layers objects based on the layer type
+             */
+            generateLayer() {
+                return $q.resolve(LayerRecordFactory.makeServiceRecord(this.config, this._epsgLookup));
+            }
+        }
+        // jscs:enable requireSpacesInAnonymousFunctionExpression
+
+        // jscs doesn't like enhanced object notation
+        // jscs:disable requireSpacesInAnonymousFunctionExpression
+        /**
+         * Create a LayerFileBlueprint.
+         * Retrieves data from the file. The file can be either online or local.
+         * @param  {Function} epsgLookup a function which takes and EPSG code and returns a projection definition (see geoService for the exact signature)
+         * @param  {Number} targetWkid wkid of the current map object
+         * @param  {String} path      either file name or file url; if it's a file name, need to provide a HTML5 file object
+         * @param  {File} file      optional: HTML5 file object
+         * @return {Function} progressCallback        optional: function to call on progress events druing when reading file
+         * @return {String}           service type: 'csv', 'shapefile', 'geojson'
+         */
+        class LayerFileBlueprint extends LayerBlueprint {
+            constructor(epsgLookup, targetWkid, path, file, progressCallback = angular.noop) { // , extension) {
+                super(undefined, epsgLookup);
+
+                // when passing file object, path is its name
+                this._fileName = typeof file !== 'undefined' ? file.name : path;
+                this._fileData = null;
+                this._formatedFileData = null;
+                this._fileType = null;
+
+                this._targetWkid = targetWkid;
+
+                this._constructorPromise = gapiService.gapi.layer.predictLayerUrl(path)
+                    .then(fileInfo => {
+                        // fileData is returned only if path is a url; if it's just a file name, only serviceType is returned                            this.fileData = fileInfo.fileData;
+                        this.layerType = 'esriFeature';
+                        this.fileType = fileInfo.serviceType;
+
+                        // error type means the file cannot be accessed
+                        if (this.fileType === Geo.Service.Types.Error) {
+                            throw new Error('Cannot retrieve file data');
+                        }
+
+                        if (typeof file !== 'undefined') {
+                            // if there is file object, read it and store the data
+                            return this._readFileData(file, progressCallback)
+                                .then(fileData => this._fileData = fileData);
+
+                        } else if (typeof fileInfo.fileData !== 'undefined') {
+                            this._fileData = fileInfo.fileData;
+                            return undefined;
+
+                        } else {
+                            throw new Error('Cannot retrieve file data');
+                        }
+                    });
+            }
+
+            /**
+             * Returns the file type. If type is `Unknown`, returns null for template bindings
+             * @return {String|null} file type
+             */
+            get fileType() {
+                if (Geo.Service.Types.Unknown === this._fileType) {
+                    return null;
+                }
+                return this._fileType;
+            }
+
+            /**
+             * Sets file type. Setting file type does not triggers file validation.
+             * @param  {String} value file type
+             */
+            set fileType(value) { this._fileType = value; }
+
+            /**
+             * Validates file blueprint against selected file type.
+             * @return {Promise} promise resolving if validation successful
+             */
+            validate() {
+                return this._constructorPromise
+                    .then(() => gapiService.gapi.layer.validateFile(this.fileType, this._fileData))
+                    .then(result => {
+                        // create user options object based on the layer type
+                        const options = new LayerBlueprintUserOptions.File[this.fileType]
+                            (this._epsgLookup, this._targetWkid, result.smartDefaults);
+                        options.layerName = this._fileName;
+
+                        this._userOptions = options;
+                        this._formatedFileData = result;
+                    });
+            }
+
+            /**
+             * Returns fields found in the file data. This is used in template bindings.
+             * @return {Array|null} array of fields in the form of [{ name: "Long", type: "esriFieldTypeString"}]
+             */
+            get fields() {
+                // console.log(this._formatedFileData);
+
+                if (this._formatedFileData !== null) {
+                    return this._formatedFileData.fields;
+                } else {
+                    return null;
+                }
+            }
+
+            /**
+             * Generate actual esri layer object from the file data, config and user options.
+             * @return {Promise} promise resolving with the esri layer object
+             */
+            generateLayer() {
+                // TODO: throw error if layer type is not defined
+                // clone data because the makeSomethingLayer functions mangle the config data
+                const _clonedFormatedFileData = angular.merge({}, this._formatedFileData);
+
+                // generator functions for different file types
+                const layerFileGenerators = {
+                    [Geo.Service.Types.CSV]: () =>
+                        gapiService.gapi.layer.makeCsvLayer(_clonedFormatedFileData.formattedData, this.userOptions),
+                    [Geo.Service.Types.GeoJSON]:  () =>
+                        gapiService.gapi.layer.makeGeoJsonLayer(_clonedFormatedFileData.formattedData,
+                            this.userOptions),
+                    [Geo.Service.Types.Shapefile]:  () =>
+                        gapiService.gapi.layer.makeShapeLayer(this._fileData, this.userOptions)
+                };
+
+                // set layer id to the config id; this is needed when using file layer generator function
+                this.userOptions.layerId = this.config.id;
+
+                // apply user selected layer name to the config so it appears in the legend entry
+                this.config.name = this.userOptions.layerName;
+                this.config.nameField = this.userOptions.primaryField;
+
+                console.log(this.userOptions);
+
+                const layerPromise = layerFileGenerators[this.fileType]();
+
+                // do angular merge here too so as to not mangle config data
+                return layerPromise.then(layer => LayerRecordFactory.makeFileRecord(angular.merge({},
+                    this.config), layer));
+            }
+
+            _applyDefaults() {
+                super._applyDefaults();
+
+                // disable reloading for file-based layers
+                // TODO: move this option when configs are typed
+                if (this.config.options) {
+                    this.config.options.reload.enabled = false;
+                }
+            }
+
+            /**
+             * Reads HTML5 File object data.
+             * @private
+             * @param  {File} file [description]
+             * @return {Promise}      promise resolving with file's data
+             */
+            _readFileData(file, progressCallback) {
+                const dataPromise = $q((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onerror = () => {
+                        console.error('Failed to read a file');
+                        reject('Failed to read a file');
+                    };
+                    reader.onload = () => {
+                        console.log('Fully loaded');
+                        resolve(reader.result); // ???
+                    };
+                    reader.onprogress = event => progressCallback(event);
+
+                    reader.readAsArrayBuffer(file);
+                });
+
+                return dataPromise;
+            }
+        }
+        // jscs:enable requireSpacesInAnonymousFunctionExpression
+
+        const service = {
+            service: LayerServiceBlueprint,
+            file: LayerFileBlueprint
+        };
+
+        return service;
+    }
+})();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Aug 19 2016 15:20:41 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
