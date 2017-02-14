@@ -197,7 +197,7 @@ FIXME: this should be handled in the shatehelper</a></li><li data-type='method'>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line436">line 436</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line440">line 440</a>
     </li></ul></dd>
     
 
@@ -667,7 +667,7 @@ FIXME: this should be handled in the shatehelper</a></li><li data-type='method'>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line157">line 157</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -1386,7 +1386,7 @@ FIXME: this should be handled in the shatehelper</a></li><li data-type='method'>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line446">line 446</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line450">line 450</a>
     </li></ul></dd>
     
 
@@ -1470,7 +1470,7 @@ FIXME: this should be handled in the shatehelper</a></li><li data-type='method'>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line397">line 397</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line401">line 401</a>
     </li></ul></dd>
     
 
@@ -1603,7 +1603,7 @@ FIXME: this should be handled in the shatehelper</a></li><li data-type='method'>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line425">line 425</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line429">line 429</a>
     </li></ul></dd>
     
 
@@ -2487,7 +2487,7 @@ in the direction given by forward. To find the first/last element in a focus tra
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line180">line 180</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -2789,6 +2789,8 @@ in the direction given by forward. To find the first/last element in a focus tra
 
 <div class="description">
     <p>Initializes the viewer with this bookmark.</p>
+<p>Whereas useBookmark can be called multiple times at any point in the viewers lifecycle, initialBookmark is meant to provide the viewer with a starting bookmark. Therefore it should only be invoked once as the very first bookmark.</p>
+<p>Note that the $rootElement must have the rv-wait attribute set for this function to have any effect. This informs the viewer to wait until you provide an initial bookmark.</p>
 </div>
 
 
@@ -3014,7 +3016,7 @@ in the direction given by forward. To find the first/last element in a focus tra
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line409">line 409</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line413">line 413</a>
     </li></ul></dd>
     
 
@@ -4900,7 +4902,7 @@ the viewer while state is inactive.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line190">line 190</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line194">line 194</a>
     </li></ul></dd>
     
 
@@ -5259,7 +5261,7 @@ focus to be trapped inside the document body.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line170">line 170</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line174">line 174</a>
     </li></ul></dd>
     
 
@@ -6143,7 +6145,7 @@ focus to be trapped inside the document body.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line373">line 373</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line377">line 377</a>
     </li></ul></dd>
     
 
@@ -6666,7 +6668,7 @@ Adding <code>{{ ::$root.uid($id) }}</code> inside a template will return a <code
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line340">line 340</a>
+        <a href="bootstrap.js.html">bootstrap.js</a>, <a href="bootstrap.js.html#line344">line 344</a>
     </li></ul></dd>
     
 
@@ -6846,7 +6848,7 @@ Adding <code>{{ ::$root.uid($id) }}</code> inside a template will return a <code
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Feb 13 2017 16:23:20 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Feb 14 2017 17:44:06 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
