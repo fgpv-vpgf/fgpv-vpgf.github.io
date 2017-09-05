@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DataRegistry | r2v2</title>
+	<title>Basemap | r2v2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,27 +60,51 @@
 					<a href="../modules/_index_d_.rv.html">RV</a>
 				</li>
 				<li>
-					<a href="../modules/_index_d_.rv.data.html">Data</a>
+					<a href="../modules/_index_d_.rv.ui.html">UI</a>
 				</li>
 				<li>
-					<a href="_index_d_.rv.data.dataregistry.html">DataRegistry</a>
+					<a href="_index_d_.rv.ui.basemap.html">Basemap</a>
 				</li>
 			</ul>
-			<h1>Class DataRegistry</h1>
+			<h1>Class Basemap</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Defines a basemap which is selectable from the basemap panel once added to the map. For example:</p>
+					</div>
+					<pre><code class="lang-js"><span class="hljs-keyword">var</span> myBasemap = <span class="hljs-keyword">new</span> RV.UI.Basemap(<span class="hljs-string">'My Custom Basemap'</span>, <span class="hljs-string">'A personal favorite of mine.'</span>, [myLayer1, myLayer2]);
+myBasemap.setActive(<span class="hljs-literal">true</span>); <span class="hljs-comment">// make active so it is displayed when added.</span>
+mapInstance.basemaps.push(myBasemap);
+</code></pre>
+					<p>Note that whenever passing string layer ids in place of Layer instances they will be converted to Layer instances automatically.</p>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><p><br><br></p>
+							<pre><code class="lang-js"><span class="hljs-keyword">var</span> firstBasemap = mapInstance.ui.basemaps.getAt(<span class="hljs-number">0</span>);
+firstBasemap.addListener(<span class="hljs-string">'active_changed'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">isActive</span>) </span>{
+    <span class="hljs-keyword">if</span> (isActive) {
+        firstBasemap.setName(<span class="hljs-string">'Active Basemap'</span>);
+    }
+});
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_index_d_.rv.mvcobject.html" class="tsd-signature-type">MVCObject</a>
+						<a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">DataRegistry</span>
+								<span class="target">Basemap</span>
 							</li>
 						</ul>
 					</li>
@@ -91,50 +115,116 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#addlayer" class="tsd-kind-icon">addlayer</a></li>
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#click" class="tsd-kind-icon">click</a></li>
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#removelayer" class="tsd-kind-icon">removelayer</a></li>
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#removeproperty" class="tsd-kind-icon">removeproperty</a></li>
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#setgeometry" class="tsd-kind-icon">setgeometry</a></li>
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#setproperty" class="tsd-kind-icon">setproperty</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#active_changed" class="tsd-kind-icon">active_<wbr>changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#addlayer" class="tsd-kind-icon">addlayer</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#click" class="tsd-kind-icon">click</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#description_changed" class="tsd-kind-icon">description_<wbr>changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#name_changed" class="tsd-kind-icon">name_<wbr>changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#removelayer" class="tsd-kind-icon">removelayer</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#removeproperty" class="tsd-kind-icon">removeproperty</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#setgeometry" class="tsd-kind-icon">setgeometry</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#setproperty" class="tsd-kind-icon">setproperty</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#add" class="tsd-kind-icon">add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#addgeojson" class="tsd-kind-icon">add<wbr>Geo<wbr>Json</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#bindto" class="tsd-kind-icon">bind<wbr>To</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#changed" class="tsd-kind-icon">changed</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#contains" class="tsd-kind-icon">contains</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#getlayerbyid" class="tsd-kind-icon">get<wbr>Layer<wbr>ById</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#loadgeojson" class="tsd-kind-icon">load<wbr>Geo<wbr>Json</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#notify" class="tsd-kind-icon">notify</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#remove" class="tsd-kind-icon">remove</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#set" class="tsd-kind-icon">set</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.data.dataregistry.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#unbind" class="tsd-kind-icon">unbind</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.data.dataregistry.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#addgeojson" class="tsd-kind-icon">add<wbr>Geo<wbr>Json</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#bindto" class="tsd-kind-icon">bind<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#changed" class="tsd-kind-icon">changed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#contains" class="tsd-kind-icon">contains</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#getdescription" class="tsd-kind-icon">get<wbr>Description</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#getlayerbyid" class="tsd-kind-icon">get<wbr>Layer<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#getprojection" class="tsd-kind-icon">get<wbr>Projection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#loadgeojson" class="tsd-kind-icon">load<wbr>Geo<wbr>Json</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#notify" class="tsd-kind-icon">notify</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#setactive" class="tsd-kind-icon">set<wbr>Active</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#setdescription" class="tsd-kind-icon">set<wbr>Description</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.basemap.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#unbind" class="tsd-kind-icon">unbind</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.ui.basemap.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Basemap<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, layers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a>, description<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.ui.basemap.html" class="tsd-signature-type">Basemap</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L525">index.d.ts:525</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>layers: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> description: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.ui.basemap.html" class="tsd-signature-type">Basemap</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="active_changed" class="tsd-anchor"></a>
+					<h3>active_<wbr>changed</h3>
+					<div class="tsd-signature tsd-kind-icon">active_<wbr>changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L553">index.d.ts:553</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{string} isActive</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="addlayer" class="tsd-anchor"></a>
 					<h3>addlayer</h3>
 					<div class="tsd-signature tsd-kind-icon">addlayer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#addlayer">addlayer</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L388">index.d.ts:388</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L428">index.d.ts:428</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -143,18 +233,19 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>{Data.Layer} layer</p>
+							<dd><p>{Layer} layer</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="click" class="tsd-anchor"></a>
 					<h3>click</h3>
 					<div class="tsd-signature tsd-kind-icon">click<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#click">click</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L402">index.d.ts:402</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L442">index.d.ts:442</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -169,12 +260,47 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="description_changed" class="tsd-anchor"></a>
+					<h3>description_<wbr>changed</h3>
+					<div class="tsd-signature tsd-kind-icon">description_<wbr>changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L547">index.d.ts:547</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{string} description - The new description</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="name_changed" class="tsd-anchor"></a>
+					<h3>name_<wbr>changed</h3>
+					<div class="tsd-signature tsd-kind-icon">name_<wbr>changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L541">index.d.ts:541</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{string} name - The new name</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="removelayer" class="tsd-anchor"></a>
 					<h3>removelayer</h3>
 					<div class="tsd-signature tsd-kind-icon">removelayer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#removelayer">removelayer</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L395">index.d.ts:395</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L435">index.d.ts:435</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -183,18 +309,19 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>{Data.Layer} layer</p>
+							<dd><p>{Layer} layer</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="removeproperty" class="tsd-anchor"></a>
 					<h3>removeproperty</h3>
 					<div class="tsd-signature tsd-kind-icon">removeproperty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#removeproperty">removeproperty</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L430">index.d.ts:430</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L470">index.d.ts:470</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -203,7 +330,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>{Data.Layer} layer</p>
+							<dd><p>{Layer} layer</p>
 							</dd>
 							<dt>property</dt>
 							<dd><p>{string} name - the property name</p>
@@ -214,13 +341,14 @@
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="setgeometry" class="tsd-anchor"></a>
 					<h3>setgeometry</h3>
 					<div class="tsd-signature tsd-kind-icon">setgeometry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#setgeometry">setgeometry</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L411">index.d.ts:411</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L451">index.d.ts:451</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -229,24 +357,25 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>{Data.Layer} layer</p>
+							<dd><p>{Layer} layer</p>
 							</dd>
 							<dt>property</dt>
-							<dd><p>{Data.Geometry} newGeometry</p>
+							<dd><p>{Geometry} newGeometry</p>
 							</dd>
 							<dt>property</dt>
-							<dd><p>{Data.Geometry} oldGeometry</p>
+							<dd><p>{Geometry} oldGeometry</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
 					<a name="setproperty" class="tsd-anchor"></a>
 					<h3>setproperty</h3>
 					<div class="tsd-signature tsd-kind-icon">setproperty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#setproperty">setproperty</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L421">index.d.ts:421</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L461">index.d.ts:461</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -255,7 +384,7 @@
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
-							<dd><p>{Data.Layer} layer</p>
+							<dd><p>{Layer} layer</p>
 							</dd>
 							<dt>property</dt>
 							<dd><p>{string} name - the property name</p>
@@ -272,22 +401,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">?: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">JSON</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">?: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#add">add</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L364">index.d.ts:364</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L404">index.d.ts:404</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Adds a layer to the collection, and returns the added layer.</p>
+									<p>Adds the provided layer to the group, and returns the added layer.</p>
 								</div>
 								<p>If the layer has an ID, it will replace any existing layer in the collection with the same ID. If no layer or JSON is given, a new layer will be created with null geometry and no properties.</p>
 								<p>Note that the IDs 1234 and &#39;1234&#39; are equivalent. Adding a layer with ID 1234 will replace a layer with ID &#39;1234&#39;, and vice versa.</p>
@@ -295,24 +425,25 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> layer: <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">JSON</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> layer: <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="addgeojson" class="tsd-anchor"></a>
 					<h3>add<wbr>Geo<wbr>Json</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>geoJson<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>geoJson<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#addgeojson">addGeoJson</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L366">index.d.ts:366</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L406">index.d.ts:406</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -326,7 +457,7 @@
 									<h5>geoJson: <span class="tsd-signature-type">Object</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -341,7 +472,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L270">index.d.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L213">index.d.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,7 +510,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#bindto">bindTo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L290">index.d.ts:290</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L233">index.d.ts:233</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -417,7 +548,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#changed">changed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L284">index.d.ts:284</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L227">index.d.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -445,17 +576,18 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="contains" class="tsd-anchor"></a>
 					<h3>contains</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#contains">contains</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L368">index.d.ts:368</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L408">index.d.ts:408</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,24 +598,25 @@ m.changed.should.have.been.calledOnce;
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>layer: <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a></h5>
+									<h5>layer: <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="foreach" class="tsd-anchor"></a>
 					<h3>for<wbr>Each</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#foreach">forEach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L370">index.d.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L410">index.d.ts:410</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,14 +631,14 @@ m.changed.should.have.been.calledOnce;
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>layer: <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a></h5>
+															<h5>layer: <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -530,7 +663,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L272">index.d.ts:272</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L215">index.d.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -549,16 +682,34 @@ m.changed.should.have.been.calledOnce;
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getlayerbyid" class="tsd-anchor"></a>
-					<h3>get<wbr>Layer<wbr>ById</h3>
+					<a name="getdescription" class="tsd-anchor"></a>
+					<h3>get<wbr>Description</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Layer<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Description<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L375">index.d.ts:375</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L529">index.d.ts:529</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getlayerbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>Layer<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Layer<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#getlayerbyid">getLayerById</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L415">index.d.ts:415</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -573,7 +724,7 @@ m.changed.should.have.been.calledOnce;
 									<h5>id: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a>
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">undefined</span>
 							</h4>
@@ -581,16 +732,78 @@ m.changed.should.have.been.calledOnce;
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="loadgeojson" class="tsd-anchor"></a>
-					<h3>load<wbr>Geo<wbr>Json</h3>
+					<a name="getname" class="tsd-anchor"></a>
+					<h3>get<wbr>Name</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">load<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L377">index.d.ts:377</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L527">index.d.ts:527</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getprojection" class="tsd-anchor"></a>
+					<h3>get<wbr>Projection</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Projection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_index_d_.rv.projection.html" class="tsd-signature-type">Projection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L535">index.d.ts:535</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Derived from the layer projections that compose this basemap. You cannot set a projection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_index_d_.rv.projection.html" class="tsd-signature-type">Projection</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isactive" class="tsd-anchor"></a>
+					<h3>is<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L532">index.d.ts:532</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if this basemap is currently shown on the map.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="loadgeojson" class="tsd-anchor"></a>
+					<h3>load<wbr>Geo<wbr>Json</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">load<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#loadgeojson">loadGeoJson</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L417">index.d.ts:417</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -608,14 +821,14 @@ m.changed.should.have.been.calledOnce;
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>layers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>data: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></h5>
+															<h5>layers: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">&gt;</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -640,7 +853,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#notify">notify</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L286">index.d.ts:286</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L229">index.d.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -658,17 +871,18 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="remove" class="tsd-anchor"></a>
 					<h3>remove</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>layer<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#remove">remove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L379">index.d.ts:379</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L419">index.d.ts:419</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,7 +893,7 @@ m.changed.should.have.been.calledOnce;
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>layer: <a href="_index_d_.rv.data.layer.html" class="tsd-signature-type">Layer</a></h5>
+									<h5>layer: <a href="_index_d_.rv.layer-1.html" class="tsd-signature-type">Layer</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -697,7 +911,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L274">index.d.ts:274</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L217">index.d.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -718,6 +932,75 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setactive" class="tsd-anchor"></a>
+					<h3>set<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Active<span class="tsd-signature-symbol">(</span>active<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L533">index.d.ts:533</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>active: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setdescription" class="tsd-anchor"></a>
+					<h3>set<wbr>Description</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Description<span class="tsd-signature-symbol">(</span>desc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L530">index.d.ts:530</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>desc: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setname" class="tsd-anchor"></a>
+					<h3>set<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L528">index.d.ts:528</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setvalues" class="tsd-anchor"></a>
 					<h3>set<wbr>Values</h3>
@@ -729,7 +1012,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#setvalues">setValues</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L288">index.d.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L231">index.d.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -747,17 +1030,18 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="togeojson" class="tsd-anchor"></a>
 					<h3>to<wbr>Geo<wbr>Json</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">to<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_index_d_.rv.layer.layergroup.html">LayerGroup</a>.<a href="_index_d_.rv.layer.layergroup.html#togeojson">toGeoJson</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L381">index.d.ts:381</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L421">index.d.ts:421</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -804,7 +1088,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#unbind">unbind</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L292">index.d.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L235">index.d.ts:235</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -833,7 +1117,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#unbindall">unbindAll</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/e2e6b6c/api/index.d.ts#L294">index.d.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L237">index.d.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -860,98 +1144,125 @@ m.changed.should.have.been.calledOnce;
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.dataregistry.html" class="tsd-kind-icon">Data<wbr>Registry</a>
+						<a href="_index_d_.rv.ui.basemap.html" class="tsd-kind-icon">Basemap</a>
 						<ul>
-							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#addlayer" class="tsd-kind-icon">addlayer</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_index_d_.rv.ui.basemap.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#click" class="tsd-kind-icon">click</a>
+								<a href="_index_d_.rv.ui.basemap.html#active_changed" class="tsd-kind-icon">active_<wbr>changed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#addlayer" class="tsd-kind-icon">addlayer</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#click" class="tsd-kind-icon">click</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#removelayer" class="tsd-kind-icon">removelayer</a>
+								<a href="_index_d_.rv.ui.basemap.html#description_changed" class="tsd-kind-icon">description_<wbr>changed</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#removeproperty" class="tsd-kind-icon">removeproperty</a>
+								<a href="_index_d_.rv.ui.basemap.html#name_changed" class="tsd-kind-icon">name_<wbr>changed</a>
 							</li>
-							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#setgeometry" class="tsd-kind-icon">setgeometry</a>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#removelayer" class="tsd-kind-icon">removelayer</a>
 							</li>
-							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#setproperty" class="tsd-kind-icon">setproperty</a>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#removeproperty" class="tsd-kind-icon">removeproperty</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#setgeometry" class="tsd-kind-icon">setgeometry</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#setproperty" class="tsd-kind-icon">setproperty</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#add" class="tsd-kind-icon">add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#addgeojson" class="tsd-kind-icon">add<wbr>Geo<wbr>Json</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#bindto" class="tsd-kind-icon">bind<wbr>To</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#changed" class="tsd-kind-icon">changed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#contains" class="tsd-kind-icon">contains</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#add" class="tsd-kind-icon">add</a>
+								<a href="_index_d_.rv.ui.basemap.html#getdescription" class="tsd-kind-icon">get<wbr>Description</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#getlayerbyid" class="tsd-kind-icon">get<wbr>Layer<wbr>ById</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#addgeojson" class="tsd-kind-icon">add<wbr>Geo<wbr>Json</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#bindto" class="tsd-kind-icon">bind<wbr>To</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#changed" class="tsd-kind-icon">changed</a>
+								<a href="_index_d_.rv.ui.basemap.html#getname" class="tsd-kind-icon">get<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#contains" class="tsd-kind-icon">contains</a>
+								<a href="_index_d_.rv.ui.basemap.html#getprojection" class="tsd-kind-icon">get<wbr>Projection</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+								<a href="_index_d_.rv.ui.basemap.html#isactive" class="tsd-kind-icon">is<wbr>Active</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#get" class="tsd-kind-icon">get</a>
+								<a href="_index_d_.rv.ui.basemap.html#loadgeojson" class="tsd-kind-icon">load<wbr>Geo<wbr>Json</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#notify" class="tsd-kind-icon">notify</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#remove" class="tsd-kind-icon">remove</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_index_d_.rv.ui.basemap.html#set" class="tsd-kind-icon">set</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#getlayerbyid" class="tsd-kind-icon">get<wbr>Layer<wbr>ById</a>
+								<a href="_index_d_.rv.ui.basemap.html#setactive" class="tsd-kind-icon">set<wbr>Active</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#loadgeojson" class="tsd-kind-icon">load<wbr>Geo<wbr>Json</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#notify" class="tsd-kind-icon">notify</a>
+								<a href="_index_d_.rv.ui.basemap.html#setdescription" class="tsd-kind-icon">set<wbr>Description</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#remove" class="tsd-kind-icon">remove</a>
+								<a href="_index_d_.rv.ui.basemap.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#set" class="tsd-kind-icon">set</a>
+								<a href="_index_d_.rv.ui.basemap.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.data.dataregistry.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a>
+								<a href="_index_d_.rv.ui.basemap.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#unbind" class="tsd-kind-icon">unbind</a>
+								<a href="_index_d_.rv.ui.basemap.html#unbind" class="tsd-kind-icon">unbind</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.data.dataregistry.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a>
+								<a href="_index_d_.rv.ui.basemap.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.geometry.html" class="tsd-kind-icon">Geometry</a>
+						<a href="_index_d_.rv.ui.legendentry.html" class="tsd-kind-icon">Legend<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.layer.html" class="tsd-kind-icon">Layer</a>
+						<a href="_index_d_.rv.ui.panel.html" class="tsd-kind-icon">Panel</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.linestring.html" class="tsd-kind-icon">Line<wbr>String</a>
+						<a href="_index_d_.rv.ui.panelregistry.html" class="tsd-kind-icon">Panel<wbr>Registry</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.multilinestring.html" class="tsd-kind-icon">Multi<wbr>Line<wbr>String</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.multipoint.html" class="tsd-kind-icon">Multi<wbr>Point</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.data.point.html" class="tsd-kind-icon">Point</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_index_d_.rv.ui.anchorpoints.html" class="tsd-kind-icon">anchor<wbr>Points</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Projection | r2v2</title>
+	<title>anchorPoints | r2v2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,21 +60,31 @@
 					<a href="../modules/_index_d_.rv.html">RV</a>
 				</li>
 				<li>
-					<a href="_index_d_.rv.projection.html">Projection</a>
+					<a href="../modules/_index_d_.rv.ui.html">UI</a>
+				</li>
+				<li>
+					<a href="_index_d_.rv.ui.anchorpoints.html">anchorPoints</a>
 				</li>
 			</ul>
-			<h1>Interface Projection</h1>
+			<h1>Interface anchorPoints</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Dom nodes for places of interest around the viewer for easier selector location.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Projection</span>
+						<span class="target">anchorPoints</span>
 					</li>
 				</ul>
 			</section>
@@ -83,78 +93,111 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#fromlatlngtopoint" class="tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#frompointtolatlng" class="tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.ui.anchorpoints.html#basemap" class="tsd-kind-icon">BASEMAP</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.ui.anchorpoints.html#legend" class="tsd-kind-icon">LEGEND</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.ui.anchorpoints.html#legend_bar" class="tsd-kind-icon">LEGEND_<wbr>BAR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.ui.anchorpoints.html#map_controls" class="tsd-kind-icon">MAP_<wbr>CONTROLS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.ui.anchorpoints.html#side_menu" class="tsd-kind-icon">SIDE_<wbr>MENU</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="fromlatlngtopoint" class="tsd-anchor"></a>
-					<h3>from<wbr>Lat<wbr>Lng<wbr>ToPoint</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint<span class="tsd-signature-symbol">(</span>latLng<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a>, point<span class="tsd-signature-symbol">?: </span><a href="../classes/_index_d_.rv.point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L157">index.d.ts:157</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Translates from the LatLng cylinder to the Point plane. This interface specifies a function which implements translation from given LatLng values to world coordinates on the map projection. The Maps API calls this method when it needs to plot locations on screen. Projection objects must implement this method.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>latLng: <a href="../classes/_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> point: <a href="../classes/_index_d_.rv.point.html" class="tsd-signature-type">Point</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="basemap" class="tsd-anchor"></a>
+					<h3>BASEMAP</h3>
+					<div class="tsd-signature tsd-kind-icon">BASEMAP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L568">index.d.ts:568</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Basemap - top right</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="frompointtolatlng" class="tsd-anchor"></a>
-					<h3>from<wbr>Point<wbr>ToLat<wbr>Lng</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng<span class="tsd-signature-symbol">(</span>pixel<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.point.html" class="tsd-signature-type">Point</a>, nowrap<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L159">index.d.ts:159</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This interface specifies a function which implements translation from world coordinates on a map projection to LatLng values. The Maps API calls this method when it needs to translate actions on screen to positions on the map. Projection objects must implement this method.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pixel: <a href="../classes/_index_d_.rv.point.html" class="tsd-signature-type">Point</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nowrap: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="legend" class="tsd-anchor"></a>
+					<h3>LEGEND</h3>
+					<div class="tsd-signature tsd-kind-icon">LEGEND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L572">index.d.ts:572</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Main legend section containing legend items</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="legend_bar" class="tsd-anchor"></a>
+					<h3>LEGEND_<wbr>BAR</h3>
+					<div class="tsd-signature tsd-kind-icon">LEGEND_<wbr>BAR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L570">index.d.ts:570</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Legend action bar containing import, show/hide all, and toggle open/closed</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="map_controls" class="tsd-anchor"></a>
+					<h3>MAP_<wbr>CONTROLS</h3>
+					<div class="tsd-signature tsd-kind-icon">MAP_<wbr>CONTROLS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L566">index.d.ts:566</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Map navigation controls found at bottom right.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="side_menu" class="tsd-anchor"></a>
+					<h3>SIDE_<wbr>MENU</h3>
+					<div class="tsd-signature tsd-kind-icon">SIDE_<wbr>MENU<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/20ec5e0/api/index.d.ts#L559">index.d.ts:559</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The side menu slide out panel</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>FOOTER<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>GROUPS<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.mvcarray.html" class="tsd-signature-type">MVCArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>TITLE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>TITLE_<wbr>IMAGE<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -169,54 +212,36 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.accessor.html" class="tsd-kind-icon">Accessor</a>
+						<a href="../classes/_index_d_.rv.ui.basemap.html" class="tsd-kind-icon">Basemap</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.geometry.html" class="tsd-kind-icon">Geometry</a>
+						<a href="../classes/_index_d_.rv.ui.legendentry.html" class="tsd-kind-icon">Legend<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
+						<a href="../classes/_index_d_.rv.ui.panel.html" class="tsd-kind-icon">Panel</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.layer-1.html" class="tsd-kind-icon">Layer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/_index_d_.rv.mvcarray.html" class="tsd-kind-icon">MVCArray</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.mvcobject.html" class="tsd-kind-icon">MVCObject</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.map.html" class="tsd-kind-icon">Map</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.point.html" class="tsd-kind-icon">Point</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.mapoptions.html" class="tsd-kind-icon">Map<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.mapseventlistener.html" class="tsd-kind-icon">Maps<wbr>Event<wbr>Listener</a>
+						<a href="../classes/_index_d_.rv.ui.panelregistry.html" class="tsd-kind-icon">Panel<wbr>Registry</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
+						<a href="_index_d_.rv.ui.anchorpoints.html" class="tsd-kind-icon">anchor<wbr>Points</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_index_d_.rv.projection.html#fromlatlngtopoint" class="tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_index_d_.rv.ui.anchorpoints.html#basemap" class="tsd-kind-icon">BASEMAP</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_index_d_.rv.projection.html#frompointtolatlng" class="tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_index_d_.rv.ui.anchorpoints.html#legend" class="tsd-kind-icon">LEGEND</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_index_d_.rv.ui.anchorpoints.html#legend_bar" class="tsd-kind-icon">LEGEND_<wbr>BAR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_index_d_.rv.ui.anchorpoints.html#map_controls" class="tsd-kind-icon">MAP_<wbr>CONTROLS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_index_d_.rv.ui.anchorpoints.html#side_menu" class="tsd-kind-icon">SIDE_<wbr>MENU</a>
 							</li>
 						</ul>
 					</li>
