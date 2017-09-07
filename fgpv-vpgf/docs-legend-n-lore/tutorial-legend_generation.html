@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Getting Started - Documentation</title>
+    <title>Legend Generation - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@ TODO: eschew events; needed here since it's very hard to communicate with main t
 
 <div id="main">
     
-    <h1 class="page-title">Getting Started</h1>
+    <h1 class="page-title">Legend Generation</h1>
     
 
     <section>
@@ -40,67 +40,104 @@ TODO: eschew events; needed here since it's very hard to communicate with main t
 </header>
 
 <article>
-    <p>This section will help you run a local version of the viewer; useful for contributing to this project!</p>
-<h2>Tools we use</h2><p>Below is a list of the software you'll need to download and install before continuing:</p>
+    <h2>Legend Generation (LegendService)</h2><p>The LegendService is responsible for converting the entries, entryGroups, and other items from the legend section of the config into appropriate LegendBlocks which will then be rendered in UI. The concept is simple - take an legend entry from the config, create a LegendBlock, and link it to the corresponding LayerRecord, and yet the <code>legend.service.js</code> file is currently 800 lines long.</p>
+<h3>constructLegend</h3><p>This function is invoked only once per every config load and will generate initial legend based on the config data. All additional layers need to be added to the legend separately, one by one. <code>constructLegend</code> function takes in an array of legend blocks and an array of layer definitions. Each layer definition is converted into a layer blueprint for future references by the legend blocks. It's possible for a single layer record to be referenced in several layer blocks, and for some layer records not to be used at all. Layer blueprints are just that, dormant layer record templates which are only instantiated when a corresponding reference is found in a legend block.</p>
+<p>Next, the legend tree is processed. Group, Info, and Set legend blocks are very straightforward to create - they are static and not directly connected to the layer record. Groups and Sets are containers for other blocks, while Info blocks are just hold some text or image data.</p>
+<p>An additional mapping is created which holds an array of references to the legendBlock and the corresponding blockConfig objects that belong to a particular layerRecord in the form of <code>{ &lt;layerRecordId&gt;: [ { legendBlockId: &lt;String&gt;, blockConfigId: &lt;String&gt; }, ... ] }</code>.</p>
+<p>This is used when reloading or removing legend blocks. Since the user can issue to reload or remove a single legend block, and several legend blocks can potentially reference a single layer, all legend blocks connected to that layer need to be re-created. This mapping makes it easier to track such cases.</p>
+<p>When creating a Legend Node block (<code>_makeLegendBlock</code>), first the appropriate blueprints are found - there must be a single main blueprint and zero or more controlled blueprints (<code>controlledIds</code> option from the config). Then, legend block is mapped to the entry type:</p>
 <ul>
-<li>A source code editor. We use <a href="https://code.visualstudio.com/">Visual Studio Code</a>, but feel free to use one you're most comfortable with.</li>
-<li><p><a href="https://git-scm.com/downloads">Git</a></p>
-<blockquote>
-<p>A version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people.</p>
-</blockquote>
-</li>
-<li><p><a href="https://nodejs.org/en/">Node.js</a></p>
-<blockquote>
-<p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
-</blockquote>
-</li>
-</ul>
-<h2>Github and Fork</h2><p>Now that you've got all the required software installed, you'll want to make an account on github.com (if you haven't already done so). Once signed in, fork this project so you have your own copy.</p>
-<h2>Setting up the environment</h2><p>Next we'll install some node.js packages, clone your forked copy of this project, and get it ready to be run locally on your machine.</p>
-<ol>
-<li>First, open git bash, or a command terminal where git is installed</li>
-<li>Change your current working directory to one where you'd like to store this project</li>
-<li>Run the following commands:<ul>
-<li><code>git clone git@github.com:(YOUR GITHUB USERNAME)/fgpv-vpgf.git</code></li>
-<li><code>git remote add upstream https://github.com/fgpv-vpgf/fgpv-vpgf.git</code></li>
-<li><code>git fetch --all</code></li>
-<li><code>git checkout develop</code></li>
-<li><code>npm install</code></li>
+<li>all single entries except for entries whose main blueprint is of <code>esriDynamic</code> type are rendered as <code>LegendNode</code>s<ul>
+<li><code>ogcWMS</code> are rendered as <code>LegendNode</code>s for now</li>
 </ul>
 </li>
-</ol>
-<h2>Running a local copy</h2><p>Using the command <code>npm run serve</code>, you can now open your preferred browser and navigate to <code>http://localhost:6001/samples/index-mobile.html</code>. You should see the viewer loading on your screen.</p>
-<p>Take a moment to browse the <code>http://localhost:6001/samples/</code> folder. There are a few different pages you can load and test. <code>index-fgp-en.html</code> is an embedded map with no layers by default. Also look at the <code>.json</code> config files to start understanding the various options available for customizing the map.</p>
-<h2>Useful Commands</h2><table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>npm run build</code></td>
-<td>Creates local build folder</td>
-</tr>
-<tr>
-<td><code>npm run build -- --env.prod</code></td>
-<td>Creates local build folder in production mode, including a zipped dist folder</td>
-</tr>
-<tr>
-<td><code>npm run serve</code></td>
-<td>Runs a local server</td>
-</tr>
-<tr>
-<td><code>npm run serve -- --env.prod</code></td>
-<td>Runs a local server in production mode</td>
-</tr>
-<tr>
-<td><code>npm run protractor</code></td>
-<td>Runs protractor tests</td>
-</tr>
-</tbody>
-</table>
+<li>all single entries whose main blueprint is of <code>esriDynamic</code> type are rendered as <code>LegendGroup</code>s</li>
+<li>all child entries of a entry referencing an <code>EsriDynamic</code> layer, are rendered according to that layer's structure, after the layer has been loaded - this cannot be determined upfront</li>
+</ul>
+<h4>_makeNodeBlock</h4><p>First, a referenced layer record for this block is retrieved from the <code>layerRegistry</code> - the record might already exist or not (if not, it's created and loaded), and its proxy object extracted. This happens in <code>_getLegendBlockProxy</code>.</p>
+<blockquote>
+<p>Note: a layer proxy object is a geoApi wrapper around ESRI layer objects, adding a layer of abstraction between the client code and ESRI API.</p>
+</blockquote>
+<p>This proxy object is then wrapped in a <code>ProxyWrapper</code> together with the corresponding layer config snippet. This is required since layer config might have settings specified that are not available through the layer proxy. Also, initial opacity, visibility, and query states are set on the proxy objects here using the values from the layer config. As the properties being changed by the user, the layer config is being updated along with the proxy object. This is useful when the layer needs to be reloaded - it automatically keeps all the latest settings are they are ultimately stored in the layer blueprint.</p>
+<p>Next, the actual <code>LegendNode</code> object is created and an appropriate <code>legendMappings</code> is made. A on-load listener is set on the corresponding layer record which will apply initial settings specified in the config to the layer proxy object (<code>LegendNode.applyInitialStateSettings</code>). This is needed to apply state settings that are not set in geoApi (dynamic layers, for example, start up as fully invisible to prevent flicker on initial load).</p>
+<p>The controlled blueprints are processed next. A flat list of controlled blueprints is converted into a flat list of <code>ProxyWrapper</code>s using <code>_getControlledLegendBlockProxy</code>. Each controlled proxy wrapper is added to the <code>LegendBlock</code> and its settings are synchronized with the main layer record (<code>LegendNode.addControlledProxyWrapper</code> and <code>LegendNode.synchronizeControlledProxyWrappers</code>). Only <code>opacity</code> and <code>visibility</code> properties are synchronized between the main and controlled blueprints. It's one way synchronization - changes made on the legend block (and its main layer record) are forced on controlled layer records.</p>
+<p>It's possible to prevent this by disabling <code>visibility</code> or <code>opacity</code> controls on the controlled layer records:</p>
+<pre class="prettyprint source lang-json"><code>&quot;legend&quot;: {
+    &quot;type&quot;: &quot;structured&quot;,
+    &quot;root&quot;: {
+       &quot;name&quot;: &quot;root&quot;,
+        &quot;children&quot;: [
+            {
+                &quot;layerId&quot;: &quot;powerplant100mw-electric&quot;,
+                &quot;controlledIds&quot;: [
+                    &quot;powerplant100mw-naturalGas&quot;
+                ]
+            }
+        ]
+    }
+}</code></pre><pre class="prettyprint source lang-json"><code>&quot;layers&quot;: [
+    {
+        &quot;id&quot;: &quot;powerplant100mw-electric&quot;,
+        &quot;name&quot;: &quot;Some Custom Name&quot;,
+        &quot;layerType&quot;: &quot;esriFeature&quot;,
+        &quot;url&quot;: &quot;www...&quot;
+    },
+    {
+        &quot;id&quot;: &quot;powerplant100mw-naturalGas&quot;,
+        &quot;name&quot;: &quot;Natural Gas Pipeline&quot;,
+        &quot;layerType&quot;: &quot;esriFeature&quot;,
+        &quot;disabledControls&quot;: [&quot;opacity&quot;, &quot;visibility&quot;],
+        &quot;url&quot;: &quot;www...&quot;
+    }
+]</code></pre><p>In this case, the controlled <code>powerplant100mw-naturalGas</code> layer will always be visible on the map, even if its master <code>powerplant100mw-electric</code> is turned off.</p>
+<h4>_makeDynamicGroupBlock</h4><p>This is most convoluted one. Dynamic entries are rendered as a group (unless they are single entry collapsed), with children, some of which can also be groups, depending on the layer structure, which is unknown until the layer is loaded.</p>
+<p>First, we get the <code>ProxyWrapper</code> for the Dynamic layer itself and construct a new <code>LegendGroup</code> config for it. A new group config is needed since an <code>entry</code> is turned into a <code>group</code> and groups have some different controls and settings. With the new config and the <code>ProxyWrapper</code> the <code>LegendGroup</code> block is created and mapped to its layer. Then a on-load listener is set which will run <code>_createDynamicChildTree</code> to create a tree since now we know the layer structure. The tree is parsed and all its children are added to the <code>LegendGroup</code> block created in the beginning (<code>_addChildBlock</code>). The settings of leaves are synchronized (<code>LegendNode.applyInitialStateSettings</code>).</p>
+<p>The controlled layers are processed in a similar fashion to controlled layers on a <code>LegendNode</code> with huge difference - controlled <code>ProxyWrapper</code>s are actually turned into normal legend blocks which are added to the group as usual. These blocks are marked as <code>controlled</code> which precludes them from being rendered.</p>
+<h4>_getControlledLegendBlockProxy</h4><p>This function is used by all layer types to create a flat list of controlled <code>ProxyWrapper</code>s. First, controlled wrappers get their <code>boundingBox</code> and <code>query</code> settings and states disabled. If the controlled layer is not a Dynamic one: layer record is retrieved, its proxy object is obtained, wrapped and returned. Easy.</p>
+<p>If the controlled layer is a Dynamic layer, its structure is unknown until it loads. When it does load, its child tree is created (<code>_createDynamicChildTree</code>), and their <code>ProxyWrapper</code>s are extracted as a flat list (their hierarchy is irrelevant since they will never be rendered in UI, so we are content with a flat list).</p>
+<h4>_createDynamicChildTree</h4><p>This function parses the child tree returned by the service, and creates a config for each child using options specified in the config (if any), child defaults, group defaults, and their parent defaults (see <code>ConfigObject.applyLayerNodeDefaults</code> for details on how defaults are applied in this case).</p>
+<p>Let's say we have this legend and layer definitions from the config file:</p>
+<pre class="prettyprint source lang-json"><code>&quot;legend&quot;: {
+    &quot;type&quot;: &quot;structured&quot;,
+    &quot;root&quot;: {
+       &quot;name&quot;: &quot;root&quot;,
+        &quot;children&quot;: [
+            {
+                &quot;layerId&quot;: &quot;one&quot;,
+            }
+        ]
+    }
+}</code></pre><pre class="prettyprint source lang-json"><code>&quot;layers&quot;: [
+    {
+        &quot;id&quot;: &quot;one&quot;,
+        &quot;name&quot;: &quot;Dynamic Layer&quot;,
+        &quot;layerType&quot;: &quot;esriDynamic&quot;,
+        &quot;url&quot;: &quot;www...&quot;,
+        &quot;layerEntries&quot;: [{&quot;index&quot;: 1}]
+    }
+]</code></pre><p>The service returns the following child tree:</p>
+<pre class="prettyprint source lang-json"><code>[
+    {
+        &quot;entryIndex&quot;:1,
+        &quot;name&quot;:&quot;Group2&quot;,
+        &quot;childs&quot;:[
+            { &quot;entryIndex&quot;:2 }
+        ]
+    }
+]</code></pre><p>And we end up with the following legend blocks:</p>
+<pre class="prettyprint source lang-json"><code>LegendGroup: &quot;Dynamic Layer&quot;
+    LegendGroup: &quot;Group2&quot;
+        LegendNode: &quot;prox_point_l2&quot;</code></pre><p>When all of these additional block configs are created, they are stored in the original layer config source and the layer itself is considered <code>resolved</code>. The next time this layer is reloaded or restored from a bookmark, its config is complete and there is no need to apply defaults (if defaults are applied, they will mess up stored state).</p>
+<h3>importLayerBlueprint</h3><p>Adding a new layer blueprint is simple - generate an entry config (importing a layer blueprint works as autogenerated legend), make a legend block and add it to the existing legend blocks. For the last step, you need to find an appropriate place to insert the newcomer: in <code>autogenerate</code> legend, the new layer is added at the top of its respective group (Feature layers or everything else); in <code>structured</code> legend, the new layer is added to the position provided to <code>importLayerBlueprint</code> or at the bottom of the legend.</p>
+<p>It's added to <code>legendMappings</code> and the new block config is added to the legend config (always to the root group), so it will be preserved when map is rebuilt.</p>
+<h3>reloadBoundLegendBlocks</h3><p>A trick in reloading a legend block is to find all the legend blocks connected to the underlying layer record and update all of them. Getting a layerRecordId, regenerate the layer record (<code>layerRegistry.regenerateLayerRecord</code>), go through <code>legendMappings</code> and find all the legend blocks involved. Reload all the layers which are controlled by these legend block in a recursive call to <code>reloadBoundLegendBlocks</code>. After this is done, create a new <code>LegendNode</code> and replace the old one. Don't forget to remove any leftover bounding boxes, as they are separate entities from the legend blocks.</p>
+<h3>removeLegendBlock</h3><p>Removing a legend block involves pulling out the block from the legend, and turning off visibility on the corresponding layer record. <code>removeLegendBlock</code> returns two functions - to remove completely and restore the legend block. The caller function must decide what to do.</p>
+<p>Removing completely means calling <code>layerRegistry.removeLayerRecord</code> to kill the layer record and remove the leftover bounding boxes (the actual legend block is already removed from the legend).</p>
+<p>Restoring adds the legend block back to its place and restored cached visibility values (in cases of dynamic layers, there can be more than one).</p>
+<blockquote>
+<p>Note: since removing legend blocks is only allowed for user-added layers and autogenerated legends, it's safe to assume there is only one legend block per layer record.</p>
+</blockquote>
+<h2>Notes</h2><p>Config samples use <strong>2.1</strong> version of the schema.</p>
 </article>
 
 </section>
