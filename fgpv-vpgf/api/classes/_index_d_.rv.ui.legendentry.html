@@ -86,14 +86,51 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getmembers" class="tsd-kind-icon">get<wbr>Members</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getnode" class="tsd-kind-icon">get<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#settitle" class="tsd-kind-icon">set<wbr>Title</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Legend<wbr>Entry<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L803">index.d.ts:803</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> title: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -108,7 +145,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/4792b71/api/index.d.ts#L675">index.d.ts:675</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L809">index.d.ts:809</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -127,6 +164,64 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L815">index.d.ts:815</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the legendEntry with the specified id only if this or a member of this legendEntry has the id set.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">undefined</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmembers" class="tsd-anchor"></a>
+					<h3>get<wbr>Members</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Members<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L813">index.d.ts:813</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns any descendents of this legend entry</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">Node</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getnode" class="tsd-anchor"></a>
 					<h3>get<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -136,7 +231,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/4792b71/api/index.d.ts#L677">index.d.ts:677</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L811">index.d.ts:811</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -158,7 +253,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/4792b71/api/index.d.ts#L673">index.d.ts:673</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/29826f9/api/index.d.ts#L807">index.d.ts:807</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -196,8 +291,17 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="_index_d_.rv.ui.legendentry.html" class="tsd-kind-icon">Legend<wbr>Entry</a>
 						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_index_d_.rv.ui.legendentry.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_index_d_.rv.ui.legendentry.html#add" class="tsd-kind-icon">add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.ui.legendentry.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.ui.legendentry.html#getmembers" class="tsd-kind-icon">get<wbr>Members</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_index_d_.rv.ui.legendentry.html#getnode" class="tsd-kind-icon">get<wbr>Node</a>
