@@ -70,7 +70,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<h4 id="introduction">Introduction</h4>
+						<h3 id="introduction">Introduction</h3>
 					</div>
 					<p>The API is available through the global <code>RV</code> namespace, after the <code>rv-main.js</code> file is added to the host page.</p>
 					<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -160,11 +160,57 @@ mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
 					<pre><code class="lang-js">$(mapInstance.ui.anchors.MAP_CONTROLS).append(<span class="hljs-string">'&lt;div&gt;my control&lt;/div&gt;'</span>);
 </code></pre>
 					<p><br></p>
-					<h4 id="event-based-with-mvcobject-mvcarray">Event based with MVCObject &amp; MVCArray</h4>
+					<h3 id="event-based-with-mvcobject-mvcarray">Event based with MVCObject &amp; MVCArray</h3>
 					<p>Both API users and our backend API implementation will rely on events to signal changes. When a user changes certain properties in the API
 					an event is triggered in the core viewer. Likewise, any backend API changes trigger events which API users can listen to.</p>
 					<p>Available events are documented throughout this API.</p>
 					<p><code>MVCObject</code> &amp; <code>MVCArray</code> are custom implementations based off similar Google MVC object designs.</p>
+					<hr>
+					<h3 id="to-be-determined">To be determined</h3>
+					<h4 id="layers">Layers</h4>
+					<p>We are currently very integrated with ESRI, both in geoApi and the viewer. The question becomes whether we want geoApi to be changeable/replaceable or if geoApi and the viewer will strictly define the layers and services that are supported.</p>
+					<p>Strict definition is fine and is the easiest way forward, but:</p>
+					<ul>
+						<li>It will be much more difficult to change direction down the road to allow geoApi to be swappable without breaking everything (core, and third party extensions).</li>
+					</ul>
+					<p>Allowing geoApi to be swappable is nice in theory, but a lot of work and:</p>
+					<ul>
+						<li>how would a custom geoApi implementation be handled by the API?</li>
+						<li>how to handle extensions that might break when custom geoApi is implemented?</li>
+					</ul>
+					<p>James&#39; <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/issues/2346#issuecomment-328196761">three potential paths forward</a>:</p>
+					<ul>
+						<li>Our API exposes currently supported layer classes instead of generic layer class. This approach puts the complexity of layer differences on the API user / plugin implementer.</li>
+						<li>Our API layer takes generic layer requests, inspects the internal layers, and figures out how to translate the generic request to supported layer types. This approach gives us some generic-ness and lets us bypass another large refactor on the viewer/geoApi. API would have to react if mismatches happen (e.g. attempt to open grid on a tile layer).</li>
+						<li>We totally abstract Mapping APIs from the viewer. This goes whole-hog for &quot;geoApi determines mapping API, viewer should work with any geoApi as long as it implements the correct interface&quot;. Probably the most amount of work, and would give the most amount of flexibility. Discussion point would be something like &quot;if we build that level of flexibility, how much would it be used? would the effort pay off in realized value?&quot;</li>
+					</ul>
+					<h4 id="extension-bundling">Extension bundling</h4>
+					<p>Mike proposes we <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/issues/2346#issuecomment-328170836">align core extensions</a> to avoid dependency bloat.
+						Core extensions would require a <code>core.extensions.js</code> type file created by webpack which contains all core extension dependencies, including
+					dependencies that may not be required by the subsequently included core extensions themselves.</p>
+					<p>For example, suppose we have the following three core extensions and their dependencies in ():</p>
+					<ul>
+						<li>Datatables (jQuery, datatable lib)</li>
+						<li>Identify (jQuery)</li>
+						<li>Full state Restore (Google API)</li>
+					</ul>
+					<p>Then <code>core.extensions.js</code> would contain <code>jQuery</code>, <code>datatable lib</code>, and <code>Google API</code>. <code>core.extensions.js</code> would be required even if we only want to load the identify extension.</p>
+					<p>Third party extensions would require their own bundled dependencies, but:</p>
+					<ul>
+						<li>Consideration to be made over providing access to some common libraries that we use for core extensions like jQuery and Angular.</li>
+						<li>Are we OK with developing our core extensions in newer versions of angular/jQuery for better performance and to reduce future development time when upgrading the main viewer code base?</li>
+					</ul>
+					<h4 id="configuration">Configuration</h4>
+					<ul>
+						<li>Should plugins have a place in the config? i.e. if you want to use <code>third.party.cat.plugin.js</code>, would we allow <code>config -&gt; plugins -&gt; catPlugin -&gt; showGarfield = true</code>? Otherwise plugins would need to be configured programmatically.</li>
+						<li>Should plugins be able to add/edit/delete sections of the loaded config and trigger a viewer reload? In this sense plugins could be built which automates some manual configuration chores.</li>
+					</ul>
+					<h4 id="implementation">Implementation</h4>
+					<ul>
+						<li>Not much dev. time allocated this year to the viewer - what&#39;s the game plan from management side?</li>
+						<li>Roll out incrementally or wait until the API is full featured.</li>
+						<li>Need to balance what makes sense now from a time perspective vs. where we want to be in a year or two. Changing API structure can break many things outside our control, best to do it right the first time and change gradually.</li>
+					</ul>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
