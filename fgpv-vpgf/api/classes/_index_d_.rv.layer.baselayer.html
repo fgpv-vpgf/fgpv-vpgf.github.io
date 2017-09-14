@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LegendEntry | r2v2</title>
+	<title>BaseLayer | r2v2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,13 +60,13 @@
 					<a href="../modules/_index_d_.rv.html">RV</a>
 				</li>
 				<li>
-					<a href="../modules/_index_d_.rv.ui.html">UI</a>
+					<a href="../modules/_index_d_.rv.layer.html">LAYER</a>
 				</li>
 				<li>
-					<a href="_index_d_.rv.ui.legendentry.html">LegendEntry</a>
+					<a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>
 				</li>
 			</ul>
-			<h1>Class LegendEntry</h1>
+			<h1>Class BaseLayer</h1>
 		</div>
 	</div>
 </header>
@@ -77,7 +77,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">LegendEntry</span>
+						<span class="target">BaseLayer</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="_index_d_.rv.layer.configlayer.html" class="tsd-signature-type">ConfigLayer</a>
+							</li>
+							<li>
+								<a href="_index_d_.rv.layer.simplelayer.html" class="tsd-signature-type">SimpleLayer</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -86,77 +94,129 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
+							<h3>Events</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#opacity_changed" class="tsd-kind-icon">opacity_<wbr>changed</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#data" class="tsd-kind-icon">data</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#add" class="tsd-kind-icon">add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getmembers" class="tsd-kind-icon">get<wbr>Members</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#getnode" class="tsd-kind-icon">get<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.ui.legendentry.html#settitle" class="tsd-kind-icon">set<wbr>Title</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#getopacity" class="tsd-kind-icon">get<wbr>Opacity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#setopacity" class="tsd-kind-icon">set<wbr>Opacity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.baselayer.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Legend<wbr>Entry<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L897">index.d.ts:897</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>id: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> title: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></h4>
-						</li>
-					</ul>
+				<h2>Events</h2>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="opacity_changed" class="tsd-anchor"></a>
+					<h3>opacity_<wbr>changed</h3>
+					<div class="tsd-signature tsd-kind-icon">opacity_<wbr>changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L609">index.d.ts:609</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This event is triggered when the opacity changes.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="_index_d_.rv.layer.layerdata.html" class="tsd-signature-type">LayerData</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L590">index.d.ts:590</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="add" class="tsd-anchor"></a>
-					<h3>add</h3>
+					<a name="getname" class="tsd-anchor"></a>
+					<h3>get<wbr>Name</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>member<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L903">index.d.ts:903</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L593">index.d.ts:593</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Adds an entry to this legend block.</p>
+									<p>Returns the name of the layer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getopacity" class="tsd-anchor"></a>
+					<h3>get<wbr>Opacity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Opacity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L597">index.d.ts:597</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the opacity of the layer on the map from 0 (hidden) to 100 (fully visible)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setname" class="tsd-anchor"></a>
+					<h3>set<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L595">index.d.ts:595</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the name of the layer. This updates the name throughout the viewer.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>member: <a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></h5>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -164,107 +224,74 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getbyid" class="tsd-anchor"></a>
-					<h3>get<wbr>ById</h3>
+					<a name="setopacity" class="tsd-anchor"></a>
+					<h3>set<wbr>Opacity</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Opacity<span class="tsd-signature-symbol">(</span>opacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L909">index.d.ts:909</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L601">index.d.ts:601</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the legendEntry with the specified id only if this or a member of this legendEntry has the id set.</p>
+									<p>Sets the opacity value.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>id: <span class="tsd-signature-type">string</span></h5>
+									<h5>opacity: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">undefined</span>
-							</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>boolean true if opacity was set successfully, false otherwise (some layers or configurations may not support this)</p>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getmembers" class="tsd-anchor"></a>
-					<h3>get<wbr>Members</h3>
+					<a name="togeojson" class="tsd-anchor"></a>
+					<h3>to<wbr>Geo<wbr>Json</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Members<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a></li>
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Geo<wbr>Json<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L907">index.d.ts:907</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L603">index.d.ts:603</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns any descendents of this legend entry</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.layer.layergroup.html" class="tsd-signature-type">LayerGroup</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">Node</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<a href="_index_d_.rv.ui.legendentry.html" class="tsd-signature-type">LegendEntry</a>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getnode" class="tsd-anchor"></a>
-					<h3>get<wbr>Node</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Node<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L905">index.d.ts:905</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the dom node containing this legend entry.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Node</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="settitle" class="tsd-anchor"></a>
-					<h3>set<wbr>Title</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Title<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L901">index.d.ts:901</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Displayed as the entry title in the legend.</p>
+									<p>Exports the layer to a GeoJSON object.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>title: <span class="tsd-signature-type">string</span></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>obj: <span class="tsd-signature-type">Object</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -283,44 +310,50 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.ui.basemap.html" class="tsd-kind-icon">Basemap</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.ui.legendentry.html" class="tsd-kind-icon">Legend<wbr>Entry</a>
+						<a href="_index_d_.rv.layer.baselayer.html" class="tsd-kind-icon">Base<wbr>Layer</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.baselayer.html#opacity_changed" class="tsd-kind-icon">opacity_<wbr>changed</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.baselayer.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#add" class="tsd-kind-icon">add</a>
+								<a href="_index_d_.rv.layer.baselayer.html#getname" class="tsd-kind-icon">get<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+								<a href="_index_d_.rv.layer.baselayer.html#getopacity" class="tsd-kind-icon">get<wbr>Opacity</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#getmembers" class="tsd-kind-icon">get<wbr>Members</a>
+								<a href="_index_d_.rv.layer.baselayer.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#getnode" class="tsd-kind-icon">get<wbr>Node</a>
+								<a href="_index_d_.rv.layer.baselayer.html#setopacity" class="tsd-kind-icon">set<wbr>Opacity</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.ui.legendentry.html#settitle" class="tsd-kind-icon">set<wbr>Title</a>
+								<a href="_index_d_.rv.layer.baselayer.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.ui.panel.html" class="tsd-kind-icon">Panel</a>
+						<a href="_index_d_.rv.layer.configlayer.html" class="tsd-kind-icon">Config<wbr>Layer</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.ui.panelregistry.html" class="tsd-kind-icon">Panel<wbr>Registry</a>
+						<a href="_index_d_.rv.layer.layerdata.html" class="tsd-kind-icon">Layer<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.layer.layergroup.html" class="tsd-kind-icon">Layer<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.layer.simplelayer.html" class="tsd-kind-icon">Simple<wbr>Layer</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.ui.anchorpoints.html" class="tsd-kind-icon">anchor<wbr>Points</a>
+						<a href="../interfaces/_index_d_.rv.layer.dataitem.html" class="tsd-kind-icon">Data<wbr>Item</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LatLng | r2v2</title>
+	<title>BaseGeometry | r2v2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,21 +60,42 @@
 					<a href="../modules/_index_d_.rv.html">RV</a>
 				</li>
 				<li>
-					<a href="_index_d_.rv.latlng.html">LatLng</a>
+					<a href="../modules/_index_d_.rv.geometry.html">GEOMETRY</a>
+				</li>
+				<li>
+					<a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>
 				</li>
 			</ul>
-			<h1>Class LatLng</h1>
+			<h1>Class BaseGeometry</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>All geometry types must derive from this class. Not intented to be instantiated on its own.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">LatLng</span>
+						<span class="target">BaseGeometry</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="_index_d_.rv.geometry.point.html" class="tsd-signature-type">Point</a>
+							</li>
+							<li>
+								<a href="_index_d_.rv.geometry.multipoint.html" class="tsd-signature-type">MultiPoint</a>
+							</li>
+							<li>
+								<a href="_index_d_.rv.geometry.multilinestring.html" class="tsd-signature-type">MultiLineString</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -85,18 +106,15 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_d_.rv.geometry.basegeometry.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#equals" class="tsd-kind-icon">equals</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#lat" class="tsd-kind-icon">lat</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#lng" class="tsd-kind-icon">lng</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#tojson" class="tsd-kind-icon">toJSON</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.latlng.html#tourlvalue" class="tsd-kind-icon">to<wbr>Url<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.geometry.basegeometry.html#foreachlatlng" class="tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.geometry.basegeometry.html#getid" class="tsd-kind-icon">get<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.geometry.basegeometry.html#gettype" class="tsd-kind-icon">get<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,30 +126,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Lat<wbr>Lng<span class="tsd-signature-symbol">(</span>lat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, lng<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Base<wbr>Geometry<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.basegeometry.html" class="tsd-signature-type">BaseGeometry</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L358">index.d.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L450">index.d.ts:450</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates a LatLng object representing a geographic point.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>lat: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>lng: <span class="tsd-signature-type">number</span></h5>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.geometry.basegeometry.html" class="tsd-signature-type">BaseGeometry</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -139,115 +149,67 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="equals" class="tsd-anchor"></a>
-					<h3>equals</h3>
+					<a name="foreachlatlng" class="tsd-anchor"></a>
+					<h3>for<wbr>Each<wbr>Lat<wbr>Lng</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L362">index.d.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L453">index.d.ts:453</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Comparison function.</p>
+									<p>Repeatedly invokes the given function, passing a point from the geometry to the function on each invocation.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>other: <a href="_index_d_.rv.latlng.html" class="tsd-signature-type">LatLng</a></h5>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>latLng<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>latLng: <a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="lat" class="tsd-anchor"></a>
-					<h3>lat</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">lat<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L364">index.d.ts:364</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the latitude in degrees.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="lng" class="tsd-anchor"></a>
-					<h3>lng</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">lng<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L366">index.d.ts:366</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the longitude in degrees.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tojson" class="tsd-anchor"></a>
-					<h3>toJSON</h3>
+					<a name="getid" class="tsd-anchor"></a>
+					<h3>get<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_index_d_.rv.latlngliteral.html" class="tsd-signature-type">LatLngLiteral</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L368">index.d.ts:368</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L457">index.d.ts:457</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Converts to JSON representation. This function is intended to be used via JSON.stringify.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_index_d_.rv.latlngliteral.html" class="tsd-signature-type">LatLngLiteral</a></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tostring" class="tsd-anchor"></a>
-					<h3>to<wbr>String</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L370">index.d.ts:370</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Converts to string representation.</p>
+									<p>Returns the geometry id.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -255,29 +217,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tourlvalue" class="tsd-anchor"></a>
-					<h3>to<wbr>Url<wbr>Value</h3>
+					<a name="gettype" class="tsd-anchor"></a>
+					<h3>get<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">to<wbr>Url<wbr>Value<span class="tsd-signature-symbol">(</span>precision<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L372">index.d.ts:372</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/204184e/api/index.d.ts#L455">index.d.ts:455</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a string of the form &quot;lat,lng&quot; for this LatLng. We round the lat/lng values to 6 decimal places by default.</p>
+									<p>Returns the type of the geometry object. Possibilities are &quot;Point&quot;, &quot;MultiPoint&quot;, &quot;LineString&quot;, or &quot;MultiLineString&quot;.</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> precision: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -294,71 +250,56 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.accessor.html" class="tsd-kind-icon">Accessor</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.geometry.html" class="tsd-kind-icon">Geometry</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
+						<a href="_index_d_.rv.geometry.basegeometry.html" class="tsd-kind-icon">Base<wbr>Geometry</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_index_d_.rv.geometry.basegeometry.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#equals" class="tsd-kind-icon">equals</a>
+								<a href="_index_d_.rv.geometry.basegeometry.html#foreachlatlng" class="tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#lat" class="tsd-kind-icon">lat</a>
+								<a href="_index_d_.rv.geometry.basegeometry.html#getid" class="tsd-kind-icon">get<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#lng" class="tsd-kind-icon">lng</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#tojson" class="tsd-kind-icon">toJSON</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_index_d_.rv.latlng.html#tourlvalue" class="tsd-kind-icon">to<wbr>Url<wbr>Value</a>
+								<a href="_index_d_.rv.geometry.basegeometry.html#gettype" class="tsd-kind-icon">get<wbr>Type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
+						<a href="_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.layer-1.html" class="tsd-kind-icon">Layer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_index_d_.rv.mvcarray.html" class="tsd-kind-icon">MVCArray</a>
+						<a href="_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.mvcobject.html" class="tsd-kind-icon">MVCObject</a>
+						<a href="_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.map.html" class="tsd-kind-icon">Map</a>
+						<a href="_index_d_.rv.geometry.layergeometry.html" class="tsd-kind-icon">Layer<wbr>Geometry</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.point.html" class="tsd-kind-icon">Point</a>
+						<a href="_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.geometry.multilinestring.html" class="tsd-kind-icon">Multi<wbr>Line<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.geometry.multipoint.html" class="tsd-kind-icon">Multi<wbr>Point</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.geometry.point.html" class="tsd-kind-icon">Point</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
+						<a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-kind-icon">Maps<wbr>Event<wbr>Listener</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
+						<a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
 					</li>
 				</ul>
 			</nav>

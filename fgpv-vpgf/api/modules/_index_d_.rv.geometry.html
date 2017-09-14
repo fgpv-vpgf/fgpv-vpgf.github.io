@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LatLngLiteral | r2v2</title>
+	<title>GEOMETRY | r2v2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,74 +54,60 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_index_d_.html">&quot;index.d&quot;</a>
+					<a href="_index_d_.html">&quot;index.d&quot;</a>
 				</li>
 				<li>
-					<a href="../modules/_index_d_.rv.html">RV</a>
+					<a href="_index_d_.rv.html">RV</a>
 				</li>
 				<li>
-					<a href="_index_d_.rv.latlngliteral.html">LatLngLiteral</a>
+					<a href="_index_d_.rv.geometry.html">GEOMETRY</a>
 				</li>
 			</ul>
-			<h1>Interface LatLngLiteral</h1>
+			<h1>Module GEOMETRY</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">LatLngLiteral</span>
-					</li>
-				</ul>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<h3 id="basegeometry">BaseGeometry</h3>
+						<p>Geometry types extend <code>BaseGeometry</code>, such as <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, and <code>MultiLineString</code>.</p>
+					</div>
+					<h3 id="layergeometry">LayerGeometry</h3>
+					<p>Makes handling various types of geometry easier on simple layers.</p>
+					<h3 id="geometry-units">Geometry units</h3>
+					<p>All geometry is calculated in latitude / longitude. In general <code>LatLngLiteral</code> and <code>LatLngBoundsLiteral</code> can be used in places where
+					<code>LatLng</code> and <code>LatLngBounds</code> are used and will be converted into their respective instance classes automatically.</p>
+				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.latlngliteral.html#lat" class="tsd-kind-icon">lat</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_index_d_.rv.latlngliteral.html#lng" class="tsd-kind-icon">lng</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.basegeometry.html" class="tsd-kind-icon">Base<wbr>Geometry</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.layergeometry.html" class="tsd-kind-icon">Layer<wbr>Geometry</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.multilinestring.html" class="tsd-kind-icon">Multi<wbr>Line<wbr>String</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.multipoint.html" class="tsd-kind-icon">Multi<wbr>Point</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.point.html" class="tsd-kind-icon">Point</a></li>
 							</ul>
 						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="lat" class="tsd-anchor"></a>
-					<h3>lat</h3>
-					<div class="tsd-signature tsd-kind-icon">lat<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L377">index.d.ts:377</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Latitude in degrees.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="lng" class="tsd-anchor"></a>
-					<h3>lng</h3>
-					<div class="tsd-signature tsd-kind-icon">lng<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/886ce57/api/index.d.ts#L379">index.d.ts:379</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Longitude in degrees.</p>
-						</div>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
@@ -137,55 +123,37 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.accessor.html" class="tsd-kind-icon">Accessor</a>
+						<a href="../classes/_index_d_.rv.geometry.basegeometry.html" class="tsd-kind-icon">Base<wbr>Geometry</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.geometry.html" class="tsd-kind-icon">Geometry</a>
+						<a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
+						<a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
+						<a href="../classes/_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.layer-1.html" class="tsd-kind-icon">Layer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/_index_d_.rv.mvcarray.html" class="tsd-kind-icon">MVCArray</a>
+						<a href="../classes/_index_d_.rv.geometry.layergeometry.html" class="tsd-kind-icon">Layer<wbr>Geometry</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.mvcobject.html" class="tsd-kind-icon">MVCObject</a>
+						<a href="../classes/_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.map.html" class="tsd-kind-icon">Map</a>
+						<a href="../classes/_index_d_.rv.geometry.multilinestring.html" class="tsd-kind-icon">Multi<wbr>Line<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.point.html" class="tsd-kind-icon">Point</a>
+						<a href="../classes/_index_d_.rv.geometry.multipoint.html" class="tsd-kind-icon">Multi<wbr>Point</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.geometry.point.html" class="tsd-kind-icon">Point</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_index_d_.rv.latlngliteral.html#lat" class="tsd-kind-icon">lat</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_index_d_.rv.latlngliteral.html#lng" class="tsd-kind-icon">lng</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.mapseventlistener.html" class="tsd-kind-icon">Maps<wbr>Event<wbr>Listener</a>
+						<a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
+						<a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
 					</li>
 				</ul>
 			</nav>
