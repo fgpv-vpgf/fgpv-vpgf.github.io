@@ -72,16 +72,27 @@
 					<div class="lead">
 						<h3 id="what-s-new">What&#39;s new</h3>
 					</div>
-					<h4 id="september-14">September 14</h4>
+					<h4 id="september-15">September 15</h4>
 					<ul>
-						<li>Added namespace <code>GEOMETRY</code> which houses, you guessed it, geometry related classes</li>
-						<li>Added <code>ConfigLayer</code> and <code>SimpleLayer</code> to <code>RV.LAYER</code> namespace (still a WIP)<ul>
-								<li><code>ConfigLayer</code> is more or less a <code>LegendNode</code> in <code>legend-block.class.js</code>. It is created via JSON layer config snippets. Geometry changes (add/remove) are not supported.</li>
-								<li><code>SimpleLayer</code> is created programmatically and allows for full geometry.</li>
-							</ul>
-						</li>
+						<li><code>RV.LAYER.LayerGroup</code> has been updated with new events and function definitions. Supports new <code>ConfigLayer</code> and <code>SimpleLayer</code> types.</li>
+						<li>Merged <code>RV.GEOMETRY.LayerGeometry</code> into <code>RV.LAYER.SimpleLayer</code>. <code>RV.LAYER.ConfigLayer</code> will not have access to geometry.</li>
+						<li>Merged <code>RV.LAYER.LayerData</code> into <code>RV.LAYER.BaseLayer</code> for easier access.</li>
+						<li><code>RV.LAYER.BaseLayer</code> now extends <code>MVCObject</code></li>
+						<li>Various documentation changes and examples added.</li>
 					</ul>
 					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="_index_d_.rv.layer.html">RV.LAYER</a> <br><br></p>
+							<h4 id="september-14">September 14</h4>
+							<ul>
+								<li>Added namespace <code>GEOMETRY</code> which houses, you guessed it, geometry related classes</li>
+								<li>Added <code>ConfigLayer</code> and <code>SimpleLayer</code> to <code>RV.LAYER</code> namespace (still a WIP)<ul>
+										<li><code>ConfigLayer</code> is more or less a <code>LegendNode</code> in <code>legend-block.class.js</code>. It is created via JSON layer config snippets. Geometry changes (add/remove) are not supported.</li>
+										<li><code>SimpleLayer</code> is created programmatically and allows for full geometry.</li>
+									</ul>
+								</li>
+							</ul>
+						</dd>
 						<dt>see</dt>
 						<dd><p><a href="_index_d_.rv.layer.html">RV.LAYER</a></p>
 						</dd>
@@ -104,9 +115,10 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
+							<p><br></p>
 							<p>We should see a map pop-up on the screen, but this won&#39;t work. The API may not be ready by the time the javascript engine reaches our
 								custom script tag. So, we initalize our code inside a function that is guaranteed to be available even if the API isn&#39;t, and is invoked
-							when the API is ready:</p>
+							when the API is ready: <br><br></p>
 							<pre><code class="lang-js"><span class="hljs-comment">// lets initialize our map</span>
 RV.onReady(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">const</span> mapInstance = <span class="hljs-keyword">new</span> RV.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myMap'</span>), <span class="hljs-string">'mapConfig.json'</span>);
@@ -114,46 +126,45 @@ RV.onReady(<span class="hljs-function"><span class="hljs-keyword">function</span
 </code></pre>
 							<p><br></p>
 							<h4 id="layergroups-layers">LayerGroups &amp; Layers</h4>
-							<p>The final design of what exactly a layer will be is yet to be determined - so there will be some magic hand waving in some places to illustrate
-							how layers in a general sense are handled.</p>
-							<p>Layers so far have:</p>
-							<pre><code>- geometry -&gt; things that are visualized on the map
-- properties -&gt; data, like those found <span class="hljs-keyword">in</span> a data table
--<span class="hljs-built_in"> settings </span>-&gt; <span class="hljs-keyword">for</span> things like opacity
-</code></pre><p>Layers will in most cases reside in a <code>LayerGroup</code> - a fancy version of an array with special properties and events to make handling many of them easier.</p>
+							<p>Layers will in most cases reside in a <code>LayerGroup</code> - a fancy version of an array with special properties and events to make handling many of them easier.</p>
 							<pre><code class="lang-js"><span class="hljs-comment">// lets create two layers with my magic wand</span>
-<span class="hljs-keyword">const</span> myLayer1 = <span class="hljs-keyword">new</span> MagicLayer();
-<span class="hljs-keyword">const</span> myLayer2 = <span class="hljs-keyword">new</span> MagicLayer();
+<span class="hljs-keyword">const</span> myLayer1 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
+<span class="hljs-keyword">const</span> myLayer2 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
 
 <span class="hljs-keyword">const</span> layerGroup1 = <span class="hljs-keyword">new</span> RV.LAYER.LayerGroup();
 layerGroup1.add(myLayer1);
 layerGroup1.add(myLayer2);
 </code></pre>
-							<p>Pretty boring so far. How about we open an external data table whenever a layer has data to show (again with a lot of magic)?</p>
-							<pre><code class="lang-js">layerGroup1.addListener(<span class="hljs-string">'properties_loaded'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layerName, properties</span>) </span>{
-    magicDatatable.open(properties);
+							<p><br>
+								Pretty boring so far. How about we open an external data table whenever a layer has data to show?
+							<br><br></p>
+							<pre><code class="lang-js">layerGroup1.addListener(<span class="hljs-string">'data_added'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer, data</span>) </span>{
+    magicDatatable.open(data);
 });
 
-myLayer2.setProperties([{<span class="hljs-attr">objectid</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'A Title'</span>}, {<span class="hljs-attr">objectid</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Another Title'</span>}]);
+myLayer2.setData([{<span class="hljs-attr">objectid</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'A Title'</span>}, {<span class="hljs-attr">objectid</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Another Title'</span>}]);
 </code></pre>
 							<p><br></p>
 							<h4 id="using-layergroups">Using layerGroups</h4>
 							<p>A <code>layerGroup</code> can define the list of available basemaps, layers on a map, or in a legend. Lets add a layer to the map and show it in the legend</p>
 							<pre><code class="lang-js"><span class="hljs-comment">// show on the map</span>
-mapInstance.layers.add(myLayer2);
+mapInstance.layers.addLayer(myLayer2);
 myLayer2.setOpacity(<span class="hljs-number">0</span>); <span class="hljs-comment">// where did it go? It's hidden!</span>
 myLayer2.setOpacity(<span class="hljs-number">70</span>); <span class="hljs-comment">// that's better</span>
 
 <span class="hljs-comment">// Its not yet in the legend, lets add it</span>
-<span class="hljs-keyword">const</span> specificLegendEntry = mapInstance.ui.legend.getById(<span class="hljs-string">'legendGroup1'</span>);
-specificLegendEntry.add(myLayer2);
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Integrate legend with new layer types</span>
+<span class="hljs-comment">//const specificLegendEntry = mapInstance.ui.legend.getById('legendGroup1');</span>
+<span class="hljs-comment">//specificLegendEntry.add(myLayer2);</span>
 
 <span class="hljs-comment">// And lets add a custom element after it, just because we can...</span>
 <span class="hljs-keyword">var</span> legendDiv = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
 $(legendDiv).html(<span class="hljs-string">'Some text...'</span>);
 specificLegendEntry.add(legendDiv);
 </code></pre>
-							<p>The process is similar with basemaps.</p>
+							<p><br>
+								The process is similar with basemaps.
+							<br><br></p>
 							<h4 id="ui-control">UI control</h4>
 							<p>We can open and close panels like:</p>
 							<pre><code class="lang-js">mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();

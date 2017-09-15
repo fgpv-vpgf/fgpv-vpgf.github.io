@@ -73,8 +73,21 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The layer namespace encapsulates the various types of layers and layer sub classes such as geometry.</p>
+						<p>There are two types of layers available, <code>ConfigLayer</code> and <code>SimpleLayer</code>.</p>
 					</div>
+					<h4 id="configlayer">ConfigLayer</h4>
+					<p>All layers specified in the viewers configuration file will be available as <code>ConfigLayer</code> instances on the map object (<code>mapInstance.layers</code>).</p>
+					<p>You can also create a <code>ConfigLayer</code> via the API by constructing it with a schema valid layer json object.</p>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="../classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a> examples <br><br></p>
+							<h4 id="simplelayer">SimpleLayer</h4>
+							<p>Must be created programatically through the API. Unlike <code>ConfigLayer</code>, <code>SimpleLayer</code> instances have API control of their geometry.</p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="../classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a> examples <br><br></p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -86,7 +99,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.baselayer.html" class="tsd-kind-icon">Base<wbr>Layer</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.configlayer.html" class="tsd-kind-icon">Config<wbr>Layer</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.layerdata.html" class="tsd-kind-icon">Layer<wbr>Data</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.layergroup.html" class="tsd-kind-icon">Layer<wbr>Group</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.simplelayer.html" class="tsd-kind-icon">Simple<wbr>Layer</a></li>
 							</ul>
@@ -116,9 +128,6 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="../classes/_index_d_.rv.layer.configlayer.html" class="tsd-kind-icon">Config<wbr>Layer</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.layer.layerdata.html" class="tsd-kind-icon">Layer<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="../classes/_index_d_.rv.layer.layergroup.html" class="tsd-kind-icon">Layer<wbr>Group</a>
