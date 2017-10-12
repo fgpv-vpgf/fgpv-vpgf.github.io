@@ -72,6 +72,13 @@
 					<div class="lead">
 						<h3 id="what-s-new">What&#39;s new</h3>
 					</div>
+					<h4 id="october-12">October 12</h4>
+					<ul>
+						<li>Expanded documentation on creating and registering extentions</li>
+						<li>Created &#39;map_added&#39; event to <code>RV</code></li>
+						<li>Added <code>addListener</code> and <code>addListenerOnce</code> to RV for extension registration`</li>
+						<li>Renamed LatLng and similar classes to XY</li>
+					</ul>
 					<h4 id="september-15">September 15</h4>
 					<ul>
 						<li><code>RV.LAYER.LayerGroup</code> has been updated with new events and function definitions. Supports new <code>ConfigLayer</code> and <code>SimpleLayer</code> types.</li>
@@ -80,119 +87,49 @@
 						<li><code>RV.LAYER.BaseLayer</code> now extends <code>MVCObject</code></li>
 						<li>Various documentation changes and examples added.</li>
 					</ul>
-					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="_index_d_.rv.layer.html">RV.LAYER</a> <br><br></p>
-							<h4 id="september-14">September 14</h4>
-							<ul>
-								<li>Added namespace <code>GEOMETRY</code> which houses, you guessed it, geometry related classes</li>
-								<li>Added <code>ConfigLayer</code> and <code>SimpleLayer</code> to <code>RV.LAYER</code> namespace (still a WIP)<ul>
-										<li><code>ConfigLayer</code> is more or less a <code>LegendNode</code> in <code>legend-block.class.js</code>. It is created via JSON layer config snippets. Geometry changes (add/remove) are not supported.</li>
-										<li><code>SimpleLayer</code> is created programmatically and allows for full geometry.</li>
-									</ul>
-								</li>
+					<h4 id="september-14">September 14</h4>
+					<ul>
+						<li>Added namespace <code>GEOMETRY</code> which houses, you guessed it, geometry related classes</li>
+						<li>Added <code>ConfigLayer</code> and <code>SimpleLayer</code> to <code>RV.LAYER</code> namespace (still a WIP)<ul>
+								<li><code>ConfigLayer</code> is more or less a <code>LegendNode</code> in <code>legend-block.class.js</code>. It is created via JSON layer config snippets. Geometry changes (add/remove) are not supported.</li>
+								<li><code>SimpleLayer</code> is created programmatically and allows for full geometry.</li>
 							</ul>
-						</dd>
+						</li>
+					</ul>
+					<dl class="tsd-comment-tags">
 						<dt>see</dt>
 						<dd><p><a href="_index_d_.rv.layer.html">RV.LAYER</a></p>
 						</dd>
 						<dt>see</dt>
 						<dd><p><a href="_index_d_.rv.geometry.html">RV.GEOMETRY</a></p>
 							<hr>
-							<h3 id="introduction">Introduction</h3>
-							<p>The API is available through the global <code>RV</code> namespace, after the <code>rv-main.js</code> file is added to the host page.</p>
-							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- load any css --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myMap"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"rv-main.js"</span> /&gt;</span><span class="handlebars"><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-        <span class="hljs-comment">// lets initialize our map</span>
-        <span class="hljs-keyword">const</span> mapInstance = <span class="hljs-keyword">new</span> RV.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myMap'</span>), <span class="hljs-string">'mapConfig.json'</span>);
-    </span></span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
-							<p><br></p>
-							<p>We should see a map pop-up on the screen, but this won&#39;t work. The API may not be ready by the time the javascript engine reaches our
-								custom script tag. So, we initalize our code inside a function that is guaranteed to be available even if the API isn&#39;t, and is invoked
-							when the API is ready: <br><br></p>
-							<pre><code class="lang-js"><span class="hljs-comment">// lets initialize our map</span>
-RV.onReady(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">const</span> mapInstance = <span class="hljs-keyword">new</span> RV.Map(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'myMap'</span>), <span class="hljs-string">'mapConfig.json'</span>);
-});
-</code></pre>
-							<p><br></p>
-							<h4 id="layergroups-layers">LayerGroups &amp; Layers</h4>
-							<p>Layers will in most cases reside in a <code>LayerGroup</code> - a fancy version of an array with special properties and events to make handling many of them easier.</p>
-							<pre><code class="lang-js"><span class="hljs-comment">// lets create two layers with my magic wand</span>
-<span class="hljs-keyword">const</span> myLayer1 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
-<span class="hljs-keyword">const</span> myLayer2 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
+							<p>This guide is intented for developers. It outlines the entire viewers API and provides examples throughout.</p>
+							<p>In all but some trival cases, you&#39;ll want to use the API in something called an <code>extention</code>. An <code>extention</code> is a file(s) where you can write custom code that uses our API. There is no right or wrong way to write an extention - choose the approach that works best for you.</p>
+							<p>We&#39;ll start by example - building an extention that allows you to toggle layer visibility through an external select box.</p>
+							<h3 id="getting-started">Getting Started</h3>
+							<p>Let&#39;s create a new file named <code>layerSelector.js</code>. We&#39;ll jump right in and write some code, inside <code>layerSelector.js</code> type:</p>
+							<pre><code class="lang-js">RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
 
-<span class="hljs-keyword">const</span> layerGroup1 = <span class="hljs-keyword">new</span> RV.LAYER.LayerGroup();
-layerGroup1.add(myLayer1);
-layerGroup1.add(myLayer2);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
+ <span class="hljs-comment">// empty for now</span>
+}
 </code></pre>
-							<p><br>
-								Pretty boring so far. How about we open an external data table whenever a layer has data to show?
-							<br><br></p>
-							<pre><code class="lang-js">layerGroup1.addListener(<span class="hljs-string">'data_added'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer, data</span>) </span>{
-    magicDatatable.open(data);
-});
-
-myLayer2.setData([{<span class="hljs-attr">objectid</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'A Title'</span>}, {<span class="hljs-attr">objectid</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Another Title'</span>}]);
+							<p>You don&#39;t want the extention code executing immediatly on load since the API may not be ready. Instead, you wait for a special event <code>map_added</code> which invokes your <code>init</code> function.</p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="../classes/_index_d_.rv.map.html">RV.Map</a> for more information on <code>mapInstance</code></p>
+							<h3 id="registering-extention-file">Registering extention file</h3>
+							<p>The relative path to the <code>layerSelector.js</code> file goes inside the <code>rv-extentions</code> property of our map element.</p>
+							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-							<p><br></p>
-							<h4 id="using-layergroups">Using layerGroups</h4>
-							<p>A <code>layerGroup</code> can define the list of available basemaps, layers on a map, or in a legend. Lets add a layer to the map and show it in the legend</p>
-							<pre><code class="lang-js"><span class="hljs-comment">// show on the map</span>
-mapInstance.layers.addLayer(myLayer2);
-myLayer2.setOpacity(<span class="hljs-number">0</span>); <span class="hljs-comment">// where did it go? It's hidden!</span>
-myLayer2.setOpacity(<span class="hljs-number">70</span>); <span class="hljs-comment">// that's better</span>
-
-<span class="hljs-comment">// Its not yet in the legend, lets add it</span>
-<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Integrate legend with new layer types</span>
-<span class="hljs-comment">//const specificLegendEntry = mapInstance.ui.legend.getById('legendGroup1');</span>
-<span class="hljs-comment">//specificLegendEntry.add(myLayer2);</span>
-
-<span class="hljs-comment">// And lets add a custom element after it, just because we can...</span>
-<span class="hljs-keyword">var</span> legendDiv = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
-$(legendDiv).html(<span class="hljs-string">'Some text...'</span>);
-specificLegendEntry.add(legendDiv);
+							<p>Additional extentions can be added, separated by commas:</p>
+							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"map1"</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js, http://www.example.com/js/anotherExtention.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-							<p><br>
-								The process is similar with basemaps.
-							<br><br></p>
-							<h4 id="ui-control">UI control</h4>
-							<p>We can open and close panels like:</p>
-							<pre><code class="lang-js">mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
+							<p>You can also skip using <code>rv-extentions</code> entirely and load the <code>layerSelector.js</code> directly after the viewers <code>rv-main.js</code> file.</p>
+							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/rv-main.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-							<p>Of course we would be opening an empty panel. Lets try this again:</p>
-							<pre><code class="lang-js">mapInstance.ui.panels.addListener(<span class="hljs-string">'opened'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">panel</span>) </span>{
-    <span class="hljs-keyword">if</span> (panel.getId() === <span class="hljs-string">'left'</span>)
-        panel.setContent(aDivNode);
-});
-
-mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
-</code></pre>
-							<p>We can also stop panels from opening or closing by listening to the <code>opening</code> and <code>closing</code> events like so:</p>
-							<pre><code class="lang-js">mapInstance.ui.panels.addListener(<span class="hljs-string">'closing'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">panel, event</span>) </span>{
-    <span class="hljs-keyword">if</span> (panel.getId() === <span class="hljs-string">'left'</span>)
-        event.stop();
-});
-</code></pre>
-							<p>Apart from that, <code>mapInstance.ui.anchors</code> provides dom nodes of common places in the viewer you may want to edit or add.
-							Adding a custom map control is easy:</p>
-							<pre><code class="lang-js">$(mapInstance.ui.anchors.MAP_CONTROLS).append(<span class="hljs-string">'&lt;div&gt;my control&lt;/div&gt;'</span>);
-</code></pre>
-							<p><br></p>
-							<h3 id="event-based-with-mvcobject-mvcarray">Event based with MVCObject &amp; MVCArray</h3>
-							<p>Both API users and our backend API implementation will rely on events to signal changes. When a user changes certain properties in the API
-							an event is triggered in the core viewer. Likewise, any backend API changes trigger events which API users can listen to.</p>
-							<p>Available events are documented throughout this API.</p>
-							<p><code>MVCObject</code> &amp; <code>MVCArray</code> are custom implementations based off similar Google MVC object designs.</p>
+							<p>If you go this route you should change the line <code>RV.addListenerOnce(&#39;map_added&#39;, init);</code> in <code>layerSelector.js</code> to <code>RV.addListener(&#39;map_added&#39;, init);</code> so that your extention is invoked for all viewer instances on the page, not just the first one.</p>
 						</dd>
 					</dl>
 				</div>
@@ -225,7 +162,98 @@ mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Events</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-module"><a href="_index_d_.rv.html#map_added" class="tsd-kind-icon">map_<wbr>added</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_index_d_.rv.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_index_d_.rv.html#addlisteneronce" class="tsd-kind-icon">add<wbr>Listener<wbr>Once</a></li>
+							</ul>
+						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Events</h2>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-module">
+					<a name="map_added" class="tsd-anchor"></a>
+					<h3>map_<wbr>added</h3>
+					<div class="tsd-signature tsd-kind-icon">map_<wbr>added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L83">index.d.ts:83</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This event is fired when a new map instance is created.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{RV.Map} mapInstance</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="addlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-signature-type">MapsEventListener</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L85">index.d.ts:85</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>handler: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-signature-type">MapsEventListener</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="addlisteneronce" class="tsd-anchor"></a>
+					<h3>add<wbr>Listener<wbr>Once</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Listener<wbr>Once<span class="tsd-signature-symbol">(</span>eventName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, handler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-signature-type">MapsEventListener</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L86">index.d.ts:86</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>eventName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>handler: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-signature-type">MapsEventListener</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -253,6 +281,15 @@ mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
+					</li>
+					<li class=" tsd-kind-event tsd-parent-kind-module">
+						<a href="_index_d_.rv.html#map_added" class="tsd-kind-icon">map_<wbr>added</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_index_d_.rv.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_index_d_.rv.html#addlisteneronce" class="tsd-kind-icon">add<wbr>Listener<wbr>Once</a>
 					</li>
 				</ul>
 			</nav>

@@ -85,8 +85,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#fromlatlngtopoint" class="tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#frompointtolatlng" class="tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#frompointtoxy" class="tsd-kind-icon">from<wbr>Point<wbr>ToXY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_index_d_.rv.projection.html#fromxytopoint" class="tsd-kind-icon">fromXYTo<wbr>Point</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,52 +95,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="fromlatlngtopoint" class="tsd-anchor"></a>
-					<h3>from<wbr>Lat<wbr>Lng<wbr>ToPoint</h3>
+					<a name="frompointtoxy" class="tsd-anchor"></a>
+					<h3>from<wbr>Point<wbr>ToXY</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint<span class="tsd-signature-symbol">(</span>latLng<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a>, point<span class="tsd-signature-symbol">?: </span><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Point<wbr>ToXY<span class="tsd-signature-symbol">(</span>pixel<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a>, nowrap<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L269">index.d.ts:269</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L210">index.d.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Translates from the LatLng cylinder to the Point plane. This interface specifies a function which implements translation from given LatLng values to world coordinates on the map projection. The Maps API calls this method when it needs to plot locations on screen. Projection objects must implement this method.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>latLng: <a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> point: <a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="frompointtolatlng" class="tsd-anchor"></a>
-					<h3>from<wbr>Point<wbr>ToLat<wbr>Lng</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng<span class="tsd-signature-symbol">(</span>pixel<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a>, nowrap<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L271">index.d.ts:271</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>This interface specifies a function which implements translation from world coordinates on a map projection to LatLng values. The Maps API calls this method when it needs to translate actions on screen to positions on the map. Projection objects must implement this method.</p>
+									<p>This interface specifies a function which implements translation from world coordinates on a map projection to XY values. The Maps API calls this method when it needs to translate actions on screen to positions on the map. Projection objects must implement this method.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -150,6 +119,37 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nowrap: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="fromxytopoint" class="tsd-anchor"></a>
+					<h3>fromXYTo<wbr>Point</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">fromXYTo<wbr>Point<span class="tsd-signature-symbol">(</span>xy<span class="tsd-signature-symbol">: </span><a href="../classes/_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a>, point<span class="tsd-signature-symbol">?: </span><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L208">index.d.ts:208</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Translates from the XY cylinder to the Point plane. This interface specifies a function which implements translation from given XY values to world coordinates on the map projection. The Maps API calls this method when it needs to plot locations on screen. Projection objects must implement this method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xy: <a href="../classes/_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> point: <a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-signature-type">CoordinatePoint</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -186,15 +186,24 @@
 						<a href="_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_index_d_.rv.projection.html#fromlatlngtopoint" class="tsd-kind-icon">from<wbr>Lat<wbr>Lng<wbr>ToPoint</a>
+								<a href="_index_d_.rv.projection.html#frompointtoxy" class="tsd-kind-icon">from<wbr>Point<wbr>ToXY</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_index_d_.rv.projection.html#frompointtolatlng" class="tsd-kind-icon">from<wbr>Point<wbr>ToLat<wbr>Lng</a>
+								<a href="_index_d_.rv.projection.html#fromxytopoint" class="tsd-kind-icon">fromXYTo<wbr>Point</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-event tsd-parent-kind-module">
+						<a href="../modules/_index_d_.rv.html#map_added" class="tsd-kind-icon">map_<wbr>added</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_index_d_.rv.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_index_d_.rv.html#addlisteneronce" class="tsd-kind-icon">add<wbr>Listener<wbr>Once</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

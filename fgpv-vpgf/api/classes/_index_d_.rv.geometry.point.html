@@ -76,7 +76,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A Point geometry contains a single LatLng.</p>
+						<p>A Point geometry contains a single XY.</p>
 					</div>
 				</div>
 			</section>
@@ -112,7 +112,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.geometry.point.html#foreachlatlng" class="tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.geometry.point.html#foreachxy" class="tsd-kind-icon">for<wbr>EachXY</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.geometry.point.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.geometry.point.html#getid" class="tsd-kind-icon">get<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_index_d_.rv.geometry.point.html#gettype" class="tsd-kind-icon">get<wbr>Type</a></li>
@@ -127,19 +127,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Point<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, latLng<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-signature-type">LatLngLiteral</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.point.html" class="tsd-signature-type">Point</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Point<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, xy<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_index_d_.rv.geometry.xyliteral.html" class="tsd-signature-type">XYLiteral</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.point.html" class="tsd-signature-type">Point</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>.<a href="_index_d_.rv.geometry.basegeometry.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L461">index.d.ts:461</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L400">index.d.ts:400</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Constructs a Point from the given LatLng or LatLngLiteral.</p>
+									<p>Constructs a Point from the given XY or XYLiteral.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -148,7 +148,7 @@
 									<h5>id: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>latLng: <a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-signature-type">LatLngLiteral</a></h5>
+									<h5>xy: <a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_index_d_.rv.geometry.xyliteral.html" class="tsd-signature-type">XYLiteral</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.geometry.point.html" class="tsd-signature-type">Point</a></h4>
@@ -164,7 +164,7 @@
 					<div class="tsd-signature tsd-kind-icon">icon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L470">index.d.ts:470</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L409">index.d.ts:409</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -177,17 +177,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="foreachlatlng" class="tsd-anchor"></a>
-					<h3>for<wbr>Each<wbr>Lat<wbr>Lng</h3>
+					<a name="foreachxy" class="tsd-anchor"></a>
+					<h3>for<wbr>EachXY</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>EachXY<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>.<a href="_index_d_.rv.geometry.basegeometry.html#foreachlatlng">forEachLatLng</a></p>
+								<p>Inherited from <a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>.<a href="_index_d_.rv.geometry.basegeometry.html#foreachxy">forEachXY</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L453">index.d.ts:453</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L392">index.d.ts:392</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,14 +202,14 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>latLng<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>xy<span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>latLng: <a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a></h5>
+															<h5>xy: <a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -227,21 +227,21 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L465">index.d.ts:465</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L404">index.d.ts:404</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns the contained LatLng.</p>
+									<p>Returns the contained XY.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.geometry.latlng.html" class="tsd-signature-type">LatLng</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.geometry.xy.html" class="tsd-signature-type">XY</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,7 +256,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>.<a href="_index_d_.rv.geometry.basegeometry.html#getid">getId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L457">index.d.ts:457</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L396">index.d.ts:396</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -279,7 +279,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_index_d_.rv.geometry.basegeometry.html">BaseGeometry</a>.<a href="_index_d_.rv.geometry.basegeometry.html#gettype">getType</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/acd05d6/api/index.d.ts#L467">index.d.ts:467</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L406">index.d.ts:406</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,12 +310,6 @@
 						<a href="_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -336,7 +330,7 @@
 								<a href="_index_d_.rv.geometry.point.html#icon" class="tsd-kind-icon">icon</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_index_d_.rv.geometry.point.html#foreachlatlng" class="tsd-kind-icon">for<wbr>Each<wbr>Lat<wbr>Lng</a>
+								<a href="_index_d_.rv.geometry.point.html#foreachxy" class="tsd-kind-icon">for<wbr>EachXY</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_index_d_.rv.geometry.point.html#get" class="tsd-kind-icon">get</a>
@@ -351,11 +345,17 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.geometry.xy.html" class="tsd-kind-icon">XY</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_index_d_.rv.geometry.xybounds.html" class="tsd-kind-icon">XYBounds</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
+						<a href="../interfaces/_index_d_.rv.geometry.xyboundsliteral.html" class="tsd-kind-icon">XYBounds<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_index_d_.rv.geometry.xyliteral.html" class="tsd-kind-icon">XYLiteral</a>
 					</li>
 				</ul>
 			</nav>

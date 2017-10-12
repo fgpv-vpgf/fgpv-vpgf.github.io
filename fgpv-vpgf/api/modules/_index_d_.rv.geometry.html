@@ -77,8 +77,8 @@
 						<p>Geometry types extend <code>BaseGeometry</code>, such as <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, and <code>MultiLineString</code>.</p>
 					</div>
 					<h3 id="geometry-units">Geometry units</h3>
-					<p>All geometry is calculated in latitude / longitude. In general <code>LatLngLiteral</code> and <code>LatLngBoundsLiteral</code> can be used in places where
-					<code>LatLng</code> and <code>LatLngBounds</code> are used and will be converted into their respective instance classes automatically.</p>
+					<p>All geometry is calculated in x,y decimal degrees. In general <code>XYLiteral</code> and <code>XYBoundsLiteral</code> can be used in places where
+					<code>XY</code> and <code>XYBounds</code> are used and will be converted into their respective instance classes automatically.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -90,19 +90,19 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.basegeometry.html" class="tsd-kind-icon">Base<wbr>Geometry</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.multilinestring.html" class="tsd-kind-icon">Multi<wbr>Line<wbr>String</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.multipoint.html" class="tsd-kind-icon">Multi<wbr>Point</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.point.html" class="tsd-kind-icon">Point</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.xy.html" class="tsd-kind-icon">XY</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.geometry.xybounds.html" class="tsd-kind-icon">XYBounds</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.xyboundsliteral.html" class="tsd-kind-icon">XYBounds<wbr>Literal</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.geometry.xyliteral.html" class="tsd-kind-icon">XYLiteral</a></li>
 							</ul>
 						</section>
 					</div>
@@ -126,12 +126,6 @@
 						<a href="../classes/_index_d_.rv.geometry.coordinatepoint.html" class="tsd-kind-icon">Coordinate<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.geometry.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_index_d_.rv.geometry.latlngbounds.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="../classes/_index_d_.rv.geometry.linestring.html" class="tsd-kind-icon">Line<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -143,11 +137,17 @@
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="../classes/_index_d_.rv.geometry.point.html" class="tsd-kind-icon">Point</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.geometry.latlngboundsliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Bounds<wbr>Literal</a>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.geometry.xy.html" class="tsd-kind-icon">XY</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.geometry.xybounds.html" class="tsd-kind-icon">XYBounds</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.geometry.latlngliteral.html" class="tsd-kind-icon">Lat<wbr>Lng<wbr>Literal</a>
+						<a href="../interfaces/_index_d_.rv.geometry.xyboundsliteral.html" class="tsd-kind-icon">XYBounds<wbr>Literal</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_index_d_.rv.geometry.xyliteral.html" class="tsd-kind-icon">XYLiteral</a>
 					</li>
 				</ul>
 			</nav>

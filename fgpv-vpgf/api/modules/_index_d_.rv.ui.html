@@ -75,6 +75,29 @@
 					<div class="lead">
 						<p>Defines UI component classes and interfaces.</p>
 					</div>
+					<h4 id="ui-control">UI control</h4>
+					<p>We can open and close panels like:</p>
+					<pre><code class="lang-js">mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
+</code></pre>
+					<p>Of course we would be opening an empty panel. Lets try this again:</p>
+					<pre><code class="lang-js">mapInstance.ui.panels.addListener(<span class="hljs-string">'opened'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">panel</span>) </span>{
+    <span class="hljs-keyword">if</span> (panel.getId() === <span class="hljs-string">'left'</span>)
+        panel.setContent(aDivNode);
+});
+
+mapInstance.ui.panels.getById(<span class="hljs-string">'left'</span>).open();
+</code></pre>
+					<p>We can also stop panels from opening or closing by listening to the <code>opening</code> and <code>closing</code> events like so:</p>
+					<pre><code class="lang-js">mapInstance.ui.panels.addListener(<span class="hljs-string">'closing'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">panel, event</span>) </span>{
+    <span class="hljs-keyword">if</span> (panel.getId() === <span class="hljs-string">'left'</span>)
+        event.stop();
+});
+</code></pre>
+					<p>Apart from that, <code>mapInstance.ui.anchors</code> provides dom nodes of common places in the viewer you may want to edit or add.
+					Adding a custom map control is easy:</p>
+					<pre><code class="lang-js">$(mapInstance.ui.anchors.MAP_CONTROLS).append(<span class="hljs-string">'&lt;div&gt;my control&lt;/div&gt;'</span>);
+</code></pre>
+					<p><br></p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
