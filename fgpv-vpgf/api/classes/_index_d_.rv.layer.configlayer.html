@@ -79,19 +79,6 @@
 						<p>A config layer instance is created automatically for every layer in the viewers configuration. You can also create them outside the config.</p>
 					</div>
 					<p>Note that <code>ConfigLayer</code> instances cannot control geometry.</p>
-					<h4 id="todo">Todo</h4>
-					<ul>
-						<li>Need to determine which functions we want to support here, and/or which functions we want to expose but not support:<ul>
-								<li>zoomToScale</li>
-								<li>zoomToBoundary</li>
-								<li>zoomToGraphic</li>
-								<li>fetchGraphic</li>
-								<li>symbologyStack</li>
-								<li>catalogueUrl</li>
-								<li>getSymbol</li>
-							</ul>
-						</li>
-					</ul>
 					<dl class="tsd-comment-tags">
 						<dt>example</dt>
 						<dd><p>Create a ConfigLayer <br><br></p>
@@ -161,8 +148,10 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#bindto" class="tsd-kind-icon">bind<wbr>To</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#changed" class="tsd-kind-icon">changed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#fetchdata" class="tsd-kind-icon">fetch<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#foreachdata" class="tsd-kind-icon">for<wbr>Each<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#getcatalogueurl" class="tsd-kind-icon">get<wbr>Catalogue<wbr>Url</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#getdata" class="tsd-kind-icon">get<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#getid" class="tsd-kind-icon">get<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
@@ -170,9 +159,11 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#gettype" class="tsd-kind-icon">get<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#getvisibility" class="tsd-kind-icon">get<wbr>Visibility</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#notify" class="tsd-kind-icon">notify</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#pantoboundary" class="tsd-kind-icon">pan<wbr>ToBoundary</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#removedata" class="tsd-kind-icon">remove<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#set" class="tsd-kind-icon">set</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#setdata" class="tsd-kind-icon">set<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#setlayerdefinitions" class="tsd-kind-icon">set<wbr>Layer<wbr>Definitions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#setopacity" class="tsd-kind-icon">set<wbr>Opacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#setvalues" class="tsd-kind-icon">set<wbr>Values</a></li>
@@ -180,6 +171,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#togeojson" class="tsd-kind-icon">to<wbr>Geo<wbr>Json</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#unbind" class="tsd-kind-icon">unbind</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_d_.rv.layer.configlayer.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_d_.rv.layer.configlayer.html#zoomtoscale" class="tsd-kind-icon">zoom<wbr>ToScale</a></li>
 							</ul>
 						</section>
 					</div>
@@ -197,7 +189,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L633">index.d.ts:633</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L696">index.d.ts:696</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -225,7 +217,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#data_added">data_added</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L541">index.d.ts:541</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L615">index.d.ts:615</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -246,7 +238,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#data_changed">data_changed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L550">index.d.ts:550</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L624">index.d.ts:624</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -270,7 +262,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#data_removed">data_removed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L557">index.d.ts:557</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L631">index.d.ts:631</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -291,7 +283,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#opacity_changed">opacity_changed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L582">index.d.ts:582</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L656">index.d.ts:656</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -306,7 +298,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<div class="tsd-signature tsd-kind-icon">state_<wbr>changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L647">index.d.ts:647</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L731">index.d.ts:731</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -329,7 +321,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#visibility_changed">visibility_changed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L588">index.d.ts:588</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L662">index.d.ts:662</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -352,7 +344,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#addlistener">addListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L221">index.d.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L254">index.d.ts:254</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -390,7 +382,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#bindto">bindTo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L241">index.d.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L274">index.d.ts:274</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -428,7 +420,7 @@ myConfigLayer.addListener(<span class="hljs-string">'state_changed'</span>, <spa
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#changed">changed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L235">index.d.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L268">index.d.ts:268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -456,6 +448,28 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fetchdata" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L708">index.d.ts:708</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The viewer downloads data when needed - call this function to force a data download. The <code>data_added</code> event will trigger when the download is complete.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="foreachdata" class="tsd-anchor"></a>
 					<h3>for<wbr>Each<wbr>Data</h3>
@@ -467,7 +481,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#foreachdata">forEachData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L521">index.d.ts:521</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L595">index.d.ts:595</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -514,7 +528,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L223">index.d.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L256">index.d.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -532,6 +546,28 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcatalogueurl" class="tsd-anchor"></a>
+					<h3>get<wbr>Catalogue<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Catalogue<wbr>Url<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L706">index.d.ts:706</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the catalogue URL</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getdata" class="tsd-anchor"></a>
 					<h3>get<wbr>Data</h3>
@@ -544,7 +580,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getdata">getData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L527">index.d.ts:527</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L601">index.d.ts:601</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -564,7 +600,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getdata">getData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L531">index.d.ts:531</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L605">index.d.ts:605</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,7 +624,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getid">getId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L576">index.d.ts:576</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L650">index.d.ts:650</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -611,7 +647,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getname">getName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L560">index.d.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L634">index.d.ts:634</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -634,7 +670,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getopacity">getOpacity</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L564">index.d.ts:564</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L638">index.d.ts:638</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -656,7 +692,7 @@ m.changed.should.have.been.calledOnce;
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L637">index.d.ts:637</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L700">index.d.ts:700</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,7 +715,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#getvisibility">getVisibility</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L570">index.d.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L644">index.d.ts:644</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -702,7 +738,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#notify">notify</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L237">index.d.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L270">index.d.ts:270</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -720,6 +756,28 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="pantoboundary" class="tsd-anchor"></a>
+					<h3>pan<wbr>ToBoundary</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">pan<wbr>ToBoundary<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L704">index.d.ts:704</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pans to the layers bounding box</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="removedata" class="tsd-anchor"></a>
 					<h3>remove<wbr>Data</h3>
@@ -731,7 +789,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#removedata">removeData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L533">index.d.ts:533</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L607">index.d.ts:607</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -760,7 +818,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L225">index.d.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L258">index.d.ts:258</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -793,7 +851,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#setdata">setData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L523">index.d.ts:523</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L597">index.d.ts:597</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -816,7 +874,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#setdata">setData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L525">index.d.ts:525</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L599">index.d.ts:599</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -834,6 +892,44 @@ m.changed.should.have.been.calledOnce;
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlayerdefinitions" class="tsd-anchor"></a>
+					<h3>set<wbr>Layer<wbr>Definitions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Layer<wbr>Definitions<span class="tsd-signature-symbol">(</span>layerDefinitions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L721">index.d.ts:721</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Layer definitions limit the information from a layer that gets displayed on the map and populated as data.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="lang-js"><span class="hljs-keyword">var</span> layerDefs = [];
+layerDefs[<span class="hljs-number">5</span>] = <span class="hljs-string">"STATE_NAME='Kansas'"</span>;
+layerDefs[<span class="hljs-number">4</span>] = <span class="hljs-string">"STATE_NAME='Kansas' and POP2007&gt;25000"</span>;
+layerDefs[<span class="hljs-number">3</span>] = <span class="hljs-string">"STATE_NAME='Kansas' and POP2007&gt;25000"</span>;
+dynamicMapServiceLayer.setLayerDefinitions(layerDefs);
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>layerDefinitions: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="setname" class="tsd-anchor"></a>
 					<h3>set<wbr>Name</h3>
@@ -845,7 +941,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#setname">setName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L562">index.d.ts:562</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L636">index.d.ts:636</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -874,7 +970,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#setopacity">setOpacity</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L568">index.d.ts:568</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L642">index.d.ts:642</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,7 +1000,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#setvalues">setValues</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L239">index.d.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L272">index.d.ts:272</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -933,7 +1029,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#setvisibility">setVisibility</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L572">index.d.ts:572</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L646">index.d.ts:646</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -962,7 +1058,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.layer.baselayer.html">BaseLayer</a>.<a href="_index_d_.rv.layer.baselayer.html#togeojson">toGeoJson</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L574">index.d.ts:574</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L648">index.d.ts:648</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1009,7 +1105,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#unbind">unbind</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L243">index.d.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L276">index.d.ts:276</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1038,7 +1134,7 @@ m.changed.should.have.been.calledOnce;
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_index_d_.rv.mvcobject.html">MVCObject</a>.<a href="_index_d_.rv.mvcobject.html#unbindall">unbindAll</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/f3a1eac/api/index.d.ts#L245">index.d.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L278">index.d.ts:278</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1047,6 +1143,28 @@ m.changed.should.have.been.calledOnce;
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_index_d_.rv.mvcobject.html" class="tsd-signature-type">MVCObject</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="zoomtoscale" class="tsd-anchor"></a>
+					<h3>zoom<wbr>ToScale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">zoom<wbr>ToScale<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L702">index.d.ts:702</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Zooms to the minimum layer scale</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1100,11 +1218,17 @@ m.changed.should.have.been.calledOnce;
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#changed" class="tsd-kind-icon">changed</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.configlayer.html#fetchdata" class="tsd-kind-icon">fetch<wbr>Data</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#foreachdata" class="tsd-kind-icon">for<wbr>Each<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.configlayer.html#getcatalogueurl" class="tsd-kind-icon">get<wbr>Catalogue<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
@@ -1127,6 +1251,9 @@ m.changed.should.have.been.calledOnce;
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#notify" class="tsd-kind-icon">notify</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.configlayer.html#pantoboundary" class="tsd-kind-icon">pan<wbr>ToBoundary</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#removedata" class="tsd-kind-icon">remove<wbr>Data</a>
 							</li>
@@ -1135,6 +1262,9 @@ m.changed.should.have.been.calledOnce;
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#setdata" class="tsd-kind-icon">set<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.configlayer.html#setlayerdefinitions" class="tsd-kind-icon">set<wbr>Layer<wbr>Definitions</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#setname" class="tsd-kind-icon">set<wbr>Name</a>
@@ -1156,6 +1286,9 @@ m.changed.should.have.been.calledOnce;
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_index_d_.rv.layer.configlayer.html#unbindall" class="tsd-kind-icon">unbind<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_index_d_.rv.layer.configlayer.html#zoomtoscale" class="tsd-kind-icon">zoom<wbr>ToScale</a>
 							</li>
 						</ul>
 					</li>
