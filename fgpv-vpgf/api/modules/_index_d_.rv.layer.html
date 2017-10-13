@@ -80,14 +80,14 @@
 					<p>You can also create a <code>ConfigLayer</code> via the API by constructing it with a schema valid layer json object.</p>
 					<dl class="tsd-comment-tags">
 						<dt>see</dt>
-						<dd><p><a href="../classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a> examples <br><br></p>
+						<dd><p><a href="../classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a> examples</p>
 							<h4 id="simplelayer">SimpleLayer</h4>
 							<p>Must be created programatically through the API. Unlike <code>ConfigLayer</code>, <code>SimpleLayer</code> instances have API control of their geometry.</p>
 						</dd>
 						<dt>see</dt>
-						<dd><p><a href="../classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a> examples <br><br></p>
+						<dd><p><a href="../classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a> examples</p>
 							<h4 id="layergroups-layers">LayerGroups &amp; Layers</h4>
-							<p>Layers will in most cases reside in a <code>LayerGroup</code> - a fancy version of an array with special properties and events to make handling many of them easier.</p>
+							<p>Layers will in most cases reside in a <code>LayerGroup</code> - an array with special properties and events to make handling many of them easier.</p>
 							<pre><code class="lang-js"><span class="hljs-comment">// lets create two layers with my magic wand</span>
 <span class="hljs-keyword">const</span> myLayer1 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
 <span class="hljs-keyword">const</span> myLayer2 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
@@ -96,16 +96,6 @@
 layerGroup1.add(myLayer1);
 layerGroup1.add(myLayer2);
 </code></pre>
-							<p><br>
-								Pretty boring so far. How about we open an external data table whenever a layer has data to show?
-							<br><br></p>
-							<pre><code class="lang-js">layerGroup1.addListener(<span class="hljs-string">'data_added'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer, data</span>) </span>{
-    magicDatatable.open(data);
-});
-
-myLayer2.setData([{<span class="hljs-attr">objectid</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'A Title'</span>}, {<span class="hljs-attr">objectid</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">title</span>: <span class="hljs-string">'Another Title'</span>}]);
-</code></pre>
-							<p><br></p>
 							<h4 id="using-layergroups">Using layerGroups</h4>
 							<p>A <code>layerGroup</code> can define the list of available basemaps, layers on a map, or in a legend. Lets add a layer to the map and show it in the legend</p>
 							<pre><code class="lang-js"><span class="hljs-comment">// show on the map</span>
@@ -123,8 +113,7 @@ myLayer2.setOpacity(<span class="hljs-number">70</span>); <span class="hljs-comm
 $(legendDiv).html(<span class="hljs-string">'Some text...'</span>);
 specificLegendEntry.add(legendDiv);
 </code></pre>
-							<p><br>
-							The process is similar with basemaps.</p>
+							<p>The process is similar with basemaps.</p>
 						</dd>
 					</dl>
 				</div>

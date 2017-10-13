@@ -67,77 +67,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<h3 id="what-s-new">What&#39;s new</h3>
-					</div>
-					<h4 id="october-12">October 12</h4>
-					<ul>
-						<li>Expanded documentation on creating and registering extentions</li>
-						<li>Created &#39;map_added&#39; event to <code>RV</code></li>
-						<li>Added <code>addListener</code> and <code>addListenerOnce</code> to RV for extension registration`</li>
-						<li>Renamed LatLng and similar classes to XY</li>
-						<li>Added <code>Polygon</code>, <code>MultiPolygon</code>, <code>Annotation</code>, <code>MultiAnnotation</code>, and <code>LinearRing</code> geometry types</li>
-						<li>Added <code>fetchData</code> and <code>setLayerDefinitions</code> on <code>configLayer</code></li>
-						<li>Added a <code>Popup</code> class to <code>RV.UI</code> available through <code>mapInstance.popup</code></li>
-						<li>Added partial config loading on mapInstance</li>
-					</ul>
-					<h4 id="september-15">September 15</h4>
-					<ul>
-						<li><code>RV.LAYER.LayerGroup</code> has been updated with new events and function definitions. Supports new <code>ConfigLayer</code> and <code>SimpleLayer</code> types.</li>
-						<li>Merged <code>RV.GEOMETRY.LayerGeometry</code> into <code>RV.LAYER.SimpleLayer</code>. <code>RV.LAYER.ConfigLayer</code> will not have access to geometry.</li>
-						<li>Merged <code>RV.LAYER.LayerData</code> into <code>RV.LAYER.BaseLayer</code> for easier access.</li>
-						<li><code>RV.LAYER.BaseLayer</code> now extends <code>MVCObject</code></li>
-						<li>Various documentation changes and examples added.</li>
-					</ul>
-					<h4 id="september-14">September 14</h4>
-					<ul>
-						<li>Added namespace <code>GEOMETRY</code> which houses, you guessed it, geometry related classes</li>
-						<li>Added <code>ConfigLayer</code> and <code>SimpleLayer</code> to <code>RV.LAYER</code> namespace (still a WIP)<ul>
-								<li><code>ConfigLayer</code> is more or less a <code>LegendNode</code> in <code>legend-block.class.js</code>. It is created via JSON layer config snippets. Geometry changes (add/remove) are not supported.</li>
-								<li><code>SimpleLayer</code> is created programmatically and allows for full geometry.</li>
-							</ul>
-						</li>
-					</ul>
-					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="_index_d_.rv.layer.html">RV.LAYER</a></p>
-						</dd>
-						<dt>see</dt>
-						<dd><p><a href="_index_d_.rv.geometry.html">RV.GEOMETRY</a></p>
-							<hr>
-							<p>This guide is intented for developers. It outlines the entire viewers API and provides examples throughout.</p>
-							<p>In all but some trival cases, you&#39;ll want to use the API in something called an <code>extention</code>. An <code>extention</code> is a file(s) where you can write custom code that uses our API. There is no right or wrong way to write an extention - choose the approach that works best for you.</p>
-							<p>We&#39;ll start by example - building an extention that allows you to toggle layer visibility through an external select box.</p>
-							<h3 id="getting-started">Getting Started</h3>
-							<p>Let&#39;s create a new file named <code>layerSelector.js</code>. We&#39;ll jump right in and write some code, inside <code>layerSelector.js</code> type:</p>
-							<pre><code class="lang-js">RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
- <span class="hljs-comment">// empty for now</span>
-}
-</code></pre>
-							<p>You don&#39;t want the extention code executing immediatly on load since the API may not be ready. Instead, you wait for a special event <code>map_added</code> which invokes your <code>init</code> function.</p>
-						</dd>
-						<dt>see</dt>
-						<dd><p><a href="../classes/_index_d_.rv.map.html">RV.Map</a> for more information on <code>mapInstance</code></p>
-							<h3 id="registering-extention-file">Registering extention file</h3>
-							<p>The relative path to the <code>layerSelector.js</code> file goes inside the <code>rv-extentions</code> property of our map element.</p>
-							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-							<p>Additional extentions can be added, separated by commas:</p>
-							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"map1"</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js, http://www.example.com/js/anotherExtention.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-							<p>You can also skip using <code>rv-extentions</code> entirely and load the <code>layerSelector.js</code> directly after the viewers <code>rv-main.js</code> file.</p>
-							<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/rv-main.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-							<p>If you go this route you should change the line <code>RV.addListenerOnce(&#39;map_added&#39;, init);</code> in <code>layerSelector.js</code> to <code>RV.addListener(&#39;map_added&#39;, init);</code> so that your extention is invoked for all viewer instances on the page, not just the first one.</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -163,7 +92,6 @@
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-kind-icon">Maps<wbr>Event<wbr>Listener</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -190,7 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">map_<wbr>added<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Event</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L87">index.d.ts:87</a></li>
+							<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/6078f8e/api/index.d.ts#L8">index.d.ts:8</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,7 +145,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L89">index.d.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/6078f8e/api/index.d.ts#L10">index.d.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -243,7 +171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/1fca764/api/index.d.ts#L90">index.d.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/6078f8e/api/index.d.ts#L11">index.d.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,9 +210,6 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_index_d_.rv.mapseventlistener.html" class="tsd-kind-icon">Maps<wbr>Event<wbr>Listener</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_index_d_.rv.projection.html" class="tsd-kind-icon">Projection</a>
 					</li>
 					<li class=" tsd-kind-event tsd-parent-kind-module">
 						<a href="_index_d_.rv.html#map_added" class="tsd-kind-icon">map_<wbr>added</a>

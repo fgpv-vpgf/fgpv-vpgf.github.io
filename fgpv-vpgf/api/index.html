@@ -62,58 +62,114 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="fgpv-vpgf">fgpv-vpgf</h1>
-				<p><a href="https://gitter.im/fgpv-vpgf/fgpv-vpgf?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://img.shields.io/badge/GITTER-join%20chat-green.svg?style=flat-square" alt="Join the chat at https://gitter.im/fgpv-vpgf/fgpv-vpgf"></a></p>
-				<p><a href="https://codeclimate.com/github/fgpv-vpgf/fgpv-vpgf"><img src="https://codeclimate.com/github/fgpv-vpgf/fgpv-vpgf/badges/gpa.svg" alt="Code Climate"></a>
-				<a href="https://codeclimate.com/github/fgpv-vpgf/fgpv-vpgf"><img src="https://codeclimate.com/github/fgpv-vpgf/fgpv-vpgf/badges/issue_count.svg" alt="Issue Count"></a></p>
-				<p><a href="https://david-dm.org/fgpv-vpgf/fgpv-vpgf"><img src="https://david-dm.org/fgpv-vpgf/fgpv-vpgf.svg?style=flat-square" alt="Dependency Status"></a>
-				<a href="https://david-dm.org/fgpv-vpgf/fgpv-vpgf#info=devDependencies"><img src="https://david-dm.org/fgpv-vpgf/fgpv-vpgf/dev-status.svg?style=flat-square" alt="devDependency Status"></a></p>
-				<p>Federal Geospatial Platform Visualiser / Visualisateur pour la Plateforme géospatiale fédérale</p>
-				<h2 id="getting-started">Getting Started</h2>
-				<p>Requirements:</p>
+				<h3 id="quick-links">Quick Links</h3>
+				<table>
+					<thead>
+						<tr>
+							<th><a href="modules/_index_d_.rv.html">RV</a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="classes/_index_d_.rv.map.html">RV.Map</a></td>
+							<td><a href="modules/_index_d_.rv.geometry.html">RV.GEOMETRY</a></td>
+						</tr>
+						<tr>
+							<td><a href="modules/_index_d_.rv.layer.html">RV.LAYER</a></td>
+							<td><a href="classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a></td>
+							<td><a href="classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 id="what-s-new-october-13">What&#39;s new October 13</h3>
 				<ul>
-					<li><a href="https://nodejs.org/">NodeJS</a></li>
+					<li>Completed introduction guide (creating extentions)</li>
+					<li>Removed projection support until its needed</li>
+					<li>Expanded documentation on creating and registering extentions</li>
+					<li>Created &#39;map_added&#39; event to <code>RV</code></li>
+					<li>Added <code>addListener</code> and <code>addListenerOnce</code> to RV for extension registration`</li>
+					<li>Renamed LatLng and similar classes to XY</li>
+					<li>Added <code>Polygon</code>, <code>MultiPolygon</code>, <code>Annotation</code>, <code>MultiAnnotation</code>, and <code>LinearRing</code> geometry types</li>
+					<li>Added <code>fetchData</code> and <code>setLayerDefinitions</code> on <code>configLayer</code></li>
+					<li>Added a <code>Popup</code> class to <code>RV.UI</code> available through <code>mapInstance.popup</code></li>
+					<li>Added partial config loading on mapInstance</li>
 				</ul>
-				<p>Running a local build:</p>
-				<ol>
-					<li>Checkout the repo</li>
-					<li>Switch to the develop branch (master is for stable, released code)</li>
-					<li>Run <code>npm install</code> to install dependencies</li>
-					<li>Run <code>npm run serve</code> to build and launch a dev server</li>
-				</ol>
-				<p>We use a fork and pull model for contributions, see our <a href="https://github.com/fgpv-vpgf/fgpv-vpgf/blob/develop/CONTRIBUTING.md">contributing guidelines</a> for more details.</p>
-				<h2 id="gulp-tasks">Gulp Tasks</h2>
-				<h3 id="generating-local-builds">Generating Local Builds</h3>
-				<ul>
-					<li><p><code>npm run build</code></p>
-						<p>  Builds development code and places it in the <code>build</code> directory. Performs eslint, SASS -&gt; CSS, and babel compilation</p>
-					</li>
-					<li><p><code>npm run build -- --env.prod</code></p>
-						<p>  Builds production code and places it in the <code>build</code> directory. Performs same steps as development builds, but also places a zipped file of the build in the <code>dist</code> directory.</p>
-					</li>
-				</ul>
-				<h3 id="serving-development-code">Serving Development Code</h3>
-				<ul>
-					<li><p><code>npm run serve</code></p>
-						<p>  Serves the development code. Reloads on file change.</p>
-					</li>
-					<li><p><code>npm run serve -- --env.prod</code></p>
-						<p>  Serves the production code. Reloads on file change.</p>
-					</li>
-				</ul>
-				<h3 id="optional-flags">Optional Flags</h3>
-				<p>To run these flags, prefix with <code>--</code> then <code>--env.</code> as in <code>npm run serve -- --env.prod</code> where <code>prod</code> is a flag.</p>
-				<ul>
-					<li><p><code>geoLocal</code>
-						Replaces geoApi from npm node_module with a local geoApi repo folder located by ../geoApi</p>
-					</li>
-					<li><p><code>geoLocal=&quot;path/to/geoApi&quot;</code>
-						Same as no argument <code>geoLocal</code> but uses the provided path to local folder</p>
-					</li>
-					<li><p><code>useMap</code>
-						Creates full independent source maps files for <code>development</code> code only. Build time will increase.</p>
-					</li>
-				</ul>
+				<h3 id="introduction">Introduction</h3>
+				<p>This guide is intented for developers. It outlines the entire viewers API and provides examples throughout.</p>
+				<p>In all but some trival cases, you&#39;ll want to use the API in something called an <code>extention</code>. An <code>extention</code> is a file(s) where you can write custom code that uses our API. There is no right or wrong way to write an extention - choose the approach that works best for you.</p>
+				<p>We&#39;ll start by example - building an extention that allows you to toggle layer visibility through an external select box.</p>
+				<h3 id="getting-started">Getting Started</h3>
+				<p>Let&#39;s create a new file named <code>layerSelector.js</code>. We&#39;ll jump right in and write some code, inside <code>layerSelector.js</code> type:</p>
+				<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> map;
+  RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
+   map = mapInstance; <span class="hljs-comment">// save instance for future use</span>
+  }
+})();
+</code></pre>
+				<p>You don&#39;t want the extention code executing immediatly on load since the API may not be ready. Instead, you wait for a special event <code>map_added</code> which invokes your <code>init</code> function. For now we can just store the <code>mapInstance</code> in a local variable for later use.</p>
+				<p>It&#39;s best practise to use an immediately invoked function expression like we have above so that the global namespace does not get polluted.</p>
+				<p>@see <a href="classes/_index_d_.rv.map.html">RV.Map</a> for more information on <code>mapInstance</code></p>
+				<h3 id="registering-extention-file">Registering extention file</h3>
+				<p>The relative path to the <code>layerSelector.js</code> file goes inside the <code>rv-extentions</code> property of your map element.</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+				<p>Additional extentions can be added, separated by commas:</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"map1"</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js, http://www.example.com/js/anotherExtention.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+				<p>You can also skip using <code>rv-extentions</code> entirely and load the <code>layerSelector.js</code> directly after the viewers <code>rv-main.js</code> file.</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/rv-main.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+				<p>If you go this route you should change the line <code>RV.addListenerOnce(&#39;map_added&#39;, init);</code> in <code>layerSelector.js</code> to <code>RV.addListener(&#39;map_added&#39;, init);</code> so that your extention is invoked for all viewer instances on the page, not just the first one.</p>
+				<h3 id="adding-the-select-element">Adding the select element</h3>
+				<p>Inside the <code>init</code> function in <code>layerSelector.js</code> type the following:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">var</span> newSelect = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"select"</span>);
+newSelect.onchange = <span class="hljs-string">"changeVisibility(this)"</span>;
+map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+ <span class="hljs-keyword">var</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"option"</span>);
+ option.text = layer.getName();
+ option.value = layer.getId();
+ newSelect.add(option);
+});
+<span class="hljs-built_in">document</span>.body.insertBefore(newSelect, map.getDiv());
+</code></pre>
+				<p>You first create a new select element then iterate over all layers adding them as options to the select element. Lastly, we add the select element before the viewer element.</p>
+				<h3 id="adding-changevisibility-function">Adding changeVisibility function</h3>
+				<p>After the <code>init</code> function let&#39;s add another function named <code>changeVisibility</code>.</p>
+				<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeVisibility</span>(<span class="hljs-params">element</span>) </span>{
+ map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+   layer.setVisibility(<span class="hljs-literal">false</span>);
+ });
+ map.layers.getLayerById(element.value).setVisibility(<span class="hljs-literal">true</span>);
+}
+</code></pre>
+				<p>This function iterates over all layers setting visibility to false. It then gets the selected layer and makes it visible.</p>
+				<h3 id="all-together-now">All together now</h3>
+				<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> map;
+  RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
+     map = mapInstance; <span class="hljs-comment">// save instance for future use</span>
+     <span class="hljs-keyword">var</span> newSelect = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"select"</span>);
+     newSelect.onchange = <span class="hljs-string">"changeVisibility(this)"</span>;
+     map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+         <span class="hljs-keyword">var</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"option"</span>);
+         option.text = layer.getName();
+         option.value = layer.getId();
+         newSelect.add(option);
+     });
+     <span class="hljs-built_in">document</span>.body.insertBefore(newSelect, map.getDiv());
+  }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeVisibility</span>(<span class="hljs-params">element</span>) </span>{
+     map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+         layer.setVisibility(<span class="hljs-literal">false</span>);
+     });
+     map.layers.getLayerById(element.value).setVisibility(<span class="hljs-literal">true</span>);
+}
+})();
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
