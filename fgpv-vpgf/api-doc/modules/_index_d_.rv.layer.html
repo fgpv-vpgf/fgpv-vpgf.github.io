@@ -1,0 +1,240 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LAYER | r2v2</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">r2v2</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_index_d_.html">&quot;index.d&quot;</a>
+				</li>
+				<li>
+					<a href="_index_d_.rv.html">RV</a>
+				</li>
+				<li>
+					<a href="_index_d_.rv.layer.html">LAYER</a>
+				</li>
+			</ul>
+			<h1>Module LAYER</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>There are two types of layers available, <code>ConfigLayer</code> and <code>SimpleLayer</code>.</p>
+					</div>
+					<h4 id="configlayer">ConfigLayer</h4>
+					<p>All layers specified in the viewers configuration file will be available as <code>ConfigLayer</code> instances on the map object (<code>mapInstance.layers</code>).</p>
+					<p>You can also create a <code>ConfigLayer</code> via the API by constructing it with a schema valid layer json object.</p>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="../classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a> examples</p>
+							<h4 id="simplelayer">SimpleLayer</h4>
+							<p>Must be created programatically through the API. Unlike <code>ConfigLayer</code>, <code>SimpleLayer</code> instances have API control of their geometry.</p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="../classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a> examples</p>
+							<h4 id="layergroups-layers">LayerGroups &amp; Layers</h4>
+							<p>Layers will in most cases reside in a <code>LayerGroup</code> - an array with special properties and events to make handling many of them easier.</p>
+							<pre><code class="lang-js"><span class="hljs-comment">// lets create two layers with my magic wand</span>
+<span class="hljs-keyword">const</span> myLayer1 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
+<span class="hljs-keyword">const</span> myLayer2 = <span class="hljs-keyword">new</span> RV.LAYER.SimpleLayer();
+
+<span class="hljs-keyword">const</span> layerGroup1 = <span class="hljs-keyword">new</span> RV.LAYER.LayerGroup();
+layerGroup1.add(myLayer1);
+layerGroup1.add(myLayer2);
+</code></pre>
+							<h4 id="using-layergroups">Using layerGroups</h4>
+							<p>A <code>layerGroup</code> can define the list of available basemaps, layers on a map, or in a legend. Lets add a layer to the map and show it in the legend</p>
+							<pre><code class="lang-js"><span class="hljs-comment">// show on the map</span>
+mapInstance.layers.addLayer(myLayer2);
+myLayer2.setOpacity(<span class="hljs-number">0</span>); <span class="hljs-comment">// where did it go? It's hidden!</span>
+myLayer2.setOpacity(<span class="hljs-number">70</span>); <span class="hljs-comment">// that's better</span>
+
+<span class="hljs-comment">// Its not yet in the legend, lets add it</span>
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Integrate legend with new layer types</span>
+<span class="hljs-comment">//const specificLegendEntry = mapInstance.ui.legend.getById('legendGroup1');</span>
+<span class="hljs-comment">//specificLegendEntry.add(myLayer2);</span>
+
+<span class="hljs-comment">// And lets add a custom element after it, just because we can...</span>
+<span class="hljs-keyword">var</span> legendDiv = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+$(legendDiv).html(<span class="hljs-string">'Some text...'</span>);
+specificLegendEntry.add(legendDiv);
+</code></pre>
+							<p>The process is similar with basemaps.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.baselayer.html" class="tsd-kind-icon">Base<wbr>Layer</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.configlayer.html" class="tsd-kind-icon">Config<wbr>Layer</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.layergroup.html" class="tsd-kind-icon">Layer<wbr>Group</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_index_d_.rv.layer.simplelayer.html" class="tsd-kind-icon">Simple<wbr>Layer</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_index_d_.rv.layer.dataitem.html" class="tsd-kind-icon">Data<wbr>Item</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.layer.baselayer.html" class="tsd-kind-icon">Base<wbr>Layer</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.layer.configlayer.html" class="tsd-kind-icon">Config<wbr>Layer</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.layer.layergroup.html" class="tsd-kind-icon">Layer<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_index_d_.rv.layer.simplelayer.html" class="tsd-kind-icon">Simple<wbr>Layer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_index_d_.rv.layer.dataitem.html" class="tsd-kind-icon">Data<wbr>Item</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
