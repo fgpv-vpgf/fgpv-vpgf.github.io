@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>r2v2</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">r2v2</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> r2v2</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h3 id="quick-links">Quick Links</h3>
+				<table>
+					<thead>
+						<tr>
+							<th><a href="modules/_index_d_.rv.html">RV</a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="classes/_index_d_.rv.map.html">RV.Map</a></td>
+							<td><a href="modules/_index_d_.rv.geometry.html">RV.GEOMETRY</a></td>
+						</tr>
+						<tr>
+							<td><a href="modules/_index_d_.rv.layer.html">RV.LAYER</a></td>
+							<td><a href="classes/_index_d_.rv.layer.configlayer.html">RV.LAYER.ConfigLayer</a></td>
+							<td><a href="classes/_index_d_.rv.layer.simplelayer.html">RV.LAYER.SimpleLayer</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 id="what-s-new-october-13">What&#39;s new October 13</h3>
+				<ul>
+					<li>Completed introduction guide (creating extentions)</li>
+					<li>Removed projection support until its needed</li>
+					<li>Expanded documentation on creating and registering extentions</li>
+					<li>Created &#39;map_added&#39; event to <code>RV</code></li>
+					<li>Added <code>addListener</code> and <code>addListenerOnce</code> to RV for extension registration`</li>
+					<li>Renamed LatLng and similar classes to XY</li>
+					<li>Added <code>Polygon</code>, <code>MultiPolygon</code>, <code>Annotation</code>, <code>MultiAnnotation</code>, and <code>LinearRing</code> geometry types</li>
+					<li>Added <code>fetchData</code> and <code>setLayerDefinitions</code> on <code>configLayer</code></li>
+					<li>Added a <code>Popup</code> class to <code>RV.UI</code> available through <code>mapInstance.popup</code></li>
+					<li>Added partial config loading on mapInstance</li>
+				</ul>
+				<h3 id="introduction">Introduction</h3>
+				<p>This guide is intented for developers. It outlines the entire viewers API and provides examples throughout.</p>
+				<p>In all but some trival cases, you&#39;ll want to use the API in something called an <code>extention</code>. An <code>extention</code> is a file(s) where you can write custom code that uses our API. There is no right or wrong way to write an extention - choose the approach that works best for you.</p>
+				<p>We&#39;ll start by example - building an extention that allows you to toggle layer visibility through an external select box.</p>
+				<h3 id="getting-started">Getting Started</h3>
+				<p>Let&#39;s create a new file named <code>layerSelector.js</code>. We&#39;ll jump right in and write some code, inside <code>layerSelector.js</code> type:</p>
+				<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> map;
+  RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
+   map = mapInstance; <span class="hljs-comment">// save instance for future use</span>
+  }
+})();
+</code></pre>
+				<p>You don&#39;t want the extention code executing immediatly on load since the API may not be ready. Instead, you wait for a special event <code>map_added</code> which invokes your <code>init</code> function. For now we can just store the <code>mapInstance</code> in a local variable for later use.</p>
+				<p>It&#39;s best practise to use an immediately invoked function expression like we have above so that the global namespace does not get polluted.</p>
+				<p>@see <a href="classes/_index_d_.rv.map.html">RV.Map</a> for more information on <code>mapInstance</code></p>
+				<h3 id="registering-extention-file">Registering extention file</h3>
+				<p>The relative path to the <code>layerSelector.js</code> file goes inside the <code>rv-extentions</code> property of your map element.</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+				<p>Additional extentions can be added, separated by commas:</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"map1"</span> <span class="hljs-attr">is</span>=<span class="hljs-string">"rv-map"</span> <span class="hljs-attr">rv-config</span>=<span class="hljs-string">"config.json"</span> <span class="hljs-attr">rv-extentions</span>=<span class="hljs-string">"js/layerSelector.js, http://www.example.com/js/anotherExtention.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+				<p>You can also skip using <code>rv-extentions</code> entirely and load the <code>layerSelector.js</code> directly after the viewers <code>rv-main.js</code> file.</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/rv-main.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"js/layerSelector.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+				<p>If you go this route you should change the line <code>RV.addListenerOnce(&#39;map_added&#39;, init);</code> in <code>layerSelector.js</code> to <code>RV.addListener(&#39;map_added&#39;, init);</code> so that your extention is invoked for all viewer instances on the page, not just the first one.</p>
+				<h3 id="adding-the-select-element">Adding the select element</h3>
+				<p>Inside the <code>init</code> function in <code>layerSelector.js</code> type the following:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">var</span> newSelect = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"select"</span>);
+newSelect.onchange = <span class="hljs-string">"changeVisibility(this)"</span>;
+map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+ <span class="hljs-keyword">var</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"option"</span>);
+ option.text = layer.getName();
+ option.value = layer.getId();
+ newSelect.add(option);
+});
+<span class="hljs-built_in">document</span>.body.insertBefore(newSelect, map.getDiv());
+</code></pre>
+				<p>You first create a new select element then iterate over all layers adding them as options to the select element. Lastly, we add the select element before the viewer element.</p>
+				<h3 id="adding-changevisibility-function">Adding changeVisibility function</h3>
+				<p>After the <code>init</code> function let&#39;s add another function named <code>changeVisibility</code>.</p>
+				<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeVisibility</span>(<span class="hljs-params">element</span>) </span>{
+ map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+   layer.setVisibility(<span class="hljs-literal">false</span>);
+ });
+ map.layers.getLayerById(element.value).setVisibility(<span class="hljs-literal">true</span>);
+}
+</code></pre>
+				<p>This function iterates over all layers setting visibility to false. It then gets the selected layer and makes it visible.</p>
+				<h3 id="all-together-now">All together now</h3>
+				<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> map;
+  RV.addListenerOnce(<span class="hljs-string">'map_added'</span>, init);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">mapInstance</span>) </span>{
+     map = mapInstance; <span class="hljs-comment">// save instance for future use</span>
+     <span class="hljs-keyword">var</span> newSelect = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"select"</span>);
+     newSelect.onchange = <span class="hljs-string">"changeVisibility(this)"</span>;
+     map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+         <span class="hljs-keyword">var</span> option = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"option"</span>);
+         option.text = layer.getName();
+         option.value = layer.getId();
+         newSelect.add(option);
+     });
+     <span class="hljs-built_in">document</span>.body.insertBefore(newSelect, map.getDiv());
+  }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeVisibility</span>(<span class="hljs-params">element</span>) </span>{
+     map.layers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">layer</span>) </span>{
+         layer.setVisibility(<span class="hljs-literal">false</span>);
+     });
+     map.layers.getLayerById(element.value).setVisibility(<span class="hljs-literal">true</span>);
+}
+})();
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_mvcobject_.html">"MVCObject"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_d_.html">"index.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_map_.html">"map"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
