@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ui/table/table.service.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-app_startup.html">Application Startup Flow</a></li><li><a href="tutorial-architecture_overview.html">Architecture Overview</a></li><li><a href="tutorial-branching.html">Branching Strategy</a></li><li><a href="tutorial-contributing_guide.html">Contributing Guide</a></li><li><a href="tutorial-scale_dependent_layers.html">Scale Dependent Layers</a></li><li><a href="tutorial-function.html">Function Specific Docs</a></li><li><a href="tutorial-getting_started.html">Getting Started</a></li><li><a href="tutorial-meta_documentation.html">Meta Documentation</a></li><li><a href="tutorial-modules.html">Modules</a></li><li><a href="tutorial-plugins.html">Plugins</a></li><li><a href="tutorial-technical.html">Technical Guides</a></li><li><a href="tutorial-translations.html">Translations</a></li><li><a href="tutorial-ui_overview.html">UI Overview & Terminology</a></li><li><a href="tutorial-user.html">User Guide</a></li></ul><h3>Classes</h3><ul><li><a href="app.core.module_ConfigObject-About.html">About</a></li><li><a href="app.core.module_ConfigObject-Basemap.html">Basemap</a></li><li><a href="app.core.module_ConfigObject-ConfigObject.html">ConfigObject</a></li><li><a href="app.core.module_ConfigObject-Entry.html">Entry</a></li><li><a href="app.core.module_ConfigObject-ExportComponent.html">ExportComponent</a></li><li><a href="app.core.module_ConfigObject-ExportService.html">ExportService</a></li><li><a href="app.core.module_ConfigObject-ExtentSet.html">ExtentSet</a><ul class='methods'><li data-type='method'><a href="app.core.module_ConfigObject-ExtentSet.html#_parseExtent">_parseExtent</a></li></ul></li><li><a href="app.core.module_ConfigObject-Help.html">Help</a></li><li><a href="app.core.module_ConfigObject-InfoSection.html">InfoSection</a></li><li><a href="app.core.module_ConfigObject-InitialLayerSettings.html">InitialLayerSettings</a></li><li><a href="app.core.module_ConfigObject-LayerNode.html">LayerNode</a></li><li><a href="app.core.module_ConfigObject-Legend.html">Legend</a></li><li><a href="app.core.module_ConfigObject-LegendExportComponent.html">LegendExportComponent</a></li><li><a href="app.core.module_ConfigObject-LegendIsOpen.html">LegendIsOpen</a></li><li><a href="app.core.module_ConfigObject-LodSet.html">LodSet</a></li><li><a href="app.core.module_ConfigObject-Map.html">Map</a></li><li><a href="app.core.module_ConfigObject-NavBar.html">NavBar</a></li><li><a href="app.core.module_ConfigObject-Services.html">Services</a></li><li><a href="app.core.module_ConfigObject-SideMenu.html">SideMenu</a></li><li><a href="app.core.module_ConfigObject-StartPoint.html">StartPoint</a></li><li><a href="app.core.module_ConfigObject-TableIsOpen.html">TableIsOpen</a></li><li><a href="app.core.module_ConfigObject-TileSchema.html">TileSchema</a></li><li><a href="app.core.module_ConfigObject-UI.html">UI</a></li><li><a href="app.core.module_ConfigObject-UILegend.html">UILegend</a></li><li><a href="app.core.module_ConfigObject-VisibilitySet.html">VisibilitySet</a></li><li><a href="app.core.module_configService-Config.html">Config</a><ul class='methods'><li data-type='method'><a href="app.core.module_configService-Config.html#parseAsGlobalObject">parseAsGlobalObject</a></li><li data-type='method'><a href="app.core.module_configService-Config.html#parseAsJson">parseAsJson</a></li><li data-type='method'><a href="app.core.module_configService-Config.html#parseSync">parseSync</a></li><li data-type='method'><a href="app.core.module_configService-Config.html#processRCS">processRCS</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerBlueprint.html">LayerBlueprint</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerBlueprint.html#generateLayer">generateLayer</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html">LayerFileBlueprint</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerFileBlueprint.html#generateLayer">generateLayer</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory-LayerServiceBlueprint.html">LayerServiceBlueprint</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory-LayerServiceBlueprint.html#generateLayer">generateLayer</a></li></ul></li><li><a href="app.geo.module_LegendBlock-LegendGroup.html">LegendGroup</a></li><li><a href="app.geo.module_LegendBlock-ProxyWrapper.html">ProxyWrapper</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LegendBlock-ProxyWrapper.html#fetchGraphic">fetchGraphic</a></li><li data-type='method'><a href="app.geo.module_LegendBlock-ProxyWrapper.html#isOffScale">isOffScale</a></li><li data-type='method'><a href="app.geo.module_LegendBlock-ProxyWrapper.html#zoomToGraphic">zoomToGraphic</a></li></ul></li><li><a href="app.geo.module_LegendElementFactory-SymbologyControl.html">SymbologyControl</a></li><li><a href="app.ui.module_StepperFactory-Stepper.html">Stepper</a><ul class='methods'><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_configureStep">_configureStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_moveStep">_moveStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_reset">_reset</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#_think">_think</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#addSteps">addSteps</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#cancelMove">cancelMove</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#moveToStep">moveToStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#nextStep">nextStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#previousStep">previousStep</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#reset">reset</a></li><li data-type='method'><a href="app.ui.module_StepperFactory-Stepper.html#start">start</a></li></ul></li><li><a href="app.ui.module_SymbologyStack-SymbologyStack.html">SymbologyStack</a></li><li><a href="app.ui.module_tooltipService-ContainInside.html">ContainInside</a></li><li><a href="app.ui.module_tooltipService-FollowMap.html">FollowMap</a></li><li><a href="app.ui.module_tooltipService-FollowMouse.html">FollowMouse</a></li><li><a href="app.ui.module_tooltipService-Tooltip.html">Tooltip</a></li><li><a href="app.ui.module_tooltipService-TooltipStrategy.html">TooltipStrategy</a></li><li><a href="ConfigObject.UI.html">UI</a></li><li><a href="ExportSize.html">ExportSize</a></li><li><a href="ToggleSymbol.html">ToggleSymbol</a></li><li><a href="Viewer.html">Viewer</a><ul class='methods'><li data-type='method'><a href="Viewer.html#clearTabindex">clearTabindex</a></li><li data-type='method'><a href="Viewer.html#contains">contains</a></li><li data-type='method'><a href="Viewer.html#setDialogAction">setDialogAction</a></li><li data-type='method'><a href="Viewer.html#setStatus">setStatus</a></li><li data-type='method'><a href="Viewer.html#trapped">trapped</a></li></ul></li><li><a href="ViewerGroup.html">ViewerGroup</a><ul class='methods'><li data-type='method'><a href="ViewerGroup.html#add">add</a></li><li data-type='method'><a href="ViewerGroup.html#contains">contains</a></li><li data-type='method'><a href="ViewerGroup.html#deactivate">deactivate</a></li><li data-type='method'><a href="ViewerGroup.html#status">status</a></li><li data-type='method'><a href="ViewerGroup.html#trapped">trapped</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="app.common.module_displayManager.html">displayManager</a><ul class='methods'><li data-type='method'><a href="app.common.module_displayManager.html#~clearDisplayPanel">clearDisplayPanel</a></li><li data-type='method'><a href="app.common.module_displayManager.html#~setDisplay">setDisplay</a></li><li data-type='method'><a href="app.common.module_displayManager.html#~toggleDisplayPanel">toggleDisplayPanel</a></li></ul></li><li><a href="app.common.module_stateManager.html">stateManager</a><ul class='methods'><li data-type='method'><a href="app.common.module_stateManager.html#~addState">addState</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~callback">callback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~closePanel">closePanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~closePanelFromHistory">closePanelFromHistory</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getChildren">getChildren</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getItem">getItem</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~getParent">getParent</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~modifyHistory">modifyHistory</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~onCloseCallback">onCloseCallback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~openChildPanel">openChildPanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~openPanel">openPanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~openParentPanel">openParentPanel</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~panelDimension">panelDimension</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~runCloseCallback">runCloseCallback</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setActive">setActive</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setItemProperty">setItemProperty</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~setMorph">setMorph</a></li><li data-type='method'><a href="app.common.module_stateManager.html#~togglePanel">togglePanel</a></li></ul></li><li><a href="app.core.module_common.html">common</a><ul class='methods'><li data-type='method'><a href="app.core.module_common.html#~intersect">intersect</a></li></ul></li><li><a href="app.core.module_ConfigObject.html">ConfigObject</a><ul class='methods'><li data-type='method'><a href="app.core.module_ConfigObject.html#~_defaultControls">_defaultControls</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~_defaultState">_defaultState</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~addChild">addChild</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~applyLayerNodeDefaults">applyLayerNodeDefaults</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~createColumnNode">createColumnNode</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~hasAllSearchServices">hasAllSearchServices</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~makeBlankBasemap">makeBlankBasemap</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~reset">reset</a></li><li data-type='method'><a href="app.core.module_ConfigObject.html#~walkFunction">walkFunction</a></li></ul></li><li><a href="app.core.module_configService.html">configService</a><ul class='methods'><li data-type='method'><a href="app.core.module_configService.html#~_initialize">_initialize</a></li><li data-type='method'><a href="app.core.module_configService.html#~currentLang">currentLang</a></li><li data-type='method'><a href="app.core.module_configService.html#~getLang">getLang</a></li><li data-type='method'><a href="app.core.module_configService.html#~reInitialize">reInitialize</a></li></ul></li><li><a href="app.geo.module_gapiService.html">gapiService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_gapiService.html#~init">init</a></li></ul></li><li><a href="app.geo.module_Geo.html">Geo</a></li><li><a href="app.geo.module_geoSearch.html">geoSearch</a><ul class='methods'><li data-type='method'><a href="app.geo.module_geoSearch.html#~convertLatLongDMS">convertLatLongDMS</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~getProvinces">getProvinces</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~getTypes">getTypes</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~init">init</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~isEnabled">isEnabled</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~parseData">parseData</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~parseLatLong">parseLatLong</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~postQuery">postQuery</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~preQuery">preQuery</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~query">query</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setExtent">setExtent</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setLatLng">setLatLng</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setProvince">setProvince</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setQueryParam">setQueryParam</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setRadius">setRadius</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~setType">setType</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~zoomScale">zoomScale</a></li><li data-type='method'><a href="app.geo.module_geoSearch.html#~zoomSearchExtent">zoomSearchExtent</a></li></ul></li><li><a href="app.geo.module_geoService.html">geoService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_geoService.html#~assembleMap">assembleMap</a></li><li data-type='method'><a href="app.geo.module_geoService.html#~validateExtent">validateExtent</a></li></ul></li><li><a href="app.geo.module_identifyService.html">identifyService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_identifyService.html#~identify">identify</a></li><li data-type='method'><a href="app.geo.module_identifyService.html#~makeInfalliblePromise">makeInfalliblePromise</a></li></ul></li><li><a href="app.geo.module_LayerBlueprintFactory.html">LayerBlueprintFactory</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory.html#~_applyFilterQuery">_applyFilterQuery</a></li><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory.html#~_getColumnFilterDefintion">_getColumnFilterDefintion</a></li><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory.html#~_getFilterDefintion">_getFilterDefintion</a></li><li data-type='method'><a href="app.geo.module_LayerBlueprintFactory.html#~epsgLookup">epsgLookup</a></li></ul></li><li><a href="app.geo.module_layerRegistry.html">layerRegistry</a><ul class='methods'><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_advanceLoadingQueue">_advanceLoadingQueue</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_attribsInvalidation">_attribsInvalidation</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_loadNextLayerRecord">_loadNextLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_onLayerRecordLoad">_onLayerRecordLoad</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_setHoverTips">_setHoverTips</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_syncSortGroup">_syncSortGroup</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~_waitForMapLoad">_waitForMapLoad</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getBoundingBoxRecord">getBoundingBoxRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getLayerRecord">getLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~getRcsLayerIDs">getRcsLayerIDs</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~makeBoundingBoxRecord">makeBoundingBoxRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~makeLayerRecord">makeLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~regenerateLayerRecord">regenerateLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~removeBoundingBoxRecord">removeBoundingBoxRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~removeLayerRecord">removeLayerRecord</a></li><li data-type='method'><a href="app.geo.module_layerRegistry.html#~synchronizeLayerOrder">synchronizeLayerOrder</a></li></ul></li><li><a href="app.geo.module_LayerSourceInfo.html">LayerSourceInfo</a></li><li><a href="app.geo.module_LegendBlock.html">LegendBlock</a><ul class='methods'><li data-type='method'><a href="app.geo.module_LegendBlock.html#~_addReload">_addReload</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~_collapsedCheck">_collapsedCheck</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~_makeBbox">_makeBbox</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~_removeReload">_removeReload</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~aggregateStates">aggregateStates</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~applyInitialStateSettings">applyInitialStateSettings</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~isControlDisabled">isControlDisabled</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~isControlSystemDisabled">isControlSystemDisabled</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~isControlUserDisabled">isControlUserDisabled</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~isControlVisible">isControlVisible</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~predictLoadedFeatureCount">predictLoadedFeatureCount</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~synchronizeControlledProxyWrappers">synchronizeControlledProxyWrappers</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~validateProjection">validateProjection</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~walkFunction">walkFunction</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~zoomToBoundary">zoomToBoundary</a></li><li data-type='method'><a href="app.geo.module_LegendBlock.html#~zoomToScale">zoomToScale</a></li></ul></li><li><a href="app.geo.module_LegendElementFactory.html">LegendElementFactory</a></li><li><a href="app.geo.module_legendService.html">legendService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_legendService.html#~_addChildBlock">_addChildBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_boundingBoxRemoval">_boundingBoxRemoval</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_createDynamicChildLegendBlock">_createDynamicChildLegendBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_createDynamicChildTree">_createDynamicChildTree</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_getControlledLegendBlockProxy">_getControlledLegendBlockProxy</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_getLayerBlueprint">_getLayerBlueprint</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_getLayerEntryConfig">_getLayerEntryConfig</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_getLegendBlockProxy">_getLegendBlockProxy</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeDynamicGroupBlock">_makeDynamicGroupBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeGroupBlock">_makeGroupBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeInfoBlock">_makeInfoBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeLegendBlock">_makeLegendBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeNodeBlock">_makeNodeBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_makeSetBlock">_makeSetBlock</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_onLayerRecordLoad">_onLayerRecordLoad</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_onLayerRecordLoad">_onLayerRecordLoad</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_reject">_reject</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_resolve">_resolve</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~_saveLayerEntryConfig">_saveLayerEntryConfig</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~addLayerDefinition">addLayerDefinition</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~constructLegend">constructLegend</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~createBlueprint">createBlueprint</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~importLayerBlueprint">importLayerBlueprint</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~reloadBoundLegendBlocks">reloadBoundLegendBlocks</a></li><li data-type='method'><a href="app.geo.module_legendService.html#~removeLegendBlock">removeLegendBlock</a></li></ul></li><li><a href="app.geo.module_locateService.html">locateService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_locateService.html#~_apiLocate">_apiLocate</a></li><li data-type='method'><a href="app.geo.module_locateService.html#~_browserLocate">_browserLocate</a></li><li data-type='method'><a href="app.geo.module_locateService.html#~find">find</a></li><li data-type='method'><a href="app.geo.module_locateService.html#~geolocate">geolocate</a></li></ul></li><li><a href="app.geo.module_mapService.html">mapService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_mapService.html#~_getStartExtent">_getStartExtent</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~_setLoadingFlag">_setLoadingFlag</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~_setMapListeners">_setMapListeners</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~_toggleHighlightHaze">_toggleHighlightHaze</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~addGraphicHighlight">addGraphicHighlight</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~checkForBadZoom">checkForBadZoom</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~clearHighlight">clearHighlight</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~destroyMap">destroyMap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~getCenterPointInTargetBasemap">getCenterPointInTargetBasemap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~makeMap">makeMap</a></li><li data-type='method'><a href="app.geo.module_mapService.html#~zoomToLatLong">zoomToLatLong</a></li></ul></li><li><a href="app.geo.module_mapToolService.html">mapToolService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_mapToolService.html#~convertDDToDMS">convertDDToDMS</a></li><li data-type='method'><a href="app.geo.module_mapToolService.html#~getMapClickInfo">getMapClickInfo</a></li><li data-type='method'><a href="app.geo.module_mapToolService.html#~mapCoordinates">mapCoordinates</a></li><li data-type='method'><a href="app.geo.module_mapToolService.html#~northArrow">northArrow</a></li><li data-type='method'><a href="app.geo.module_mapToolService.html#~padZero">padZero</a></li></ul></li><li><a href="app.geo.module_metadataService.html">metadataService</a><ul class='methods'><li data-type='method'><a href="app.geo.module_metadataService.html#~applyXSLT">applyXSLT</a></li><li data-type='method'><a href="app.geo.module_metadataService.html#~loadFromURL">loadFromURL</a></li><li data-type='method'><a href="app.geo.module_metadataService.html#~loadXmlFile">loadXmlFile</a></li></ul></li><li><a href="app.geo.module_rvInitMap.html">rvInitMap</a><ul class='methods'><li data-type='method'><a href="app.geo.module_rvInitMap.html#~animate">animate</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~keyDownHandler">keyDownHandler</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~keyUpHandler">keyUpHandler</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~mouseDownHandler">mouseDownHandler</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~mouseMoveHandlerBuilder">mouseMoveHandlerBuilder</a></li><li data-type='method'><a href="app.geo.module_rvInitMap.html#~mouseUpHandler">mouseUpHandler</a></li></ul></li><li><a href="app.geo.module_rvOverviewToggle.html">rvOverviewToggle</a><ul class='methods'><li data-type='method'><a href="app.geo.module_rvOverviewToggle.html#~animate">animate</a></li><li data-type='method'><a href="app.geo.module_rvOverviewToggle.html#~animationCompleted">animationCompleted</a></li><li data-type='method'><a href="app.geo.module_rvOverviewToggle.html#~toggleOverview">toggleOverview</a></li></ul></li><li><a href="app.layout.module_animationService.html">animationService</a><ul class='methods'><li data-type='method'><a href="app.layout.module_animationService.html#~animationWrapper">animationWrapper</a></li><li data-type='method'><a href="app.layout.module_animationService.html#~timeLineLite">timeLineLite</a></li></ul></li><li><a href="app.layout.module_layoutService.html">layoutService</a><ul class='methods'><li data-type='method'><a href="app.layout.module_layoutService.html#~currentHeight">currentHeight</a></li><li data-type='method'><a href="app.layout.module_layoutService.html#~currentLayout">currentLayout</a></li></ul></li><li><a href="app.layout.module_referenceService.html">referenceService</a><ul class='methods'><li data-type='method'><a href="app.layout.module_referenceService.html#~onResize">onResize</a></li><li data-type='method'><a href="app.layout.module_referenceService.html#~peekAtMap">peekAtMap</a></li><li data-type='method'><a href="app.layout.module_referenceService.html#~watchBBoxChanges">watchBBoxChanges</a></li></ul></li><li><a href="app.layout.module_rvShell.html">rvShell</a><ul class='methods'><li data-type='method'><a href="app.layout.module_rvShell.html#~updateClass">updateClass</a></li><li data-type='method'><a href="app.layout.module_rvShell.html#~updateMapCoordinates">updateMapCoordinates</a></li></ul></li><li><a href="app.module_core.html">core</a><ul class='methods'><li data-type='method'><a href="app.module_core.html#~_closeOpenPanels">_closeOpenPanels</a></li><li data-type='method'><a href="app.module_core.html#~adjustRcsLanguage">adjustRcsLanguage</a></li><li data-type='method'><a href="app.module_core.html#~binaryToHex">binaryToHex</a></li><li data-type='method'><a href="app.module_core.html#~decode64">decode64</a></li><li data-type='method'><a href="app.module_core.html#~decodeBoolean">decodeBoolean</a></li><li data-type='method'><a href="app.module_core.html#~decodeMainBookmark">decodeMainBookmark</a></li><li data-type='method'><a href="app.module_core.html#~decodeOpacity">decodeOpacity</a></li><li data-type='method'><a href="app.module_core.html#~encode64">encode64</a></li><li data-type='method'><a href="app.module_core.html#~encodeBoolean">encodeBoolean</a></li><li data-type='method'><a href="app.module_core.html#~encodeInteger">encodeInteger</a></li><li data-type='method'><a href="app.module_core.html#~encodeLegendChild">encodeLegendChild</a></li><li data-type='method'><a href="app.module_core.html#~encodeOpacity">encodeOpacity</a></li><li data-type='method'><a href="app.module_core.html#~extractChildSettings">extractChildSettings</a></li><li data-type='method'><a href="app.module_core.html#~extractLayerSettings">extractLayerSettings</a></li><li data-type='method'><a href="app.module_core.html#~extractRcsKey">extractRcsKey</a></li><li data-type='method'><a href="app.module_core.html#~extractRcsLayers">extractRcsLayers</a></li><li data-type='method'><a href="app.module_core.html#~getBookmark">getBookmark</a></li><li data-type='method'><a href="app.module_core.html#~hexToBinary">hexToBinary</a></li><li data-type='method'><a href="app.module_core.html#~insertRcsLayers">insertRcsLayers</a></li><li data-type='method'><a href="app.module_core.html#~loadNewLang">loadNewLang</a></li><li data-type='method'><a href="app.module_core.html#~loadWithBookmark">loadWithBookmark</a></li><li data-type='method'><a href="app.module_core.html#~loadWithBookmark">loadWithBookmark</a></li><li data-type='method'><a href="app.module_core.html#~makeLayerBookmark">makeLayerBookmark</a></li><li data-type='method'><a href="app.module_core.html#~onCreate">onCreate</a></li><li data-type='method'><a href="app.module_core.html#~openDialogInfo">openDialogInfo</a></li><li data-type='method'><a href="app.module_core.html#~parseBookmark">parseBookmark</a></li><li data-type='method'><a href="app.module_core.html#~parseLayers">parseLayers</a></li><li data-type='method'><a href="app.module_core.html#~PluginDialogController">PluginDialogController</a></li><li data-type='method'><a href="app.module_core.html#~register">register</a></li><li data-type='method'><a href="app.module_core.html#~registerDebounce">registerDebounce</a></li><li data-type='method'><a href="app.module_core.html#~reloadConfig">reloadConfig</a></li></ul></li><li><a href="app.module_ui.html">ui</a><ul class='methods'><li data-type='method'><a href="app.module_ui.html#~_createSVGCode">_createSVGCode</a></li><li data-type='method'><a href="app.module_ui.html#~_showBlock">_showBlock</a></li><li data-type='method'><a href="app.module_ui.html#~close">close</a></li><li data-type='method'><a href="app.module_ui.html#~closeLoaderService">closeLoaderService</a></li><li data-type='method'><a href="app.module_ui.html#~configureOnContinue">configureOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~configureReset">configureReset</a></li><li data-type='method'><a href="app.module_ui.html#~connectOnContinue">connectOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~connectReset">connectReset</a></li><li data-type='method'><a href="app.module_ui.html#~extractLegendTree">extractLegendTree</a></li><li data-type='method'><a href="app.module_ui.html#~generate">generate</a></li><li data-type='method'><a href="app.module_ui.html#~getSectionWidth">getSectionWidth</a></li><li data-type='method'><a href="app.module_ui.html#~isAllLayersSelected">isAllLayersSelected</a></li><li data-type='method'><a href="app.module_ui.html#~isDownloadBlocked">isDownloadBlocked</a></li><li data-type='method'><a href="app.module_ui.html#~isGenerating">isGenerating</a></li><li data-type='method'><a href="app.module_ui.html#~isSettingsEditable">isSettingsEditable</a></li><li data-type='method'><a href="app.module_ui.html#~isSomeLayersSelected">isSomeLayersSelected</a></li><li data-type='method'><a href="app.module_ui.html#~isWMSLayerWithMultipleStyles">isWMSLayerWithMultipleStyles</a></li><li data-type='method'><a href="app.module_ui.html#~makeGroup">makeGroup</a></li><li data-type='method'><a href="app.module_ui.html#~makeHeader">makeHeader</a></li><li data-type='method'><a href="app.module_ui.html#~makeItem">makeItem</a></li><li data-type='method'><a href="app.module_ui.html#~makeLayer">makeLayer</a></li><li data-type='method'><a href="app.module_ui.html#~makeLegend">makeLegend</a></li><li data-type='method'><a href="app.module_ui.html#~makeLegendElement">makeLegendElement</a></li><li data-type='method'><a href="app.module_ui.html#~onCancel">onCancel</a></li><li data-type='method'><a href="app.module_ui.html#~onDynamicLayerSection">onDynamicLayerSection</a></li><li data-type='method'><a href="app.module_ui.html#~open">open</a></li><li data-type='method'><a href="app.module_ui.html#~saveImage">saveImage</a></li><li data-type='method'><a href="app.module_ui.html#~scrollCustomSettings">scrollCustomSettings</a></li><li data-type='method'><a href="app.module_ui.html#~selectOnContinue">selectOnContinue</a></li><li data-type='method'><a href="app.module_ui.html#~serviceUrlResetValidation">serviceUrlResetValidation</a></li><li data-type='method'><a href="app.module_ui.html#~showToast">showToast</a></li><li data-type='method'><a href="app.module_ui.html#~toggleErrorMessage">toggleErrorMessage</a></li><li data-type='method'><a href="app.module_ui.html#~toggleLayers">toggleLayers</a></li><li data-type='method'><a href="app.module_ui.html#~updateComponents">updateComponents</a></li><li data-type='method'><a href="app.module_ui.html#~updateTitleComponent">updateTitleComponent</a></li><li data-type='method'><a href="app.module_ui.html#~wraplegend">wraplegend</a></li></ul></li><li><a href="app.ui.module_basemapService.html">basemapService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_basemapService.html#~close">close</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~open">open</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~setOtherChromeOpacity">setOtherChromeOpacity</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~toggle">toggle</a></li><li data-type='method'><a href="app.ui.module_basemapService.html#~toggle">toggle</a></li></ul></li><li><a href="app.ui.module_detailService.html">detailService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_detailService.html#~closeDetails">closeDetails</a></li><li data-type='method'><a href="app.ui.module_detailService.html#~expandPanel">expandPanel</a></li></ul></li><li><a href="app.ui.module_errorService.html">errorService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_errorService.html#~display">display</a></li><li data-type='method'><a href="app.ui.module_errorService.html#~remove">remove</a></li></ul></li><li><a href="app.ui.module_ExportComponent.html">ExportComponent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_ExportComponent.html#~constructor">constructor</a></li><li data-type='method'><a href="app.ui.module_ExportComponent.html#~generate">generate</a></li><li data-type='method'><a href="app.ui.module_ExportComponent.html#~reset">reset</a></li></ul></li><li><a href="app.ui.module_exportComponentsService.html">exportComponentsService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_exportComponentsService.html#~get">get</a></li><li data-type='method'><a href="app.ui.module_exportComponentsService.html#~init">init</a></li><li data-type='method'><a href="app.ui.module_exportComponentsService.html#~update">update</a></li></ul></li><li><a href="app.ui.module_exportGenerators.html">exportGenerators</a><ul class='methods'><li data-type='method'><a href="app.ui.module_exportGenerators.html#~footnoteGenerator">footnoteGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~getScaleInfo">getScaleInfo</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~legendGenerator">legendGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~mapDummyGenerator">mapDummyGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~mapLocalGenerator">mapLocalGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~mapServerGenerator">mapServerGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~northarrowGenerator">northarrowGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~scalebarGenerator">scalebarGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~timestampGenerator">timestampGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~titleGenerator">titleGenerator</a></li><li data-type='method'><a href="app.ui.module_exportGenerators.html#~wrapOutput">wrapOutput</a></li></ul></li><li><a href="app.ui.module_ExportSize.html">ExportSize</a></li><li><a href="app.ui.module_exportSizesService.html">exportSizesService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_exportSizesService.html#~isCustomOptionSelected">isCustomOptionSelected</a></li><li data-type='method'><a href="app.ui.module_exportSizesService.html#~isCustomOptionUpdated">isCustomOptionUpdated</a></li><li data-type='method'><a href="app.ui.module_exportSizesService.html#~resetTemporaryOption">resetTemporaryOption</a></li><li data-type='method'><a href="app.ui.module_exportSizesService.html#~update">update</a></li><li data-type='method'><a href="app.ui.module_exportSizesService.html#~updateCustomOption">updateCustomOption</a></li></ul></li><li><a href="app.ui.module_geosearchFiltersService.html">geosearchFiltersService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_geosearchFiltersService.html#~init">init</a></li><li data-type='method'><a href="app.ui.module_geosearchFiltersService.html#~setExtentParameter">setExtentParameter</a></li><li data-type='method'><a href="app.ui.module_geosearchFiltersService.html#~setProvince">setProvince</a></li><li data-type='method'><a href="app.ui.module_geosearchFiltersService.html#~setType">setType</a></li><li data-type='method'><a href="app.ui.module_geosearchFiltersService.html#~setVisible">setVisible</a></li></ul></li><li><a href="app.ui.module_geosearchService.html">geosearchService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_geosearchService.html#~onClose">onClose</a></li><li data-type='method'><a href="app.ui.module_geosearchService.html#~runQuery">runQuery</a></li><li data-type='method'><a href="app.ui.module_geosearchService.html#~toggleBuilder">toggleBuilder</a></li><li data-type='method'><a href="app.ui.module_geosearchService.html#~zoomTo">zoomTo</a></li></ul></li><li><a href="app.ui.module_helpService.html">helpService</a></li><li><a href="app.ui.module_highlightFilter.html">highlightFilter</a><ul class='methods'><li data-type='method'><a href="app.ui.module_highlightFilter.html#~clearDrawn">clearDrawn</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~closeHelpSummary">closeHelpSummary</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~doSearch">doSearch</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~findTextNodes">findTextNodes</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~onSearchTermChange">onSearchTermChange</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~open">open</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~register">register</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~setDrawn">setDrawn</a></li><li data-type='method'><a href="app.ui.module_highlightFilter.html#~unregister">unregister</a></li></ul></li><li><a href="app.ui.module_layerSource.html">layerSource</a><ul class='methods'><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsDynamic">_parseAsDynamic</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsFeature">_parseAsFeature</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsImage">_parseAsImage</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsSomethingElse">_parseAsSomethingElse</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsTile">_parseAsTile</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~_parseAsWMS">_parseAsWMS</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~fetchFileInfo">fetchFileInfo</a></li><li data-type='method'><a href="app.ui.module_layerSource.html#~fetchServiceInfo">fetchServiceInfo</a></li></ul></li><li><a href="app.ui.module_mapNavigationService.html">mapNavigationService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_mapNavigationService.html#~mapNavigationService">mapNavigationService</a></li></ul></li><li><a href="app.ui.module_rvAppbar.html">rvAppbar</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvAppbar.html#~rvAppbar">rvAppbar</a></li></ul></li><li><a href="app.ui.module_rvBasemap.html">rvBasemap</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvBasemap.html#~selectBasemap">selectBasemap</a></li></ul></li><li><a href="app.ui.module_rvBasemapItem.html">rvBasemapItem</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvBasemapItem.html#~toggleDescription">toggleDescription</a></li></ul></li><li><a href="app.ui.module_rvContentPane.html">rvContentPane</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvContentPane.html#~addHeaderControl">addHeaderControl</a></li><li data-type='method'><a href="app.ui.module_rvContentPane.html#~link">link</a></li></ul></li><li><a href="app.ui.module_rvDetails.html">rvDetails</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetails.html#~_waitForFirstResult">_waitForFirstResult</a></li><li data-type='method'><a href="app.ui.module_rvDetails.html#~findPreviouslySelected">findPreviouslySelected</a></li><li data-type='method'><a href="app.ui.module_rvDetails.html#~selectItem">selectItem</a></li></ul></li><li><a href="app.ui.module_rvDetailsContent.html">rvDetailsContent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsContent.html#~rvDetailsContent">rvDetailsContent</a></li></ul></li><li><a href="app.ui.module_rvDetailsHeader.html">rvDetailsHeader</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsHeader.html#~rvDetailsHeader">rvDetailsHeader</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordEsrifeature.html">rvDetailsRecordEsrifeature</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~_drawFeatureHighlight">_drawFeatureHighlight</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~_redrawHighlight">_redrawHighlight</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~initHighlight">initHighlight</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~rvDetailsRecordEsrifeature">rvDetailsRecordEsrifeature</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeature.html#~toggleHighlight">toggleHighlight</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordEsrifeatureItem.html">rvDetailsRecordEsrifeatureItem</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsRecordEsrifeatureItem.html#~toggleDetails">toggleDetails</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordHtml.html">rvDetailsRecordHtml</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsRecordHtml.html#~_redrawHighlight">_redrawHighlight</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordHtml.html#~rvDetailsRecordHtml">rvDetailsRecordHtml</a></li></ul></li><li><a href="app.ui.module_rvDetailsRecordText.html">rvDetailsRecordText</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvDetailsRecordText.html#~_redrawHighlight">_redrawHighlight</a></li><li data-type='method'><a href="app.ui.module_rvDetailsRecordText.html#~rvDetailsRecordText">rvDetailsRecordText</a></li></ul></li><li><a href="app.ui.module_rvDetectScrollbar.html">rvDetectScrollbar</a></li><li><a href="app.ui.module_rvDragula.html">rvDragula</a></li><li><a href="app.ui.module_rvExportCustomSize.html">rvExportCustomSize</a></li><li><a href="app.ui.module_rvGeosearch.html">rvGeosearch</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvGeosearch.html#~getTooltipDirection">getTooltipDirection</a></li><li data-type='method'><a href="app.ui.module_rvGeosearch.html#~onBottomFiltersUpdate">onBottomFiltersUpdate</a></li><li data-type='method'><a href="app.ui.module_rvGeosearch.html#~onTopFiltersUpdate">onTopFiltersUpdate</a></li><li data-type='method'><a href="app.ui.module_rvGeosearch.html#~rvGeosearch">rvGeosearch</a></li><li data-type='method'><a href="app.ui.module_rvGeosearch.html#~setTruncated">setTruncated</a></li></ul></li><li><a href="app.ui.module_rvGeosearchBar.html">rvGeosearchBar</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvGeosearchBar.html#~getGeosearchMenuNode">getGeosearchMenuNode</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchBar.html#~getSuggestions">getSuggestions</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchBar.html#~onUpdateDebounceBuilder">onUpdateDebounceBuilder</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchBar.html#~rvGeosearch">rvGeosearch</a></li></ul></li><li><a href="app.ui.module_rvGeosearchBottomFilters.html">rvGeosearchBottomFilters</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvGeosearchBottomFilters.html#~onUpdateDebounceBuilder">onUpdateDebounceBuilder</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchBottomFilters.html#~rvGeosearchBottomFilters">rvGeosearchBottomFilters</a></li></ul></li><li><a href="app.ui.module_rvGeosearchTopFilters.html">rvGeosearchTopFilters</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvGeosearchTopFilters.html#~clear">clear</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchTopFilters.html#~rvGeosearchTopFilters">rvGeosearchTopFilters</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchTopFilters.html#~setProvince">setProvince</a></li><li data-type='method'><a href="app.ui.module_rvGeosearchTopFilters.html#~setType">setType</a></li></ul></li><li><a href="app.ui.module_rvHelpOverlay.html">rvHelpOverlay</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~draw">draw</a></li><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~overlap">overlap</a></li><li data-type='method'><a href="app.ui.module_rvHelpOverlay.html#~shouldBeDrawn">shouldBeDrawn</a></li></ul></li><li><a href="app.ui.module_rvHelpSearch.html">rvHelpSearch</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvHelpSearch.html#~rvHelpSearch">rvHelpSearch</a></li></ul></li><li><a href="app.ui.module_rvLayerListSlider.html">rvLayerListSlider</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~animateClosed">animateClosed</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~animateOpen">animateOpen</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~itemSelectedByKeypress">itemSelectedByKeypress</a></li><li data-type='method'><a href="app.ui.module_rvLayerListSlider.html#~itemSelectedByMouse">itemSelectedByMouse</a></li></ul></li><li><a href="app.ui.module_rvLegendBlock.html">rvLegendBlock</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLegendBlock.html#~getTooltipDelay">getTooltipDelay</a></li><li data-type='method'><a href="app.ui.module_rvLegendBlock.html#~getTooltipDirection">getTooltipDirection</a></li><li data-type='method'><a href="app.ui.module_rvLegendBlock.html#~link">link</a></li></ul></li><li><a href="app.ui.module_rvLoaderFile.html">rvLoaderFile</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~_loadFile">_loadFile</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~_updateProgress">_updateProgress</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~closeLoaderFile">closeLoaderFile</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~configureOnContinue">configureOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileReset">fileReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileResetValidation">fileResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileUrlReset">fileUrlReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~fileUrlResetValidation">fileUrlResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~onCancel">onCancel</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~onLayerBlueprintReady">onLayerBlueprintReady</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectOnContinue">selectOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectReset">selectReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectReset">selectReset</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectResetValidation">selectResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~selectResetValidation">selectResetValidation</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~toggleErrorMessage">toggleErrorMessage</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadFilesSubmitted">uploadFilesSubmitted</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadOnContinue">uploadOnContinue</a></li><li data-type='method'><a href="app.ui.module_rvLoaderFile.html#~uploadReset">uploadReset</a></li></ul></li><li><a href="app.ui.module_rvLoaderMenu.html">rvLoaderMenu</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvLoaderMenu.html#~setFocus">setFocus</a></li></ul></li><li><a href="app.ui.module_rvMapnav.html">rvMapnav</a></li><li><a href="app.ui.module_rvMapnavButton.html">rvMapnavButton</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMapnavButton.html#~rvMapnavButton">rvMapnavButton</a></li></ul></li><li><a href="app.ui.module_rvMenuLink.html">rvMenuLink</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMenuLink.html#~rvMenuLink">rvMenuLink</a></li></ul></li><li><a href="app.ui.module_rvMetadataContent.html">rvMetadataContent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataContent.html#~rvMetadataContent">rvMetadataContent</a></li></ul></li><li><a href="app.ui.module_rvMetadataExpand.html">rvMetadataExpand</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataExpand.html#~rvMetadataExpand">rvMetadataExpand</a></li></ul></li><li><a href="app.ui.module_rvMetadataPanel.html">rvMetadataPanel</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMetadataPanel.html#~rvMetadataPanel">rvMetadataPanel</a></li></ul></li><li><a href="app.ui.module_rvMorph.html">rvMorph</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvMorph.html#~linkFunc">linkFunc</a></li><li data-type='method'><a href="app.ui.module_rvMorph.html#~rvMorph">rvMorph</a></li></ul></li><li><a href="app.ui.module_rvPlugSlide.html">rvPlugSlide</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~animationBuilder">animationBuilder</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~buildTween">buildTween</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~calculateShift">calculateShift</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~cleanup">cleanup</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~deltaHelper">deltaHelper</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~getPanelSize">getPanelSize</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~makeFadeAnim">makeFadeAnim</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~makeSlideAnim">makeSlideAnim</a></li><li data-type='method'><a href="app.ui.module_rvPlugSlide.html#~ngShowHideWrapper">ngShowHideWrapper</a></li></ul></li><li><a href="app.ui.module_rvReverse.html">rvReverse</a></li><li><a href="app.ui.module_rvSettings.html">rvSettings</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvSettings.html#~rvSettings">rvSettings</a></li></ul></li><li><a href="app.ui.module_rvSettingsContent.html">rvSettingsContent</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~checkAvailableControls">checkAvailableControls</a></li><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~checkDisabledControls">checkDisabledControls</a></li><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~checkStylesLength">checkStylesLength</a></li><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~checkWMS">checkWMS</a></li><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~findParentBlock">findParentBlock</a></li><li data-type='method'><a href="app.ui.module_rvSettingsContent.html#~rvSettingsContent">rvSettingsContent</a></li></ul></li><li><a href="app.ui.module_rvSidenav.html">rvSidenav</a></li><li><a href="app.ui.module_rvStepperItem.html">rvStepperItem</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvStepperItem.html#~onCancelBefore">onCancelBefore</a></li></ul></li><li><a href="app.ui.module_rvSymbologyStack.html">rvSymbologyStack</a></li><li><a href="app.ui.module_rvTableDefault.html">rvTableDefault</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~addColumnInteractivity">addColumnInteractivity</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~closePanel">closePanel</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~Controller">Controller</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~createTable">createTable</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~customizeColumns">customizeColumns</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~customizeFilter">customizeFilter</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~customizeTable">customizeTable</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~destroyTable">destroyTable</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~getColumnWidth">getColumnWidth</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~getDToLang">getDToLang</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~getTextWidth">getTextWidth</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~initButtons">initButtons</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~initColumns">initColumns</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~link">link</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onDetailsClick">onDetailsClick</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onTableDraw">onTableDraw</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onTableInit">onTableInit</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onTableProcess">onTableProcess</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onTableSort">onTableSort</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~onZoomClick">onZoomClick</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~RenderEllipsis">RenderEllipsis</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~rvTableDefault">rvTableDefault</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~setColumnReorder">setColumnReorder</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~setDToLang">setDToLang</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~setkeytable">setkeytable</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~ToastController">ToastController</a></li><li data-type='method'><a href="app.ui.module_rvTableDefault.html#~triggerTableButton">triggerTableButton</a></li></ul></li><li><a href="app.ui.module_rvTableDefaultMenu.html">rvTableDefaultMenu</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableDefaultMenu.html#~dataExportCSVTODO:eschewevents;neededheresinceit'sveryhardtocommunicatewithmaintabledirective;angular1.5shouldsolveitusingdirectiveswithmultipletransclusions">dataExportCSV
+TODO: eschew events; needed here since it's very hard to communicate with main table directive; angular 1.5 should solve it using directives with multiple transclusions</a></li><li data-type='method'><a href="app.ui.module_rvTableDefaultMenu.html#~dataPrintTODO:eschewevents;neededheresinceit'sveryhardtocommunicatewithmaintabledirective;angular1.5shouldsolveitusingdirectiveswithmultipletransclusions">dataPrint
+TODO: eschew events; needed here since it's very hard to communicate with main table directive; angular 1.5 should solve it using directives with multiple transclusions</a></li></ul></li><li><a href="app.ui.module_rvTableDefinition.html">rvTableDefinition</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableDefinition.html#~rvTableDefinition">rvTableDefinition</a></li><li data-type='method'><a href="app.ui.module_rvTableDefinition.html#~setDateFilter">setDateFilter</a></li><li data-type='method'><a href="app.ui.module_rvTableDefinition.html#~setFilter">setFilter</a></li><li data-type='method'><a href="app.ui.module_rvTableDefinition.html#~setFilters">setFilters</a></li><li data-type='method'><a href="app.ui.module_rvTableDefinition.html#~setNumberFilter">setNumberFilter</a></li></ul></li><li><a href="app.ui.module_rvTableNumberOnly.html">rvTableNumberOnly</a></li><li><a href="app.ui.module_rvTablePanel.html">rvTablePanel</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTablePanel.html#~closePanel">closePanel</a></li><li data-type='method'><a href="app.ui.module_rvTablePanel.html#~Controller">Controller</a></li><li data-type='method'><a href="app.ui.module_rvTablePanel.html#~link">link</a></li></ul></li><li><a href="app.ui.module_rvTableSearch.html">rvTableSearch</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~buildFilters">buildFilters</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~changeColumnsName">changeColumnsName</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~clear">clear</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~filterComplex">filterComplex</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~rvTableSearch">rvTableSearch</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~search">search</a></li><li data-type='method'><a href="app.ui.module_rvTableSearch.html#~setFilterInfo">setFilterInfo</a></li></ul></li><li><a href="app.ui.module_rvTableSettingCluster.html">rvTableSettingCluster</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableSettingCluster.html#~rvTableSettingCluster">rvTableSettingCluster</a></li></ul></li><li><a href="app.ui.module_rvTableSettingPanel.html">rvTableSettingPanel</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~displayAll">displayAll</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~displayStatus">displayStatus</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~init">init</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~onDisplay">onDisplay</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~onSort">onSort</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~rvTableSettingPanel">rvTableSettingPanel</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~sortAll">sortAll</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~sortColumns">sortColumns</a></li><li data-type='method'><a href="app.ui.module_rvTableSettingPanel.html#~sortStatus">sortStatus</a></li></ul></li><li><a href="app.ui.module_rvToc.html">rvToc</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvToc.html#~_applyInitialDynamicLayerFilter">_applyInitialDynamicLayerFilter</a></li><li data-type='method'><a href="app.ui.module_rvToc.html#~killEvent">killEvent</a></li><li data-type='method'><a href="app.ui.module_rvToc.html#~tocKeyDownHandler">tocKeyDownHandler</a></li><li data-type='method'><a href="app.ui.module_rvToc.html#~toggleReorderMode">toggleReorderMode</a></li><li data-type='method'><a href="app.ui.module_rvToc.html#~toggleSortGroups">toggleSortGroups</a></li></ul></li><li><a href="app.ui.module_rvTocEntryControl.html">rvTocEntryControl</a></li><li><a href="app.ui.module_rvTocExpandMenu.html">rvTocExpandMenu</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTocExpandMenu.html#~_legendBlocksReadyCheck">_legendBlocksReadyCheck</a></li><li data-type='method'><a href="app.ui.module_rvTocExpandMenu.html#~getLegendGroupEntriesExpandState">getLegendGroupEntriesExpandState</a></li><li data-type='method'><a href="app.ui.module_rvTocExpandMenu.html#~toggleLegendGroupEntries">toggleLegendGroupEntries</a></li></ul></li><li><a href="app.ui.module_rvTocVisibilityMenu.html">rvTocVisibilityMenu</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTocVisibilityMenu.html#~_legendBlocksReadyCheck">_legendBlocksReadyCheck</a></li><li data-type='method'><a href="app.ui.module_rvTocVisibilityMenu.html#~getLegendEntriesVisibility">getLegendEntriesVisibility</a></li><li data-type='method'><a href="app.ui.module_rvTocVisibilityMenu.html#~toggleLegendEntries">toggleLegendEntries</a></li></ul></li><li><a href="app.ui.module_rvToggleSlide.html">rvToggleSlide</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~getTargetHeight">getTargetHeight</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~ngShowHideBootstrap">ngShowHideBootstrap</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~toggleClose">toggleClose</a></li><li data-type='method'><a href="app.ui.module_rvToggleSlide.html#~toggleOpen">toggleOpen</a></li></ul></li><li><a href="app.ui.module_rvToolbox.html">rvToolbox</a></li><li><a href="app.ui.module_rvTooltip.html">rvTooltip</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTooltip.html#~watchBBoxChanges">watchBBoxChanges</a></li></ul></li><li><a href="app.ui.module_rvTruncate.html">rvTruncate</a><ul class='methods'><li data-type='method'><a href="app.ui.module_rvTruncate.html#~rvTruncate">rvTruncate</a></li><li data-type='method'><a href="app.ui.module_rvTruncate.html#~rvTruncateTitle">rvTruncateTitle</a></li><li data-type='method'><a href="app.ui.module_rvTruncate.html#~splitString">splitString</a></li><li data-type='method'><a href="app.ui.module_rvTruncate.html#~update">update</a></li></ul></li><li><a href="app.ui.module_sideNavigationService.html">sideNavigationService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~close">close</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~getLongLink">getLongLink</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~getShortLink">getShortLink</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~init">init</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~isCurrentLanguage">isCurrentLanguage</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~open">open</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~selectURL">selectURL</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~switchChanged">switchChanged</a></li><li data-type='method'><a href="app.ui.module_sideNavigationService.html#~switchLanguage">switchLanguage</a></li></ul></li><li><a href="app.ui.module_StepperFactory.html">StepperFactory</a></li><li><a href="app.ui.module_SymbologyStack.html">SymbologyStack</a><ul class='methods'><li data-type='method'><a href="app.ui.module_SymbologyStack.html#~expandSymbology">expandSymbology</a></li><li data-type='method'><a href="app.ui.module_SymbologyStack.html#~fanOutSymbology">fanOutSymbology</a></li><li data-type='method'><a href="app.ui.module_SymbologyStack.html#~getTextWidth">getTextWidth</a></li><li data-type='method'><a href="app.ui.module_SymbologyStack.html#~iconLegendItem">iconLegendItem</a></li><li data-type='method'><a href="app.ui.module_SymbologyStack.html#~imageLegendItem">imageLegendItem</a></li></ul></li><li><a href="app.ui.module_tableService.html">tableService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_tableService.html#~applyFilters">applyFilters</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~clearFilters">clearFilters</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~filteredState">filteredState</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~getFilterDefintion">getFilterDefintion</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~getTable">getTable</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~init">init</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onCreate">onCreate</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onDestroy">onDestroy</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onExtentChange">onExtentChange</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onFilterDateChange">onFilterDateChange</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onFilterNumberChange">onFilterNumberChange</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onFilterSelectorChange">onFilterSelectorChange</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~onFilterStringChange">onFilterStringChange</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~openSettings">openSettings</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~preventSorting">preventSorting</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~queryMapserver">queryMapserver</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~setActive">setActive</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~setDefinitionExpression">setDefinitionExpression</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~setFilterState">setFilterState</a></li><li data-type='method'><a href="app.ui.module_tableService.html#~setTable">setTable</a></li></ul></li><li><a href="app.ui.module_tocService.html">tocService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_tocService.html#~_findOpenPanel">_findOpenPanel</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~reloadLayer">reloadLayer</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~removeLayer">removeLayer</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~setTocEntrySelectedState">setTocEntrySelectedState</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleLayerTablePanel">toggleLayerTablePanel</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleMetadata">toggleMetadata</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~toggleSettings">toggleSettings</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~watchPanelState">watchPanelState</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~zoomLayerScale">zoomLayerScale</a></li><li data-type='method'><a href="app.ui.module_tocService.html#~zoomToBoundary">zoomToBoundary</a></li></ul></li><li><a href="app.ui.module_tooltipService.html">tooltipService</a><ul class='methods'><li data-type='method'><a href="app.ui.module_tooltipService.html#~_mouseMoveHandler">_mouseMoveHandler</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~_resetOffset">_resetOffset</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~_start">_start</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~_stop">_stop</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~_updateDimensions">_updateDimensions</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~addHoverTooltip">addHoverTooltip</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~checkCollisions">checkCollisions</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~constructor">constructor</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~constructor">constructor</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~constructor">constructor</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~constructor">constructor</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~deRegister">deRegister</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~deRegister">deRegister</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~destroy">destroy</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~getBounds">getBounds</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~getOriginPoint">getOriginPoint</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~offset">offset</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~position">position</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~refreshHoverTooltip">refreshHoverTooltip</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~register">register</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~register">register</a></li><li data-type='method'><a href="app.ui.module_tooltipService.html#~removeHoverTooltip">removeHoverTooltip</a></li></ul></li><li><a href="app.ui%250A%250AProvides%2520ability%2520to%2520place%2520this%2520viewer%2520into%2520fullscreen%2520mode,%2520and%2520whether%2520it%2520is%2520actively%2520in%2520fullscreen%2520mode.fullScreenServicemodule_.html">fullScreenService</a></li><li><a href="material.components.button.module_MdButtonDirectiveDecorator.html">MdButtonDirectiveDecorator</a><ul class='methods'><li data-type='method'><a href="material.components.button.module_MdButtonDirectiveDecorator.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.dialog.module_$mdDialog.html">$mdDialog</a><ul class='methods'><li data-type='method'><a href="material.components.dialog.module_$mdDialog.html#~show">show</a></li></ul></li><li><a href="material.components.icon.module_mdIconDirectiveDecorator.html">mdIconDirectiveDecorator</a><ul class='methods'><li data-type='method'><a href="material.components.icon.module_mdIconDirectiveDecorator.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.menu.module_mdMenuDirective.html">mdMenuDirective</a><ul class='methods'><li data-type='method'><a href="material.components.menu.module_mdMenuDirective.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.menu.module_mdSelectDirective.html">mdSelectDirective</a><ul class='methods'><li data-type='method'><a href="material.components.menu.module_mdSelectDirective.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.menuBar.module_mdMenuItemDirectiveDecorator.html">mdMenuItemDirectiveDecorator</a><ul class='methods'><li data-type='method'><a href="material.components.menuBar.module_mdMenuItemDirectiveDecorator.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.select.module_mdSelectMenuDirective.html">mdSelectMenuDirective</a><ul class='methods'><li data-type='method'><a href="material.components.select.module_mdSelectMenuDirective.html#~decorateCompile">decorateCompile</a></li></ul></li><li><a href="material.components.tooltip.module_mdTooltipDirective.html">mdTooltipDirective</a><ul class='methods'><li data-type='method'><a href="material.components.tooltip.module_mdTooltipDirective.html#~decorateCompile">decorateCompile</a></li><li data-type='method'><a href="material.components.tooltip.module_mdTooltipDirective.html#~isTouch">isTouch</a></li></ul></li></ul><h3>Namespaces</h3><ul><li><a href="app.html">app</a></li><li><a href="app.core.html">core</a><ul class='methods'><li data-type='method'><a href="app.core.html#.apiBlock">apiBlock</a></li><li data-type='method'><a href="app.core.html#.configBlock">configBlock</a></li><li data-type='method'><a href="app.core.html#.debugBlock">debugBlock</a></li><li data-type='method'><a href="app.core.html#.rcsAddKeys">rcsAddKeys</a></li><li data-type='method'><a href="app.core.html#.runBlock">runBlock</a></li><li data-type='method'><a href="app.core.html#~configureIconsets">configureIconsets</a></li><li data-type='method'><a href="app.core.html#~configureTheme">configureTheme</a></li><li data-type='method'><a href="app.core.html#~configureTranslations">configureTranslations</a></li><li data-type='method'><a href="app.core.html#~loadRcsLayers">loadRcsLayers</a></li><li data-type='method'><a href="app.core.html#~setLanguage">setLanguage</a></li></ul></li><li><a href="app.geo.html">geo</a></li><li><a href="app.layout.html">layout</a></li><li><a href="app.ui.html">ui</a></li></ul><h3>Global</h3><ul><li><a href="global.html#$on">$on</a></li><li><a href="global.html#addViewer">addViewer</a></li><li><a href="global.html#applyDefault">applyDefault</a></li><li><a href="global.html#attachEvents">attachEvents</a></li><li><a href="global.html#autolink">autolink</a></li><li><a href="global.html#centerAndZoom">centerAndZoom</a></li><li><a href="global.html#configureParser">configureParser</a></li><li><a href="global.html#createCanvas">createCanvas</a></li><li><a href="global.html#createSvg">createSvg</a></li><li><a href="global.html#dateTimeZone">dateTimeZone</a></li><li><a href="global.html#detachEvents">detachEvents</a></li><li><a href="global.html#detectBlur">detectBlur</a></li><li><a href="global.html#detectFocus">detectFocus</a></li><li><a href="global.html#disableCommonPrototypes">disableCommonPrototypes</a></li><li><a href="global.html#elemIsFocusable">elemIsFocusable</a></li><li><a href="global.html#enhanceLogger">enhanceLogger</a></li><li><a href="global.html#fireRvReady">fireRvReady</a></li><li><a href="global.html#focus">focus</a></li><li><a href="global.html#focusableSearch">focusableSearch</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getBookmark">getBookmark</a></li><li><a href="global.html#getCurrentLang">getCurrentLang</a></li><li><a href="global.html#getLogdownInstance">getLogdownInstance</a></li><li><a href="global.html#getRcsLayerIDs">getRcsLayerIDs</a></li><li><a href="global.html#getTextWidth">getTextWidth</a></li><li><a href="global.html#hasLink">hasLink</a></li><li><a href="global.html#initialBookmark">initialBookmark</a></li><li><a href="global.html#isSameActiveElement">isSameActiveElement</a></li><li><a href="global.html#isValid">isValid</a></li><li><a href="global.html#lastVisibleHistoryElement">lastVisibleHistoryElement</a></li><li><a href="global.html#link">link</a></li><li><a href="global.html#loadRcsLayers">loadRcsLayers</a></li><li><a href="global.html#mapCoordinates">mapCoordinates</a></li><li><a href="global.html#mergeCanvases">mergeCanvases</a></li><li><a href="global.html#northArrow">northArrow</a></li><li><a href="global.html#noSourceLink">noSourceLink</a></li><li><a href="global.html#onFocusin">onFocusin</a></li><li><a href="global.html#onFocusout">onFocusout</a></li><li><a href="global.html#onKeydown">onKeydown</a></li><li><a href="global.html#onKeyup">onKeyup</a></li><li><a href="global.html#onMouseDown">onMouseDown</a></li><li><a href="global.html#picture">picture</a></li><li><a href="global.html#preLoadApiBlock">preLoadApiBlock</a></li><li><a href="global.html#process">process</a></li><li><a href="global.html#projectGeometry">projectGeometry</a></li><li><a href="global.html#ready">ready</a></li><li><a href="global.html#readyDelay">readyDelay</a></li><li><a href="global.html#registerPlugin">registerPlugin</a></li><li><a href="global.html#reInitialize">reInitialize</a></li><li><a href="global.html#restoreSession">restoreSession</a></li><li><a href="global.html#RV">RV</a></li><li><a href="global.html#rvDefaults">rvDefaults</a></li><li><a href="global.html#rvFailureImage">rvFailureImage</a></li><li><a href="global.html#rvFocus">rvFocus</a></li><li><a href="global.html#rvNorthArrow">rvNorthArrow</a></li><li><a href="global.html#rvState">rvState</a></li><li><a href="global.html#setLanguage">setLanguage</a></li><li><a href="global.html#setLevel">setLevel</a></li><li><a href="global.html#setMapCursor">setMapCursor</a></li><li><a href="global.html#setSvgHref">setSvgHref</a></li><li><a href="global.html#shiftFocus">shiftFocus</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#svgToCanvas">svgToCanvas</a></li><li><a href="global.html#trackFocusBuilder">trackFocusBuilder</a></li><li><a href="global.html#uid">uid</a></li><li><a href="global.html#updateNorthArrow">updateNorthArrow</a></li><li><a href="global.html#useBookmark">useBookmark</a></li><li><a href="global.html#versionCheck">versionCheck</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ui/table/table.service.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module tableService
+ * @memberof app.ui
+ * @description
+ *
+ * The `tableService` is responsible for filtering DataTable results by the users current
+ * extent (if enabled).
+ *
+ */
+angular
+    .module('app.ui')
+    .factory('tableService', tableService);
+
+function tableService(stateManager, geoService, $rootScope, $q, gapiService, debounceService, $rootElement, $timeout,
+    referenceService, layerRegistry, configService, Geo, events) {
+
+    // timestamps can be watched for key changes to filter data
+    const filterTimeStamps = {
+        onCreated: null,
+        onChanged: null,
+        onDeleted: null
+    };
+
+    // a list of valid oidField values after filtering is complete
+    let validOIDs = [];
+
+    // the numerical index of DataTables corresponding row oidField for the range filter
+    let oidColNum;
+
+    const service = {
+        setActive,
+        filterTimeStamps,
+        filter: {
+            isActive: false,
+            isApplied: true,
+            isMapFiltered: false,
+            isOpen: true
+        },
+        setTable,
+        getTable,
+        clearFilters,
+        applyFilters,
+        openSettings,
+        onFilterStringChange: debounceService.registerDebounce(onFilterStringChange, 700, false),
+        onFilterSelectorChange: onFilterSelectorChange,
+        onFilterNumberChange: debounceService.registerDebounce(onFilterNumberChange, 700, false),
+        onFilterDateChange: onFilterDateChange,
+        preventSorting: preventSorting,
+        filters: {},
+        isFeatureLayer: false,
+        isDynamicLayer: false,
+        isSettingOpen: false,
+        isGlobalSearch: true
+    };
+
+    // active table for global search to link to
+    let activeTable;
+
+    // array who contains filters (use to show/hide apply on map button)
+    let filtersObject;
+
+    init();
+
+    return service;
+
+    /**
+     * Enables/Disables filtering by extent.
+     *
+     * @function setActive
+     * @param   {Boolean}   value   true if extent filtering is enabled, false otherwise
+     */
+    function setActive(value) {
+        if (filterTimeStamps.onCreated !== null) { // ignore if no DataTable is active
+            service.filter.isActive = value;
+            stateManager.display.table.data.filter.isActive = value; // set on layer so it can persist when we change layer
+
+            // filter flag
+            stateManager.display.table.requester.legendEntry.filter = service.filter.isMapFiltered;
+
+            filteredState().then(() => {
+                filterTimeStamps.onChanged = Date.now();
+            });
+        }
+    }
+
+    /**
+     * Initialize watchers and DataTable range filter
+     *
+     * @function init
+     * @private
+     */
+    function init() {
+
+        events.$on(events.rvLayerDefinitionClauseChanged, () => {
+            if (filterTimeStamps.onCreated !== null) {
+                filteredState().then(() => {
+                    filterTimeStamps.onChanged = Date.now();
+                });
+            }
+        });
+
+        $rootScope.$on('extentChange', debounceService.registerDebounce(onExtentChange, 300, false));
+
+        // DataTable is either being created or destroyed
+        $rootScope.$watch(() => stateManager.display.table.data, (val, prevVal) => {
+            // triggered on DataTable panel close or switching from one layer to another
+            if ((val === null &amp;&amp; prevVal &amp;&amp; prevVal.rows) || (val &amp;&amp; val.rows &amp;&amp; prevVal &amp;&amp; prevVal.rows)) {
+                onDestroy();
+            }
+            // triggered on DataTable panel open
+            if (val &amp;&amp; val.rows) {
+                onCreate();
+            }
+        });
+    }
+
+    /**
+     * Set active table
+     *
+     * @function setTable
+     * @param   {Object}   table   active table
+     */
+    function setTable(table) {
+        activeTable = table;
+
+        // reset all filters state to false (they will be populated by the loading table)
+        filtersObject = table.columns().dataSrc();
+        filtersObject.each(el => {
+            service.filters[el] = false;
+        });
+
+        // recompute oidColNum for data table filter since it may not be first index
+        oidColNum = stateManager.display.table.data.columns.findIndex(col =>
+            col.data === stateManager.display.table.data.oidField);
+
+        // add a DataTable filter which only accepts rows with oidField values in the validOIDs list
+        $.fn.dataTable.ext.searchTemp.push((settings, data) =>
+            validOIDs.indexOf(parseInt(data[settings._colReorder.fnTranspose(oidColNum)])) !== -1);
+    }
+
+    /**
+     * Get active table
+     *
+     * @function getTable
+     * @return   {Object}  activeTable the active table
+     */
+    function getTable() {
+        return activeTable;
+    }
+
+    /**
+     * Clear all filters
+     *
+     * @function clearFilters
+     */
+    function clearFilters() {
+        const filters = stateManager.display.table;
+        const table = service.getTable();
+
+        // show processing
+        $rootElement.find('.dataTables_processing').css('display', 'block');
+
+        // set isApplied to hide apply filters on map button
+        service.filter.isApplied = true;
+        filters.data.filter.isApplied = service.filter.isApplied;  // set on layer so it can persist when we change layer
+
+        // reset global search ($watch in filters-search.directive will remove the value)
+        stateManager.display.table.data.filter.globalSearch = '_reset_';
+
+        // reset all filters state to false
+        filtersObject.each(el => {
+            service.filters[el] = false;
+        });
+
+        // reset all filters value to default
+        let defs = [];
+        let filter = false;
+        filters.data.columns.forEach(column => {
+            // skip columns with no filter
+            if (typeof column.filter !== 'undefined') {
+                if (!column.filter.static) {
+                    if (column.type === 'string') {
+                        column.filter.value = '';
+                        table.column(`${column.data}:name`).search('');
+                    } else if (column.type === 'selector') {
+                        column.filter.value = [];
+                        table.column(`${column.data}:name`).search('');
+                    } else if (column.type === 'number') {
+                        column.filter.min = '';
+                        column.filter.max = '';
+                    } else if (column.type === 'rv-date') {
+                        column.filter.min = null;
+                        column.filter.max = null;
+                    }
+                } else {
+                    // if filter is static, apply the value
+                    defs = getFilterDefintion(defs, column);
+                    filter = true;
+                }
+            }
+        });
+
+        const layerConfig = filters.requester.legendEntry.mainProxyWrapper.layerConfig;
+
+        // store the reset filter values
+        layerConfig.table.columns.forEach(column => {
+            if (typeof column.filter !== 'undefined') {
+                if (!column.filter.static) {
+                    if (column.filter.type === 'selector') {
+                        column.filter.value = [];
+                    } else if (column.filter.type === 'rv-date') {
+                        column.filter.value = {};
+                    } else {
+                        column.filter.value = '';
+                    }
+                }
+            }
+        });
+
+        // remove filter flag if filter by extent is not active (data is not filtered)
+        service.filter.isMapFiltered = false;
+        filters.data.filter.isMapFiltered = service.filter.isMapFiltered;  // set on layer so it can persist when we change layer
+
+        let config = configService.getSync.map.layerRecords.find(item =>
+            item.config.id === filters.requester.legendEntry.layerRecordId).initialConfig;
+
+        // TODO: Modify when filtering capabilities added for other layers such as WMS
+        if (config.layerType === Geo.Layer.Types.ESRI_DYNAMIC) {
+            config = config.layerEntries.find(item => item.index === layerConfig.index)
+        }
+
+        config.table.applyMap = false;
+
+        // most recent 'filters' were applied (no filters but no changes either)
+        config.table.applied = true;
+
+        // update the query to use on layer reload
+        config.initialFilteredQuery = defs.join(' AND ');
+
+        // get filters configuration and check if static field were used. If so, filters can't be remove and flag need to stay
+        stateManager.display.table.requester.legendEntry.filter =
+            service.filter.isMapFiltered || filter;
+
+        // if filter by extent is enable, manually trigger the on extentChange event to refresh the table
+        if (service.filter.isActive) { onExtentChange(); }
+
+        // redraw table to clear filters (use timeout for redraw so processing can show)
+        $timeout(() => { table.search('').draw(); }, 100);
+
+        // set layer defintion query
+        setDefinitionExpression(filters.requester.legendEntry, defs);
+    }
+
+    /**
+     * Apply filters on map
+     *
+     * @function applyFilters
+     */
+    function applyFilters() {
+        const filters = stateManager.display.table;
+
+        // set isApplied to hide apply filters on map button
+        service.filter.isApplied = true;
+        filters.data.filter.isApplied = service.filter.isApplied;  // set on layer so it can persist when we change layer
+
+        // loop trought all the filters to construct the array queries
+        let defs = [];
+        filters.data.columns.forEach(column => {
+            // skip columns with no filter
+            if (typeof column.filter !== 'undefined') {
+                defs = getFilterDefintion(defs, column);
+            }
+        });
+
+        // set layer defintion query
+        setDefinitionExpression(filters.requester.legendEntry, defs);
+
+        const layerConfig = filters.requester.legendEntry.mainProxyWrapper.layerConfig;
+
+        if (defs.length === 0) {
+            // store the reset filter values
+            layerConfig.table.columns.forEach(column => {
+                if (typeof column.filter !== 'undefined') {
+                    if (column.filter.type === 'selector') {
+                        column.filter.value = [];
+                    } else if (column.filter.type === 'rv-date') {
+                        column.filter.value = {};
+                    } else {
+                        column.filter.value = '';
+                    }
+                }
+            });
+        }
+
+        // set filter flag accordingly (if data is filtered)
+        service.filter.isMapFiltered = defs.length > 0;
+        filters.data.filter.isMapFiltered = service.filter.isMapFiltered;  // set on layer so it can persist when we change layer
+
+        let config = configService.getSync.map.layerRecords.find(item =>
+            item.config.id === filters.requester.legendEntry.layerRecordId).initialConfig;
+
+        // TODO: Modify when filtering capabilities added for other layers such as WMS
+        if (config.layerType === Geo.Layer.Types.ESRI_DYNAMIC) {
+            config = config.layerEntries.find(item => item.index === layerConfig.index)
+        }
+
+        // most recent 'filters' were applied (either no filters and no changes or updated filters applied)
+        config.table.applyMap = config.table.applied = true;
+
+        stateManager.display.table.requester.legendEntry.filter = service.filter.isMapFiltered;
+
+        // update the query to use on layer reload
+        config.initialFilteredQuery = defs.join(' AND ');
+    }
+
+    /**
+     * Set the layer definition query
+     *
+     * @function getFilterDefintion
+     * @private
+     * @param   {Array}   defs   array of definition queries
+     * @param   {Object}   column   column object
+     * @return {Array} defs definition queries array
+     */
+    // eslint-disable-next-line complexity
+    function getFilterDefintion(defs, column) {
+        /*jshint maxcomplexity:11 */
+        if (column.type === 'string') {
+            // replace ' by '' to be able to perform the search in the datatable
+            // relpace * wildcard and construct the query (add wildcard at the end)
+            const val = column.filter.value.replace(/'/g, /''/);
+            if (val !== '') {
+                defs.push(`UPPER(${column.name}) LIKE \'${val.replace(/\*/g, '%').toUpperCase()}%\'`);
+            }
+        }
+
+        if (column.type === 'selector') {
+            const val =  column.filter.value.join(',').replace(/"/g, '\'');
+            if (val !== '') {
+                defs.push(`${column.name} IN (${val})`);
+            }
+        } else if (column.type === 'number') {
+            const min = column.filter.min;
+            const max = column.filter.max;
+
+            if (min !== '') {
+                defs.push(`${column.name} >= ${min}`);
+            }
+            if (max !== '') {
+                defs.push(`${column.name} &lt;= ${max}`);
+            }
+        } else if (column.type === 'rv-date') {
+            const min = column.filter.min;
+            const max = column.filter.max;
+
+            if (min) {
+                const dateMin = `${min.getMonth() + 1}/${min.getDate()}/${min.getFullYear()}`;
+                defs.push(`${column.name} >= DATE \'${dateMin}\'`);
+            }
+            if (max) {
+                const dateMax = `${max.getMonth() + 1}/${max.getDate()}/${max.getFullYear()}`;
+                defs.push(`${column.name} &lt;= DATE \'${dateMax}\'`);
+            }
+        }
+
+        return defs;
+    }
+
+    /**
+     * Set the layer definition query
+     *
+     * @function setDefinitionExpression
+     * @private
+     * @param   {Object}   legendEntry   legendEntry item to get layer from
+     * @param   {Array}   defs   array of definition queries to apply
+     */
+    function setDefinitionExpression(legendEntry, defs) {
+        // stringnify the array
+        const definition = defs.join(' AND ');
+
+        // set definition query
+        stateManager.display.table.requester.legendEntry.definitionQuery = definition;
+    }
+
+    /**
+     * Open settings info section
+     *
+     * @function openSettings
+     */
+    function openSettings() {
+        service.isSettingOpen = !service.isSettingOpen;
+
+        // show filters if setting is open
+        if (service.isSettingOpen) {
+            referenceService.isFiltersVisible = true;
+        } else {
+            // when setting is close, check if we need to show setting
+            referenceService.isFiltersVisible = service.filter.isOpen;
+
+            // need to recalculate scroller space because user may have switch from default to full view inside setting panel
+            // need a timeout, if not measure occurs when datatable is not displayed and it fails
+            $timeout(() => { activeTable.scroller.measure(); }, 0);
+        }
+    }
+
+    /**
+     * Apply on string filter change callback
+     *
+     * @function onFilterStringChange
+     * @param   {String}   column   column name
+     * @param   {String}   value   search filter
+     * @param   {Boolean}  [keep=false]    optional true: keep value for filter, false do not keep
+     */
+    function onFilterStringChange(column, value, keep = false) {
+        // show processing
+        $rootElement.find('.dataTables_processing').css('display', 'block');
+
+        // generate regex then filter (use timeout for redraw so processing can show)
+        const val = `^${value.replace(/\*/g, '.*')}.*$`;
+        const table = service.getTable();
+        $timeout(() => { table.column(`${column}:name`).search(val, true, false).draw(); }, 100);
+
+        // keep filter state to know when to show apply map button
+        setFiltersState(column, value);
+
+        const configTable = stateManager.display.table.requester.legendEntry.mainProxyWrapper.layerConfig.table;
+
+        // keep filter value to reapply when table reopens
+        configTable.columns.find(filter => column === filter.data).filter.value = value;
+
+        // changes made to filter, show Apply Map button
+        configTable.applyMap = configTable.applied = false;
+    }
+
+    /**
+     * Apply on selector filter change callback
+     *
+     * @function onFilterSelectorChange
+     * @param   {String}   column   column name
+     * @param   {Array}   values   search filter array
+     */
+    function onFilterSelectorChange(column, values) {
+        // join the values by | for or and remove all ". They are use to split the values
+        const value = (values.length > 0) ? values.join('|').replace(/"/g, '') : '';
+        onFilterStringChange(column, value);
+
+        const configTable = stateManager.display.table.requester.legendEntry.mainProxyWrapper.layerConfig.table;
+
+        // keep filter value when reloading layer
+        configTable.columns.find(filter => column === filter.data).filter.value = values;
+
+        // changes made to filter, show Apply Map button
+        configTable.applyMap = configTable.applied = false;
+    }
+
+    /**
+     * Apply on number filter change callback
+     *
+     * @function onFilterNumberChange
+     * @param   {String}   column   column name
+     * @param   {Number}   min   minimum number search filter
+     * @param   {Number}   max   maximum number search filter
+     */
+    function onFilterNumberChange(column, min, max) {
+        // show processing
+        $rootElement.find('.dataTables_processing').css('display', 'block');
+
+        // keep filter state to know when to show apply map button
+        setFiltersState(column, `${min}${max}`);
+
+        // redraw table to filter (filters for range number are added on the table itself in table-definition.directive)
+        // use timeout for redraw so processing can show
+        $timeout(() => { service.getTable().draw(); }, 100);
+
+        const configTable = stateManager.display.table.requester.legendEntry.mainProxyWrapper.layerConfig.table;
+
+        // keep filter value when reloading layer
+        configTable.columns.find(filter => column === filter.data).filter.value = `${min},${max}`;
+
+        // changes made to filter, show Apply Map button
+        configTable.applyMap = configTable.applied = false;
+    }
+
+    /**
+     * Apply on date filter change callback
+     *
+     * @function onFilterDateChange
+     * @param   {String} column   column name
+     * @param   {Date}   min   minimum date search filter
+     * @param   {Date}   max   maximum date search filter
+     */
+    function onFilterDateChange(column, min, max) {
+        // show processing
+        $rootElement.find('.dataTables_processing').css('display', 'block');
+
+        // keep filter state to know when to show apply map button
+        setFiltersState(column, `${min}${max}`);
+
+        // redraw table to filter (filters for range date are added on the table itself in table-definition.directive)
+        // use timeout for redraw so processing can show
+        $timeout(() => { service.getTable().draw(); }, 100);
+
+        const configTable = stateManager.display.table.requester.legendEntry.mainProxyWrapper.layerConfig.table;
+
+        // keep filter value when reloading layer
+        configTable.columns.find(filter => column === filter.data).filter.value = {
+            min: min,
+            max: max
+        };
+
+        // changes made to filter, show Apply Map button
+        configTable.applyMap = configTable.applied = false;
+    }
+
+    /**
+     * Set filters state on filters modification to know when show/hide apply on map button
+     *
+     * @function setFilterState
+     * @private
+     * @param   {String}   column   column name
+     * @param   {String}   value   search filter value
+     */
+    function setFiltersState(column, value) {
+        // if there is value, assign to column and show apply map button
+        // if not, it means value is '', loop through the filters to see if we still need to show apply map button
+        if (value) {
+            service.filters[column] = true;
+            service.filter.isApplied = false;
+        } else {
+            service.filters[column] = false;
+
+            // check filter flag to know if filter is applied
+            service.filter.isApplied = stateManager.display.table.requester.legendEntry.filters ? false : true;
+
+            let flag = false;
+
+            filtersObject.each(el => {
+                // check if another field have a filter. If so, show Apply Map
+                if (service.filters[el]) {
+                    flag = true;
+                    service.filter.isApplied = false;
+                }
+            });
+
+            // if flag is still false, no other field has a filter, so all filters have been cleared on table
+            // show Apply Map button to be able to clear all filters on the map as well
+            if (flag === false) {
+                service.filter.isApplied = false;
+            }
+        }
+
+        stateManager.display.table.data.filter.isApplied = service.filter.isApplied;  // set on layer so it can persist when we change layer
+    }
+
+    /**
+     * Prevent column sort when filter is clicked
+     *
+     * @function preventSorting
+     * @param   {Object} event   event fired when user click or press a key on a filter
+     */
+    function preventSorting(event) {
+        if (event.type === 'click' || (event.type === 'keypress' &amp;&amp; event.which === 13)) {
+            event.stopPropagation(true);
+            event.preventDefault(true);
+        }
+    }
+
+    /**
+     * Called when filter panel data is being added.
+     *
+     * @function onCreate
+     * @private
+     */
+    function onCreate() {
+        // recompute oidColNum for data table filter since it may not be first index
+        oidColNum = stateManager.display.table.data.columns.findIndex(col =>
+            col.data === stateManager.display.table.data.oidField);
+
+        // set filter flag
+        service.filter.isActive = stateManager.display.table.requester.legendEntry.filters
+
+        // set filter extent and apply map button from table information
+        const filter = stateManager.display.table.data.filter;
+        service.filter.isActive = filter.isActive;
+        service.filter.isApplied = filter.isApplied;
+        service.filter.isMapFiltered = filter.isMapFiltered;
+        service.filter.isOpen = filter.isOpen;
+
+        // check if we need to show the filters (need this check when table is created)
+        // always show filters if settings panel is open
+        referenceService.isFiltersVisible = service.isSettingOpen ? true : service.filter.isOpen;
+
+        // set layer type to see if we show apply filter button. Only works on feature/dynamic layer
+        // user added layer (layer created by value from a feature collection like CSV file) does not support definition expressions and time definitions)
+        // user added layer from server support definition expression and time defintion
+        const layer = layerRegistry.getLayerRecord(stateManager.display.table.requester.legendEntry.layerRecordId);
+        const layerType = layer.initialConfig.layerType; // stateManager.display.table.requester.legendEntry.layerType;
+        service.isFeatureLayer = (layerType === Geo.Layer.Types.ESRI_FEATURE &amp;&amp; !layer.isFileLayer());
+        service.isDynamicLayer = (layerType === Geo.Layer.Types.ESRI_DYNAMIC);
+
+        filteredState().then(() => {
+            filterTimeStamps.onCreated = Date.now();
+        });
+    }
+
+    /**
+     * Called when filter panel data is being removed or swapped.
+     *
+     * @function onDestroy
+     * @private
+     */
+    function onDestroy() {
+        filterTimeStamps.onDeleted = Date.now();
+        filterTimeStamps.onCreated = null;
+        filterTimeStamps.onChanged = null;
+    }
+
+    /**
+     * Called on map extent changes. Locates updating layer and waits for updating to complete before
+     * running filtering.
+     *
+     * @function onExtentChange
+     * @private
+     */
+    function onExtentChange() {
+        if (!service.filter.isActive || !stateManager.display.table.requester) { // filter by extent disabled or no DataTable is active - ignore
+            return;
+        }
+
+        const layer =
+            layerRegistry.getLayerRecord(stateManager.display.table.requester.legendEntry.layerRecordId)._layer;
+
+        // wait until layer has finished updating before filtering
+        const stopUpdateWatcher = $rootScope.$watch(() => layer.updating, updating => {
+            if (!updating) {
+                filteredState().then(() => {
+                    filterTimeStamps.onChanged = Date.now();
+                });
+                stopUpdateWatcher(); // remove watcher
+            }
+        });
+    }
+
+    /**
+     * Applies validOIDs returned from queryMap or all oids if no query is applied.
+     *
+     * @function filteredState
+     * @private
+     * @return  {Promise}   resolves to undefined when the filtering is complete
+     */
+    function filteredState() {
+        const layerRecId = layerRegistry.getLayerRecord(stateManager.display.table.requester.legendEntry.layerRecordId);
+
+        // we're not filtering by either symbology or extent, so resolve with all oid's as valid
+        if (!service.filter.isActive &amp;&amp; typeof layerRecId.definitionClause !== 'string') {
+            validOIDs = stateManager.display.table.data.rows.map(row => parseInt(row[stateManager.display.table.data.oidField]));
+            return $q.resolve();
+        }
+
+        return queryMapserver().then(oids => (validOIDs = oids));
+    }
+
+    /**
+     * Performs an ESRI query for all features with a spatial intersection with the current extent.
+     *
+     * @function queryMapserver
+     * @private
+     * @param   {Number}    lastOID the oidField value of the last query when exceededTransferLimit is reached
+     * @return  {Promise}   resolves to a list of valid oid's
+     */
+    function queryMapserver(lastOID = 0) {
+        const state = stateManager.display.table;
+        const legEntry = state.requester.legendEntry;
+        const layerRecId = layerRegistry.getLayerRecord(legEntry.layerRecordId);
+
+        const filterByExtent = service.filter.isActive;
+        const filterBySymbology = typeof layerRecId.definitionClause === 'string';
+
+        const queryOpts = { outFields: [state.data.oidField] };
+        if (filterByExtent) {
+            queryOpts.geometry = geoService.map.extent;
+        }
+
+        // query the layer itself instead of making a mapserver request
+        if (legEntry.parentLayerType === 'esriFeature' &amp;&amp; legEntry.layerType === 'esriFeature' &amp;&amp; layerRecId.isFileLayer()) {
+            queryOpts.featureLayer = layerRecId._layer;         // file based layer
+        } else {
+            queryOpts.url = legEntry.mainProxy.queryUrl;        // server based layer
+        }
+
+        // only include oidField values after previous mapserver query resulted in a exceededTransferLimit exception
+        if (lastOID > 0) {
+            queryOpts.where = `(${state.data.oidField} > ${lastOID})`;
+
+            if (filterBySymbology) {
+                queryOpts.where += ` AND `;
+            }
+        } else {
+            queryOpts.where = ''; // this is needed for our string concatenation below, else its undefined
+        }
+
+
+        if (filterBySymbology) {
+            queryOpts.where += `(${layerRecId.definitionClause})`;
+        }
+
+        return gapiService.gapi.query.queryGeometry(queryOpts).then(featureSet => {
+            // save an array of OID's returned by the query
+            const validOIDs = featureSet.features.map(feat => parseInt(feat.attributes[state.data.oidField]));
+            // transfer limit exceeded - call query again until all data is retrieved
+            if (featureSet.exceededTransferLimit) {
+                // get the last oidField value to use as a starting point for another query
+                // TODO: Using the assumption that oidField values are sorted. If this turns out to be not the case,
+                // see the available ESRI methods orderByFields or start (would need to expose in geoAPI first)
+                const lastOID = featureSet.features[featureSet.features.length - 1].attributes[state.data.oidField];
+                return queryMapserver(lastOID).then(oIDs => validOIDs.concat(oIDs)); // merge recursive list with own results
+            } else { // either query did not trigger an exceededTransferLimit exception, or this marks the end of the result set
+                return validOIDs;
+            }
+        });
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Jan 10 2018 20:11:13 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
